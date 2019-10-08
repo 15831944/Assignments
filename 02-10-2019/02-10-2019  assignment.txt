@@ -1,0 +1,2 @@
+﻿Tối ưu hóa Code để việc đọc Code trở nên dễ dàng hơn với việc tạo ra kiểu biến Enum
+Thừa kế Class để Override function của Class cha

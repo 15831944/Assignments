@@ -1,0 +1,7 @@
+D:\Assignments\07-10-2019\Sorting-Algorithm\bin\Release\Sorting-Algorithm.exe.config
+D:\Assignments\07-10-2019\Sorting-Algorithm\bin\Release\Sorting-Algorithm.exe
+D:\Assignments\07-10-2019\Sorting-Algorithm\bin\Release\Sorting-Algorithm.pdb
+D:\Assignments\07-10-2019\Sorting-Algorithm\obj\Release\Sorting-Algorithm.csproj.CoreCompileInputs.cache
+D:\Assignments\07-10-2019\Sorting-Algorithm\obj\Release\Sorting-Algorithm.exe
+D:\Assignments\07-10-2019\Sorting-Algorithm\obj\Release\Sorting-Algorithm.pdb
+D:\Assignments\07-10-2019\Sorting-Algorithm\obj\Release\Sorting-Algorithm.csprojAssemblyReference.cache

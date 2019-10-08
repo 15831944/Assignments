@@ -1,0 +1,2 @@
+﻿Thay đổi thuật toán Sort theo Tên bằng hàm String.Compare()
+[NEW] Tích hợp Delegate để nhận biết khi nào có yêu cầu Sort và kiểu Sort 

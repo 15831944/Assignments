@@ -1,0 +1,2 @@
+﻿Tạo 1 list people bao gồm các thuộc tính Tuổi (int), Tên (string), Địa Chỉ (int)
+Viết hàm sắp xếp theo Tên, Tuổi, Địa Chỉ
