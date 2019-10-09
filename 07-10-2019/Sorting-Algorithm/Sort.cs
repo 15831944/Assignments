@@ -119,35 +119,78 @@ namespace Sorting_Algorithm
         }
     }
 
-    public class HeapSort<T>
+    public class HeapSort<T> : Sort<T>
     {
-        T[] arr;
         int arrSize;
-        int eleCount;
-
-        public HeapSort()
+        public HeapSort(List<T> list) : base(list)
         {
-            arrSize = 0;
-            eleCount = 0;
-            arr = new T[arrSize];
+            arrSize = list.Count();
+            data = list;
         }
+        //public HeapSort()
+        //{
+        //    arrSize = 0;
+        //    eleCount = 0;
+        //    arr = new int[arrSize];
+        //}
 
-        public HeapSort(int size)
+        public void BuildMaxHeap(ref List<T> list, Compare cmp_func)
         {
-            arrSize = size;
-            eleCount = 0;
-            arr = new T[size];
-        }
-
-        public bool Add(T value)
-        {
-            if (eleCount == arr.Length)
+            for (int i = arrSize / 2 - 1; i >= 0; i--)
             {
-                return false;
+                Heapify(ref list, arrSize, i, cmp_func);
             }
 
-            arr[arrSize] = value;
-            return true;
+            for (int i = arrSize - 1; i >= 0; i--)
+            {
+                T temp = list[0];
+                list[0] = list[i];
+                list[i] = temp;
+                Heapify(ref list, i, 0, cmp_func);
+            }
+        }
+
+        public void Heapify(ref List<T> list, int n, int i, Compare cmp_func)
+        {
+            int largest = i;
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            if (left < n && cmp_func(list[left], list[largest]) == Sort<T>.COMPARET.GREATER)
+            {
+                largest = left;
+            }
+            if (right < n && cmp_func(list[right], list[largest]) == Sort<T>.COMPARET.GREATER)
+            {
+                largest = right;
+            }
+            if (largest != i)
+            {
+                T temp = list[i];
+                list[i] = list[largest];
+                list[largest] = temp;
+                Heapify(ref list, n, largest, cmp_func);
+            }
+        }
+
+        //public bool Add(T value)
+        //{
+        //    if (eleCount == arr.Length)
+        //    {
+        //        return false;
+        //    }
+
+        //    arr[arrSize] = value;
+        //    return true;
+        //}
+
+        public override void DoCompare(Compare cmp_func, int left, int right)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DoSort(Compare cmp_func, int low, int high)
+        {
+            throw new NotImplementedException();
         }
     }
 }

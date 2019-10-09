@@ -37,6 +37,7 @@ namespace ConsoleApp1
 
         public abstract void DoSort(Compare cmp_func);
         public abstract List<T> DoSort(Compare cmp_func, List<T> T);
+
     }
 
     class BubbleSort<T> : Sort<T>

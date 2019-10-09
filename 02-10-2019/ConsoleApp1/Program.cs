@@ -31,8 +31,7 @@ namespace ConsoleApp1
         {
             // init sort
             Sort<People> sort = new BubbleSort<People>(people);
-
-            /* Sort By Age */
+            List<People> temp = sort.GetData(false);
             sort.DoSort(People.CompareByPeopleAge);
             sort.DoSort(People.CompareByPeopleName);
         }

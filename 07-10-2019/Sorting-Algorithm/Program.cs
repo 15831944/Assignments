@@ -23,8 +23,8 @@ namespace Sorting_Algorithm
         {
             List<Address> address_list = new List<Address>();
             Address address = new Address();
-            //int[] int_arr = GetRanDomNumList(1000);
-            int[] int_arr = { 9, 3, 1, 5, 4, 7, 10, 14, 17 };
+            int[] int_arr = GetRanDomNumList(1000000);
+            //int[] int_arr = { 9, 3, 1, 5, 4, 7, 10, 14, 17 };
             foreach (var val in int_arr)
                 address.addAddress(ref address_list, val);
             return address_list;
@@ -35,17 +35,24 @@ namespace Sorting_Algorithm
 
         static void Main(string[] args)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             /* Quick Sort */
-            //Sort<Address> sort = new QuickSort<Address>(address_list);
-            //sort.DoSort(Address.DoCompare, 0, address_list.Count() - 1);
+            QuickSort<Address> sort = new QuickSort<Address>(address_list);
+            sort.DoSort(Address.DoCompare, 0, address_list.Count() - 1);
             /* END: Quick Sort */
-
+            stopwatch.Stop();
+            string temp = stopwatch.Elapsed.ToString();
+            stopwatch.Reset();
+            stopwatch.Start();
             /* Heap Sort */
-            Sort<Address> sort = new HeapSort<Address>(address_list);
-            
+            HeapSort<Address> heapsort = new HeapSort<Address>(address_list);
+            heapsort.BuildMaxHeap(ref address_list, Address.DoCompare);
             /* END: Heap Sort */
+            stopwatch.Stop();
+            Console.WriteLine("Thoi gian thuc hien Quick Sort: {0} \nThoi gian thuc hien Heap Sort: {1}",temp,stopwatch.Elapsed.ToString());
 
-            //foreach (var val in sort.GetData(false))
+            //foreach (var val in heapsort.GetData(false))
             //    Console.Write(val.address + " ");
             //Console.WriteLine();
             Console.ReadKey();
