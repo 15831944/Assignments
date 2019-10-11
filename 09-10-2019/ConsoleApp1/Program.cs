@@ -22,7 +22,7 @@ namespace ConsoleApp1
             else
             {
                 //int_arr = new int[] { 9, 3, 1, 5, 4, 7 };//4, 7, 10, 14, 17 };
-                int_arr = new int[] { 9, 6, 8, 3, 2 }; //, 2, 4
+                int_arr = new int[] { 9, 6, 8, 3, 2, 4 }; // 
             }
             return int_arr;
         }
