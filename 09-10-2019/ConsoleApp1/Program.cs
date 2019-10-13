@@ -43,7 +43,8 @@ namespace ConsoleApp1
             {
                 addressTree.Add(ref addressTree, listAddress[i]);
             }
-            addressTree.Print(addressTree, "Parent");
+
+            //addressTree.Print(addressTree, "Parent");
 
             //Console.WriteLine("Height: " + addressTree.height(addressTree).ToString());
             Console.ReadLine();

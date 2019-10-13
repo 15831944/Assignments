@@ -1,0 +1,60 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="1419" scrollPosition="0|37" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3157" scrollPosition="0|63" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="940" scrollPosition="0|15" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="671" scrollPosition="0|15" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="15" scrollPosition="0|0" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="5770" scrollPosition="0|18" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="1298" scrollPosition="0|0" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4901" scrollPosition="0|15" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4071" scrollPosition="0|48" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4518" scrollPosition="0|81" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4497" scrollPosition="0|75" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4859" scrollPosition="0|75" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3955" scrollPosition="0|54" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3861" scrollPosition="0|42" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="2283" scrollPosition="0|16" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="1729" scrollPosition="0|16" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="1171" scrollPosition="0|25" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3529" scrollPosition="0|43" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3172" scrollPosition="0|34" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4087" scrollPosition="0|40" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4927" scrollPosition="0|78" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="4927" scrollPosition="0|90" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="1109" scrollPosition="0|5" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="1860" scrollPosition="0|14" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="5022" scrollPosition="18|126" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="5510" scrollPosition="0|138" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="5625" scrollPosition="0|135" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="2172" scrollPosition="0|48" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="2739" scrollPosition="0|60" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="3157" scrollPosition="0|63" />
+      <File id="E533900A-33E9-46E4-82FC-8341643F50DF/f:Program.cs" caret="1479" scrollPosition="0|37" />
+      <File id="F219E616-9217-4BFB-A7E5-F8B21A6147A2/f:BinaryTree.cs" caret="871" scrollPosition="0|12" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>

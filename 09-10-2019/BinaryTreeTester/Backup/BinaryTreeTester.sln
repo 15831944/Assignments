@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTreeTester", "BinaryTreeTester\BinaryTreeTester.csproj", "{E533900A-33E9-46E4-82FC-8341643F50DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{F219E616-9217-4BFB-A7E5-F8B21A6147A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E533900A-33E9-46E4-82FC-8341643F50DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E533900A-33E9-46E4-82FC-8341643F50DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E533900A-33E9-46E4-82FC-8341643F50DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E533900A-33E9-46E4-82FC-8341643F50DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F219E616-9217-4BFB-A7E5-F8B21A6147A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F219E616-9217-4BFB-A7E5-F8B21A6147A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F219E616-9217-4BFB-A7E5-F8B21A6147A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F219E616-9217-4BFB-A7E5-F8B21A6147A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
