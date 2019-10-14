@@ -21,8 +21,7 @@ namespace ConsoleApp1
             }
             else
             {
-                //int_arr = new int[] { 9, 3, 1, 5, 4, 7 };//4, 7, 10, 14, 17 };
-                int_arr = new int[] { 9, 6, 8, 3, 2, 4, 7 }; // 
+                int_arr = new int[] { 9, 6, 8, 3, 2, 4, 7, 10 }; // , 1, 5 
             }
             return int_arr;
         }
@@ -41,10 +40,10 @@ namespace ConsoleApp1
             BalancedTree<int> addressTree = new BalancedTree<int>();
             for(int i = 0; i < listAddress.Count(); i++)
             {
-                addressTree.Add(ref addressTree, listAddress[i]);
+                addressTree.Add(addressTree.Root, listAddress[i]);
             }
 
-            addressTree.Print(addressTree, "Parent");
+            addressTree.Print(addressTree.Root, "Parent");
 
             //Console.WriteLine("Height: " + addressTree.height(addressTree).ToString());
             Console.ReadLine();
