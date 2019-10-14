@@ -1,3 +1,21 @@
+
+                if (binaryTree.LeftTree == null)
+                {
+                    binaryTree.LeftTree = new BalancedTree<T>();
+                }
+                if (binaryTree.RightTree == null)
+                {
+                    binaryTree.RightTree = new BalancedTree<T>();
+                }
+                if (binaryTree.CenterTree == null)
+                {
+                    binaryTree.CenterTree = new BalancedTree<T>();
+                }
+
+        public BalancedTree<T> LeftTree;
+        public BalancedTree<T> RightTree;
+        public BalancedTree<T> CenterTree;
+
             //if (CountSpace(binaryTree.data) == EQUAL_VAL)
             //{
             //    binaryTree.data.Add(value);

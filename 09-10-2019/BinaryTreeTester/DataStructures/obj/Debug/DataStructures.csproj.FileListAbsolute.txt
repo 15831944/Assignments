@@ -3,3 +3,9 @@ C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\DataStruct
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.csprojAssemblyReference.cache
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.dll
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.dll
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\bin\Debug\DataStructures.dll
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\bin\Debug\DataStructures.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.csprojAssemblyReference.cache
+D:\Assignments\09-10-2019\BinaryTreeTester\DataStructures\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache

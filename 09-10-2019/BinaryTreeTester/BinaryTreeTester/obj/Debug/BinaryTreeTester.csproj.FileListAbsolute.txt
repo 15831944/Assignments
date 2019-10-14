@@ -6,3 +6,13 @@ C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\BinaryTree
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.csproj.CopyComplete
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.exe
 C:\Users\nvtam\Downloads\Compressed\binarysearchtree\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.exe
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\bin\Debug\BinaryTreeTester.exe.config
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\bin\Debug\BinaryTreeTester.exe
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\bin\Debug\BinaryTreeTester.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\bin\Debug\DataStructures.dll
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\bin\Debug\DataStructures.pdb
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.csprojAssemblyReference.cache
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.csproj.CoreCompileInputs.cache
+D:\Assignments\09-10-2019\BinaryTreeTester\BinaryTreeTester\obj\Debug\BinaryTreeTester.csproj.CopyComplete
