@@ -7,9 +7,9 @@ namespace ConsoleApp1
     public class BalancedTreeNode<T> : Compare<T> where T : IComparable
     {
         public List<T> Data { get; set; }
-        public BalancedTreeNode<T> LeftNode;
-        public BalancedTreeNode<T> RightNode;
-        public BalancedTreeNode<T> CenterNode;
+        //public BalancedTreeNode<T> LeftNode;
+        //public BalancedTreeNode<T> RightNode;
+        //public BalancedTreeNode<T> CenterNode;
 
         public BalancedTreeNode(T value)
         {
@@ -23,43 +23,169 @@ namespace ConsoleApp1
         //public List<T> data;
         public int max = 3; // max storage of node
         public BalancedTreeNode<T> Root;
+        public BalancedTreeNode<T> Children;
         public BalancedTree()
         {
-            //Parent = new BalancedTree<T>(value);
             //data = new List<T>();
             Root = null;
+            Children = null;
         }
 
         public void Insert(BalancedTreeNode<T> node, T value)
         {
-            if (node == null)
+            BalancedTreeNode<T> Curr = Root;
+            if (Curr == null)
             {
-                node = new BalancedTreeNode<T>(value);
-                return;
+                Curr = new BalancedTreeNode<T>(value);
             }
             else
             {
-                if (node.Data.Count < max)
+                do
                 {
-                    if (DoCompare(value, Root.Data[0]) == Comparet.LESSTHAN)
+                    for (; IsFull(Curr); )
+                    if (IsFull(Curr))
                     {
-                        Insert(node.LeftNode, value);
+                        if (DoCompare(value, Curr.Data[0]) == Comparet.LESSTHAN)
+                        {
+                            Insert(Children.Data[0], value);
+                        }
+                        else
+                        {
+                            if (DoCompare(value, Curr.Data[1]) == Comparet.LESSTHAN)
+                            {
+                                Curr.Data.Add(Curr.Data[1]);
+                                Curr.Data.RemoveAt(1);
+                                Curr.Data.Insert(1, value);
+                            }
+                            else
+                            {
+                                Curr.Data.Add(value);
+                            }
+                        }
                     }
-                    else if (DoCompare(value, Root.Data[0]) == Comparet.GREATER)
-                    {
-                        Insert(node.RightNode, value);
-                    }
-                    else
-                    {
-                        //Throw Exception
-                        throw new Exception("Duplicate value");
-                    }
-                }
-                else
+
+                } while (true);
+            }
+            Root = Curr;
+        }
+
+        
+        public void Split(BalancedTreeNode<T> node)
+        {
+            // at root
+            if (node == Root)
+            {
+                Children = new BalancedTreeNode<T>(node.Data[0]);
+                Children.Data.Add(node.Data[2]);
+                Root.Data.Remove(node.Data[0]);
+                Root.Data.Remove(node.Data[2]);
+            }
+            else
+            {
+                int minSplit = CountSpace(Children.Data) / 2;
+                int maxSplit = CountSpace(Children.Data);
+            }
+        }
+        // TODO
+
+        // TODO
+        public void Delete()
+        {
+
+        }
+        // TODO
+
+        // TODO
+        public void Find()
+        {
+
+        }
+        // TODO
+
+        public void Print(BalancedTreeNode<T> binaryTreeNode, String pos)
+        {
+            //if (binaryTreeNode.Data != null)
+            //{
+            //    for (int i = 0; i < binaryTreeNode.Data.Count(); i++)
+            //    {
+            //        //if (i == 0)
+            //        //{
+            //        //    Console.Write("{0} Node: ", pos);
+            //        //}
+            //        Console.Write(binaryTreeNode.Data[i] + " ");
+            //        //if (i == binaryTreeNode.Data.Count() - 1)
+            //        //{
+            //        //    Console.WriteLine();
+            //        //}
+            //    }
+            //    if (binaryTreeNode.LeftNode != null)
+            //    {
+            //        foreach (var item in binaryTreeNode.LeftNode.Data)
+            //        {
+            //            Console.Write(item + " ");
+            //        }
+            //    }
+            //    if (binaryTreeNode.CenterNode != null)
+            //    {
+            //        foreach (var item in binaryTreeNode.CenterNode.Data)
+            //        {
+            //            Console.Write(item + " ");
+            //        }
+            //    }
+            //    if (binaryTreeNode.RightNode != null)
+            //    {
+            //        foreach (var item in binaryTreeNode.RightNode.Data)
+            //        {
+            //            Console.Write(item + " ");
+            //        }
+            //    }
+            //}
+        }
+        public int CountSpace(List<T> list)
+        {
+            if (list == null)
+            {
+                return 0;
+            }
+            return list.Count();
+        }
+
+        public bool IsFull(BalancedTreeNode<T> node)
+        {
+            if (CountSpace(node.Data) == max)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public List<T> Reverse(List<T> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = i + 1; j < list.Count; j++)
                 {
-                    Split();
+                    if (DoCompare(list[i], list[j]) == Comparet.GREATER)
+                    {
+                        T temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
                 }
             }
+            return list;
+        }
+        
+        public BalancedTreeNode<T> GetParent()
+        {
+            BalancedTreeNode<T> node = null;
+            int i = 0;
+            while (Root.Data != null)
+            {
+                node.Data.Add(Root.Data[i]);
+                i++;
+            }
+            return node;
         }
 
         //public void Add(BalancedTreeNode<T> node, T value)
@@ -172,91 +298,5 @@ namespace ConsoleApp1
         //}
 
         // TODO
-        public void Split()
-        {
-
-        }
-        // TODO
-
-        // TODO
-        public void Delete()
-        {
-
-        }
-        // TODO
-
-        // TODO
-        public void Find()
-        {
-
-        }
-        // TODO
-
-        public void Print(BalancedTreeNode<T> binaryTreeNode, String pos)
-        {
-            if (binaryTreeNode.Data != null)
-            {
-                for (int i = 0; i < binaryTreeNode.Data.Count(); i++)
-                {
-                    //if (i == 0)
-                    //{
-                    //    Console.Write("{0} Node: ", pos);
-                    //}
-                    Console.Write(binaryTreeNode.Data[i] + " ");
-                    //if (i == binaryTreeNode.Data.Count() - 1)
-                    //{
-                    //    Console.WriteLine();
-                    //}
-                }
-                if (binaryTreeNode.LeftNode != null)
-                {
-                    foreach (var item in binaryTreeNode.LeftNode.Data)
-                    {
-                        Console.Write(item + " ");
-                    }
-                }
-                if (binaryTreeNode.CenterNode != null)
-                {
-                    foreach (var item in binaryTreeNode.CenterNode.Data)
-                    {
-                        Console.Write(item + " ");
-                    }
-                }
-                if (binaryTreeNode.RightNode != null)
-                {
-                    foreach (var item in binaryTreeNode.RightNode.Data)
-                    {
-                        Console.Write(item + " ");
-                    }
-                }
-            }
-        }
-
-        public int CountSpace(List<T> list)
-        {
-            if (list == null)
-            {
-                return 0;
-            }
-            return list.Count();
-        }
-
-        public List<T> Reverse(List<T> list)
-        {
-            for (int i = 0; i < list.Count; i++)
-            {
-                for (int j = i + 1; j < list.Count; j++)
-                {
-                    if (DoCompare(list[i], list[j]) == Comparet.GREATER)
-                    {
-                        T temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                    }
-                }
-            }
-            return list;
-        }
-        
     }
 }
