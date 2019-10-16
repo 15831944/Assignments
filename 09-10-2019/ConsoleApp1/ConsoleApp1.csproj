@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BalancedTree.cs" />
+    <Compile Include="BalancedTreeNode.cs" />
     <Compile Include="Compare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

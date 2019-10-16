@@ -4,103 +4,167 @@ using System.Linq;
 
 namespace ConsoleApp1
 {
-    public class BalancedTreeNode<T> : Compare<T> where T : IComparable
-    {
-        public List<T> Data { get; set; }
-        //public BalancedTreeNode<T> LeftNode;
-        //public BalancedTreeNode<T> RightNode;
-        //public BalancedTreeNode<T> CenterNode;
-
-        public BalancedTreeNode(T value)
-        {
-            Data = new List<T>();
-            Data.Add(value);
-        }
-    }
-   
     public class BalancedTree<T> : Compare<T> where T : IComparable
     {
-        //public List<T> data;
-        public int max = 3; // max storage of node
         public BalancedTreeNode<T> Root;
-        public BalancedTreeNode<T> Children;
         public BalancedTree()
         {
-            //data = new List<T>();
             Root = null;
-            Children = null;
         }
 
-        public void Insert(BalancedTreeNode<T> node, T value)
+        public void Insert(T value)
         {
-            BalancedTreeNode<T> Curr = Root;
-            if (Curr == null)
+            if (Root == null)
             {
-                Curr = new BalancedTreeNode<T>(value);
+                Root = new BalancedTreeNode<T>(value);
+                Root.Parent = Root;
             }
             else
             {
+                BalancedTreeNode<T> Curr = Root;
                 do
                 {
-                    for (; IsFull(Curr); )
-                    if (IsFull(Curr))
+                    for (; Curr.IsFull(); Curr = GetNextChild(Curr, value))
                     {
-                        if (DoCompare(value, Curr.Data[0]) == Comparet.LESSTHAN)
-                        {
-                            Insert(Children.Data[0], value);
-                        }
-                        else
-                        {
-                            if (DoCompare(value, Curr.Data[1]) == Comparet.LESSTHAN)
-                            {
-                                Curr.Data.Add(Curr.Data[1]);
-                                Curr.Data.RemoveAt(1);
-                                Curr.Data.Insert(1, value);
-                            }
-                            else
-                            {
-                                Curr.Data.Add(value);
-                            }
-                        }
+                        Split(Curr);
+                        Curr = Curr.GetParent();
                     }
-
+                    //Children = new List<BalancedTreeNode<T>>();
+                    if (!Curr.IsLeaf() && Curr == Root)
+                    {
+                        Curr = GetNextChild(Curr, value);
+                    }
+                    else
+                    {
+                        Curr.InsertItem(value);
+                        Curr.Reverse();
+                        return;
+                    }
                 } while (true);
             }
-            Root = Curr;
         }
 
-        
         public void Split(BalancedTreeNode<T> node)
         {
-            // at root
-            if (node == Root)
+            //BalancedTreeNode<T> newRoot = new BalancedTreeNode<T>(node.Data[1]);
+            //BalancedTreeNode<T>[] newNodes = { };
+            //if (node.IsFull())
+            //{
+            //    if (node == Root)
+            //    {
+            //        if (node.Children != null && node.Children.Count == 2)
+            //        {
+            //            BalancedTree<T> balancedTree = new BalancedTree<T>();
+            //            balancedTree.Root.Data.Add(node.Data[1]);
+            //            BalancedTreeNode<T> firstnode = new BalancedTreeNode<T>(node.Data[0]);
+            //            balancedTree.Root.Children.Add(firstnode);
+            //            BalancedTreeNode<T> secondnode = new BalancedTreeNode<T>(node.Data[1]);
+            //            balancedTree.Root.Children.Add(secondnode);
+            //        }
+            //        else
+            //        {
+            //            // change node to Root 17:18
+            //            BalancedTreeNode<T> newRight = new BalancedTreeNode<T>(Root.Data[2]);
+            //            if (Root.Children == null)
+            //            {
+            //                Root.Children = new List<BalancedTreeNode<T>>();
+            //            }
+            //            for (int x = 2; x < Root.Children.Count; x++)
+            //            {
+            //                if (newRight.Children == null)
+            //                {
+            //                    newRight.Children = new List<BalancedTreeNode<T>>();
+            //                }
+            //                newRight.Children.Add(Root.Children[x]);
+            //            }
+
+            //            for (int x = Root.Children.Count() - 1; x >= 2; x--)
+            //            {
+            //                Root.Children.RemoveAt(x);
+            //            }
+
+            //            for (int x = 2; x > 0; x--)
+            //            {
+            //                Root.Data.RemoveAt(x);
+            //            }
+
+            //            newNodes = new BalancedTreeNode<T>[] { node, newRight };
+            //            newRoot.InsertChild(newNodes[0]);
+            //            newRoot.InsertChild(newNodes[1]);
+            //            Root = newRoot;
+            //            Root.Parent = Root; // 17:47 
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Root.Data.Add(node.Data[1]);
+            //        Root.Reverse();
+            //        if (Root.IsFull())
+            //        {
+            //            Split(Root);
+            //        }
+            //        Root.Children.Add(Root.Children[1]);
+            //        Root.Children.RemoveAt(1);
+            //        BalancedTreeNode<T> newNode = new BalancedTreeNode<T>(node.Data[2]);
+            //        Root.Children.Insert(1, newNode);
+            //        node.Data.RemoveRange(1, 2);
+
+            //        Root.Parent = Root; // 17:47 
+            //    }
+            //}
+            
+            if (node.IsFull())
             {
-                Children = new BalancedTreeNode<T>(node.Data[0]);
-                Children.Data.Add(node.Data[2]);
-                Root.Data.Remove(node.Data[0]);
-                Root.Data.Remove(node.Data[2]);
+                BalancedTreeNode<T> newNode = new BalancedTreeNode<T>(node.Data[1]);
+                if (node.Children == null)
+                {
+                    node.Children = new List<BalancedTreeNode<T>>();
+                }
+                for (int x = 2; x < node.Children.Count; x++)
+                {
+                    newNode.Children.Add(node.Children[x]);
+                }
+                for (int x = node.Children.Count - 1; x >= 2; x--)
+                {
+                    node.Children.RemoveAt(x);
+                }
+                for (int x = 1; x < node.Data.Count; x++)
+                {
+                    node.Data.RemoveAt(1);
+                }
+                Root.Children.Add(node);
+                Root.Children.Add(newNode);
+            }
+        }
+
+        public BalancedTreeNode<T> GetNextChild(BalancedTreeNode<T> node, T value)
+        {
+            if (DoCompare(node.Data[0], value) == Comparet.LESSTHAN)
+            {
+                if (node.Children == null)
+                {
+                    node.Children = new List<BalancedTreeNode<T>>();
+                    BalancedTreeNode<T> newNode = null;
+                    node.Children.Add(newNode);
+                }
+                node = node.Children[1];
+            }
+            else if (DoCompare(node.Data[0], value) == Comparet.GREATER)
+            {
+                if (node.Children == null)
+                {
+                    node.Children = new List<BalancedTreeNode<T>>();
+                    BalancedTreeNode<T> newNode = null;
+                    node.Children.Add(newNode);
+                }
+                node = node.Children[0];
             }
             else
             {
-                int minSplit = CountSpace(Children.Data) / 2;
-                int maxSplit = CountSpace(Children.Data);
+                throw new Exception("Duplicate value");
             }
+            return node;
         }
-        // TODO
-
-        // TODO
-        public void Delete()
-        {
-
-        }
-        // TODO
-
-        // TODO
-        public void Find()
-        {
-
-        }
-        // TODO
 
         public void Print(BalancedTreeNode<T> binaryTreeNode, String pos)
         {
@@ -141,162 +205,19 @@ namespace ConsoleApp1
             //    }
             //}
         }
-        public int CountSpace(List<T> list)
-        {
-            if (list == null)
-            {
-                return 0;
-            }
-            return list.Count();
-        }
 
-        public bool IsFull(BalancedTreeNode<T> node)
+        // TODO
+        public void Delete()
         {
-            if (CountSpace(node.Data) == max)
-            {
-                return true;
-            }
-            return false;
-        }
 
-        public List<T> Reverse(List<T> list)
+        }
+        // TODO
+
+        // TODO
+        public void Find()
         {
-            for (int i = 0; i < list.Count; i++)
-            {
-                for (int j = i + 1; j < list.Count; j++)
-                {
-                    if (DoCompare(list[i], list[j]) == Comparet.GREATER)
-                    {
-                        T temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                    }
-                }
-            }
-            return list;
-        }
-        
-        public BalancedTreeNode<T> GetParent()
-        {
-            BalancedTreeNode<T> node = null;
-            int i = 0;
-            while (Root.Data != null)
-            {
-                node.Data.Add(Root.Data[i]);
-                i++;
-            }
-            return node;
-        }
 
-        //public void Add(BalancedTreeNode<T> node, T value)
-        //{
-        //    if (Root == null)
-        //    {
-        //        Root = new BalancedTreeNode<T>(value);
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        if (CountSpace(Root.Data) < max)
-        //        {
-        //            if (Root.LeftNode != null && Root.RightNode != null)
-        //            {
-        //                if (CountSpace(Root.Data) == 2)
-        //                {
-        //                    Root.Data.Add(value);
-        //                    Root.Data = Reverse(Root.Data);
-        //                    Root.CenterNode.Data.Add(Root.Data[1]);
-        //                    Root.CenterNode.Data = Reverse(Root.CenterNode.Data);
-        //                    Root.Data.RemoveAt(1);
-        //                    Root.Data = Reverse(Root.Data);
-        //                    if (CountSpace(Root.CenterNode.Data) == max)
-        //                    {
-        //                        // TO-DO
-        //                        BalancedTree<T> Tree = new BalancedTree<T>();
-        //                        Tree.Root = new BalancedTreeNode<T>(Root.CenterNode.Data[1]);
-        //                        Tree.Root.LeftNode = new BalancedTreeNode<T>(Root.Data[0]); // Root.Data[0]
-        //                        Tree.Root.RightNode = new BalancedTreeNode<T>(Root.Data[1]); // Root.Data[1]
-        //                        Tree.Root.LeftNode.LeftNode = new BalancedTreeNode<T>(Root.LeftNode.Data[0]); // 
-        //                        Tree.Root.LeftNode.RightNode = new BalancedTreeNode<T>(Root.CenterNode.Data[0]);
-        //                        Tree.Root.RightNode.LeftNode = new BalancedTreeNode<T>(Root.CenterNode.Data[2]);
-        //                        Tree.Root.RightNode.RightNode = new BalancedTreeNode<T>(Root.RightNode.Data[0]);
-        //                        Root.CenterNode.Data.Clear();
-        //                        //balancedTree = Tree;
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    if (DoCompare(value, Root.Data[0]) == Comparet.LESSTHAN)
-        //                    {
-        //                        Add(Root.LeftNode, value);
-        //                        //Root.LeftNode.Data.Add(value);
-        //                        //Reverse(Root.LeftNode.Data);
-        //                        if (Root.LeftNode.Data.Count == max)
-        //                        {
-        //                            if (Root.CenterNode == null)
-        //                            {
-        //                                Root.CenterNode = new BalancedTreeNode<T>(Root.LeftNode.Data[2]);
-        //                            }
-        //                            else
-        //                            {
-        //                                Root.CenterNode.Data.Add(Root.LeftNode.Data[2]);
-        //                            }
-        //                            Root.Data.Add(Root.LeftNode.Data[1]);
-        //                            Reverse(Root.Data);
-        //                            Root.LeftNode.Data.RemoveRange(1, 2);
-        //                        }
-        //                    }
-        //                    else if (DoCompare(value, Root.Data[0]) == Comparet.GREATER)
-        //                    {
-        //                        Root.RightNode.Data.Add(value);
-        //                        Reverse(Root.RightNode.Data);
-        //                        if (Root.RightNode.Data.Count == max)
-        //                        {
-        //                            if (Root.CenterNode == null)
-        //                            {
-        //                                Root.CenterNode = new BalancedTreeNode<T>(Root.RightNode.Data[2]);
-        //                            }
-        //                            else
-        //                            {
-        //                                Root.CenterNode.Data.Add(Root.RightNode.Data[2]);
-        //                            }
-        //                            Root.Data.Add(Root.RightNode.Data[1]);
-        //                            Reverse(Root.Data);
-        //                            Root.RightNode.Data.RemoveRange(1, 2);
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        // Throw Exception
-        //                        throw new Exception("Duplicate value");
-        //                    }
-        //                }
-        //            }
-        //            else
-        //            {
-        //                Root.Data.Add(value);
-        //                Root.Data = Reverse(Root.Data);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // 16:21
-        //            if (Root.LeftNode == null)
-        //            {
-        //                Root.LeftNode = new BalancedTreeNode<T>(Root.Data[0]);
-        //            }
-        //            if (Root.RightNode == null)
-        //            {
-        //                Root.RightNode = new BalancedTreeNode<T>(Root.Data[2]);
-        //            }
-        //            T temp = Root.Data[1];
-        //            Root.Data.Clear();
-        //            Root.Data.Add(temp);
-        //            Add(Root, value);
-        //        }
-        //    }
-        //}
-
+        }
         // TODO
     }
 }
