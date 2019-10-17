@@ -49,26 +49,20 @@ namespace ConsoleApp3
             {
                 splitLine = line.Split(' ');
                 firstChar = splitLine[0];
-
-                
-
                 //According to the first char of every line, perform an action
                 switch (firstChar)
                 {
                     case "#":
-
                         //if it is the first line just create a new stack
                         if (flag)
                         {
                             currentStack = new TreeStack(int.Parse(splitLine[1]));
                             flag = false;
-                            
                         }
                         else
                         {
                             //TODO run tree builder  
                             currentStack = new TreeStack(int.Parse(splitLine[1]));
-
                             foreach (var o in currentStack.operations)
                             {
                                 if (o.operation == "I")
@@ -82,36 +76,26 @@ namespace ConsoleApp3
                                     tree.delete(o.number);
                                     twoFourTree.delete(o.number);
                                 }
-
                                 /*
                                 Console.Clear();
                                 tree.root.PrintNode(1);*/
-
                                 /*Console.Clear();
                                  twoFourTree.root.PrintNode(1);*/
-                                
                             }
-
                             twoFourTree.root.PrintNode(1);
                             tree.root.PrintNode(1);
                             Console.WriteLine("Line Numbers " + counter);
                         }
-
                         break;
-
                     case "I":
                         currentStack.Push(new Operation("I", int.Parse(splitLine[1])));
                         break;
-
                     case "D":
                         currentStack.Push(new Operation("D", int.Parse(splitLine[1])));
                         break;
                 }
-                
                 counter++;
             }
-
-          
             //FOr the last set of numbers
             //TwoFourTree twoFourTree = new TwoFourTree();
             foreach (var o in currentStack.operations)
@@ -120,33 +104,25 @@ namespace ConsoleApp3
                 {
                     tree.Insert(o.number);
                     twoFourTree.Insert(o.number);
-
                 }
                 else if (o.operation == "D")
                 {
                     tree.delete(o.number);
                     twoFourTree.delete(o.number);
                 }
-
                 /*
                 Console.Clear();
                 tree.root.PrintNode(1);*/
-
                 /*Console.Clear();
                  twoFourTree.root.PrintNode(1);*/
-
             }
-
             twoFourTree.root.PrintNode(1);
             tree.root.PrintNode(1);
             Console.WriteLine("Line Numbers " + counter);
-           
             //tree.root.PrintNode(1);
-
             file.Close();
             Console.ReadLine();
         }
-
         void ApplyOperations(Tree tree)
         {
 
@@ -1077,8 +1053,7 @@ namespace ConsoleApp3
             }
         }
     }
-    
-
+   
     //Represents a 2,4 Tree
     public class TwoFourTree : Tree {
       
@@ -1212,7 +1187,7 @@ namespace ConsoleApp3
 
             if (p.NumberOfElements() == 3)
             {
-                this.Split(p, middle);             
+                this.Split(p, middle);
             }
 
             else if (p.NumberOfElements() < this.limit)

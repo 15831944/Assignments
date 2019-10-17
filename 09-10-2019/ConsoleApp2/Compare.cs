@@ -27,5 +27,24 @@ namespace ConsoleApp2
             }
             return Comparet.EQUAL;
         }
+
+        public static bool CompareToZero(T t1)
+        {
+            bool result = false;
+            if (t1.CompareTo(0) == EQUAL_VAL)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public static bool CompareToNull(T t1)
+        {
+            bool result = false;
+            if (t1 != null)
+            {
+                result = true;
+            }
+            return result;
+        }
     }
 }
