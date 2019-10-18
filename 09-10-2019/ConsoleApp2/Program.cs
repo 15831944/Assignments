@@ -107,15 +107,13 @@ namespace ConsoleApp2
             newNode.children = new Node<T>[3];
             Node<T> n1 = new Node<T>();
             Node<T> n2 = new Node<T>();
-            Node<T> n3 = new Node<T>();
             n1.elements = new T[2];
             n2.elements = new T[2];
-            n3.elements = new T[2];
             T[] elements = { node.elements[0], node.elements[1], node.elements[2] };
-
+            elements = SortArray(elements);
             if (node.parent == null)
             {
-                elements = SortArray(elements);
+                
                 n1.elements[0] = elements[0];
                 n2.elements[0] = elements[2];
                 n1.parent = newNode;
@@ -139,8 +137,97 @@ namespace ConsoleApp2
             else
             {
                 newNode = node.parent;
+                n1.parent = newNode;
+                n2.parent = newNode;
+                Array.Resize(ref newNode.elements, newNode.NumberOfElements() + 1);
+                newNode.elements[newNode.NumberOfElements()] = elements[1]; // root 
+                n1.elements[0] = elements[0]; // left
+                n2.elements[0] = elements[2]; // center
+                Reverse(n1.elements, n1.NumberOfElements());
+                Reverse(n2.elements, n1.NumberOfElements());
+                Reverse(newNode.elements, newNode.NumberOfElements());
             }
-            
+
+            if (newNode.NumberOfElements() == 0)
+            {
+                newNode.children[0] = n1;
+                newNode.children[1] = n2;
+                this.root = newNode;
+            }
+            else if (newNode.NumberOfElements() == 2)
+            {
+                if (DoCompare(value, newNode.elements[0]) == Comparet.LESSTHAN && DoCompare(value, newNode.elements[1]) == Comparet.LESSTHAN)
+                {
+                    // add new value to left
+                    newNode.children[0] = n1;
+                    newNode.children[1] = n2;
+                }
+                else if (DoCompare(value, newNode.elements[0]) == Comparet.GREATER && DoCompare(value, newNode.elements[1]) == Comparet.GREATER)
+                {
+                    // add new value to right
+                    newNode.children[1] = n2;
+                    newNode.children[2] = n1;
+                }
+                else
+                {
+                    Array.Resize(ref newNode.elements, newNode.NumberOfElements() + 1);
+                    newNode.elements[newNode.elements.Length] = value;
+                    Reverse(newNode.elements, newNode.NumberOfElements());
+                    //newNode.children[]
+                }
+                this.root = newNode;
+                //if (DoCompare(RightNode.elements[0], newNode.elements[0]) == Comparet.LESSTHAN && DoCompare(RightNode.elements[0], newNode.elements[1]) == Comparet.LESSTHAN)
+                //{
+                //    newNode.children = new Node<T>[4];
+                //    newNode.children[3] = newNode.children[2];
+                //    newNode.children[2] = newNode.children[1];
+                //    newNode.children[0] = LeftNode;
+                //    newNode.children[1] = RightNode;
+                //}
+                //else if (DoCompare(LeftNode.elements[1], newNode.elements[0]) == Comparet.GREATER && DoCompare(LeftNode.elements[1], newNode.elements[1]) == Comparet.GREATER)
+                //{
+                //    newNode.children = new Node<T>[4];
+                //    newNode.children[2] = LeftNode;
+                //    newNode.children[3] = RightNode;
+                //}
+                //else
+                //{
+                //    newNode.children = new Node<T>[4];
+                //    newNode.children[3] = newNode.children[2];
+                //    newNode.children[1] = LeftNode;
+                //    newNode.children[2] = RightNode;
+                //}
+            }
+
+            // if it is not a leaf check
+            if (node.IsLeaf() == false)
+            {
+                //node.children[0].parent = LeftNode;
+                //node.children[1].parent = LeftNode;
+                //node.children[2].parent = LeftNode;
+
+                //node.children[3].parent = RightNode;
+                //node.children[4].parent = RightNode;
+
+                //LeftNode.children[0] = node.children[0];
+                //LeftNode.children[1] = node.children[1];
+                //LeftNode.children[2] = node.children[2];
+
+                //RightNode.children[0] = node.children[3];
+                //RightNode.children[1] = node.children[4];
+            }
+
+            if (newNode.NumberOfElements() == 3)
+            {
+                this.Split(newNode, elements[1]);
+            }
+            else if (newNode.NumberOfElements() < this.max)
+            {
+                newNode.elements = new T[1];
+                newNode.elements[newNode.NumberOfElements()] = elements[1];
+                newNode.elements = SortArray(newNode.elements);
+            }
+
             /*  */
             //Node<T> LeftNode = new Node<T>();
             //LeftNode.elements = new T[2];
@@ -159,7 +246,7 @@ namespace ConsoleApp2
             //newNode.elements = new T[] { };
             //if (newNode.NumberOfElements() == 0)
             //{
-                
+
             //    newNode.children[0] = LeftNode;
             //    newNode.children[1] = RightNode;
             //    this.root = newNode;
