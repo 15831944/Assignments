@@ -1,4 +1,5 @@
 ﻿using Bricscad.ApplicationServices;
+using Bricscad.EditorInput;
 using Bricscad.Ribbon;
 using BricscadApp;
 using System;
@@ -28,17 +29,17 @@ namespace RemoveToolbarsAndRibbons
 
         public void Initialize()
         {
-            Application.ShowAlertDialog("The commands class is Initialized");
+            //Application.ShowAlertDialog("The commands class is Initialized");
             if (RibbonServices.RibbonPaletteSet == null)
                 RibbonServices.CreateRibbonPaletteSet();
             RemoveRibbon();
-            Test();
+            RemoveToolbar();
             //Application.ShowAlertDialog(toolbar.Count.ToString());
         }
 
         public void Terminate()
         {
-            Application.ShowAlertDialog("The commands class is Terminated");
+            //Application.ShowAlertDialog("The commands class is Terminated");
         }
 
         // This attribute marks this function as being command line callable 
@@ -48,11 +49,41 @@ namespace RemoveToolbarsAndRibbons
             Ribbon.RemoveRibbons();
         }
 
-        static public void Test()
+        [CommandMethod("samp02")]
+        public static void RemoveToolbar()
         {
-            Toolbar toolbar = new Toolbar();
-            Application.ShowAlertDialog(toolbar.Count.ToString());
-            
+            var app = Application.AcadApplication as AcadApplication;
+            if (app == null)
+            {
+                throw new NullReferenceException("Could Not Get Application");
+            }
+            try
+            {
+                var MenuGroups = app.MenuGroups;
+                var Toolbars = MenuGroups.Item(0).Toolbars;
+                for (int i = 0; i < Toolbars.Count; i++)
+                {
+                    if (Toolbars.Item(i).Name.ToString() == "Standard")
+                    //editor().WriteMessage(Toolbars.Item(i).Name.ToString() + "\n");
+                    {
+                        Toolbars.Item(i).Delete();
+                    }
+                }
+                
+            }
+            catch (System.Exception ex)
+            {
+                Application.ShowAlertDialog(string.Format("\nError: {0}\nStackTrace: {1}"
+                    , ex.Message, ex.StackTrace));
+            }
         }
+
+        public static Editor editor()
+        {
+            Document document = Application.DocumentManager.MdiActiveDocument;
+            return document.Editor;
+        }
+
+        
     }
 }

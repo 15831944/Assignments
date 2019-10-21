@@ -58,7 +58,6 @@
     <Compile Include="Commands.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Toolbar.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="BricscadApp">
