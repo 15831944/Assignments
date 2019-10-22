@@ -8,7 +8,7 @@ using Encrypt;
 
 namespace GenerateLicense
 {
-    public class LicenseGenerator
+    public abstract class LicenseGenerator
     {
         public string GenerateKey { get; set; }
         public LicenseGenerator()

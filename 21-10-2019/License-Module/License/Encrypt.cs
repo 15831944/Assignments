@@ -13,7 +13,8 @@ namespace Encrypt
         public abstract void DoEncrypt();
         public Encrypt()
         {
-
+            FileIO file = new FileIO();
+            if (file.Read())
         }
     }
 

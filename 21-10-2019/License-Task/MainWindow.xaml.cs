@@ -35,7 +35,12 @@ namespace License_Task
     {
         public Test()
         {
-            MitaniGenerator mitaniGenerator = new MitaniGenerator();
+            MitaniLicense mitaniLicense = new MitaniLicense();
+            if (!mitaniLicense.IsLicensed())
+            {
+                MessageBox.Show("Please buy a key to active this program or you can register a trial");
+            }
+            //MitaniGenerator mitaniGenerator = new MitaniGenerator();
             //MacAddress = mAC_ID.GetMacAddress();
             //HDList = HD_Serial.hardDriveDetails;
         }
