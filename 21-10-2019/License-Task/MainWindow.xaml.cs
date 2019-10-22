@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using License_Module;
+using CheckLicense;
+using GenerateLicense;
 
 namespace License_Task
 {
@@ -31,10 +33,9 @@ namespace License_Task
 
     public class Test
     {
-        
         public Test()
         {
-            Component component = new Component();
+            MitaniGenerator mitaniGenerator = new MitaniGenerator();
             //MacAddress = mAC_ID.GetMacAddress();
             //HDList = HD_Serial.hardDriveDetails;
         }

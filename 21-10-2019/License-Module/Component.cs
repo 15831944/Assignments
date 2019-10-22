@@ -6,6 +6,7 @@ namespace License_Module
     {
         public static string MAC_Address { get; set; }
         public static ArrayList HardDriveList;
+        public static string HDSerial { get; set; }
         
         public Component()
         {
@@ -13,6 +14,7 @@ namespace License_Module
             HardDiskSerial HD_Serial = new HardDiskSerial();
             MAC_Address = mAC_ID.MacAddress;
             HardDriveList = HD_Serial.hardDriveDetails;
+            HDSerial = HD_Serial.HDSerial;
         }
     }
 }

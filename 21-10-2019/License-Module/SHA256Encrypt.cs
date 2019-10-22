@@ -19,7 +19,7 @@ namespace Encrypt
             using (SHA256 sha256Hash = SHA256.Create())
             {
                 // ComputeHash - returns byte array  
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(Key));
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(GenerateString));
 
                 // Convert byte array to a string   
                 StringBuilder builder = new StringBuilder();

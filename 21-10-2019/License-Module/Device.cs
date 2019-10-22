@@ -9,9 +9,9 @@ namespace License_Module
             return MAC_Address;
         }
 
-        public ArrayList GetHDSerial()
+        public string GetHDSerial()
         {
-            return HardDriveList;
+            return HDSerial;
         }
     }
 }

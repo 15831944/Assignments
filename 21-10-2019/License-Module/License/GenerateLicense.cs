@@ -13,7 +13,7 @@ namespace GenerateLicense
         public string GenerateKey { get; set; }
         public LicenseGenerator()
         {
-            MessageBox.Show("You generate key: " + GenerateKey);
+            
         }
     }
 
@@ -22,7 +22,9 @@ namespace GenerateLicense
         public MitaniGenerator()
         {
             MitaniEncrypt mitaniEncrypt = new MitaniEncrypt();
+            mitaniEncrypt.DoEncrypt();
             GenerateKey = mitaniEncrypt.EncryptKey;
+            MessageBox.Show("You generate key: " + GenerateKey);
         }
     }
 }

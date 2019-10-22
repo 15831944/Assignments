@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="172,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="172,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="172,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="MAC Address" HorizontalAlignment="Left" Margin="69,91,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Harddisk Serial" HorizontalAlignment="Left" Margin="69,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Key" HorizontalAlignment="Left" Margin="69,177,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

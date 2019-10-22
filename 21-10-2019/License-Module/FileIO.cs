@@ -10,17 +10,19 @@ namespace Encrypt
     public class FileIO
     {
         static string path = @"D:\Assignments\21-10-2019\License-Module\bin\Debug\MyTest.txt";
-        public bool Write(string StringToWrite)
+        public void Write(string StringToWrite)
         {
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine(StringToWrite);
-                    return true;
                 }
             }
-            return false;
+            else
+            {
+                File.AppendAllText(path, StringToWrite + Environment.NewLine);
+            }
         }
 
         public string Read()

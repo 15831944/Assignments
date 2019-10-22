@@ -16,6 +16,7 @@ namespace License_Module
         public HardDiskSerial()
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
+            int i = 0;
             foreach (ManagementObject wmi_HD in searcher.Get())
             {
                 HardDrive hd = new HardDrive();  // User Defined Class
@@ -23,6 +24,10 @@ namespace License_Module
                 hd.Type = wmi_HD["InterfaceType"].ToString();  //Interface Type
                 hd.SerialNo = wmi_HD["SerialNumber"].ToString(); //Serial Number
                 hardDriveDetails.Add(hd);
+                if (i == 0)
+                {
+                    HDSerial = wmi_HD["SerialNumber"].ToString().Trim();
+                }
             }
         }
     }

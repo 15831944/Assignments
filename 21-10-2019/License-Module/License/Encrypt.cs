@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using License_Module;
 namespace Encrypt
 {
     public abstract class Encrypt
@@ -12,7 +13,7 @@ namespace Encrypt
         public abstract void DoEncrypt();
         public Encrypt()
         {
-            MitaniEncrypt mitaniEncrypt = new MitaniEncrypt();
+
         }
     }
 
@@ -20,18 +21,18 @@ namespace Encrypt
     {
         public override void DoEncrypt()
         {
+            Algorithms algorithms = new Algorithms();
+            EncryptKey = algorithms.EncryptKey;
+
+            Device device = new Device();
+            string MacAddress = device.GetMACID();
+            //ArrayList temp = device.GetHDSerial();
+            string HDSerial = device.GetHDSerial();
+
             FileIO file = new FileIO();
-            if (file.Read() != "")
-            {
-                EncryptKey = file.Read();
-            }
-            else
-            {
-                EncryptKey = "";
-            }
-            //Algorithms algorithms = new Algorithms();
-            //EncryptKey = algorithms.EncryptKey;
-            //file.Write(EncryptKey);
+            file.Write("Mac Address: " + MacAddress);
+            file.Write("HD Serial: " + HDSerial);
+            file.Write("Key: " + EncryptKey);
         }
     }
 }

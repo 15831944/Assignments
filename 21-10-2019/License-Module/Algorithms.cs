@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Encrypt
 {
-    public class Algorithms : SHA256Encrypt
+    public class Algorithms
     {
         public string EncryptKey { get; set; }
 
         public Algorithms()
         {
             EncryptKey = RandomString(11, false);
-            GetEncrypt(EncryptKey);
+            SHA256Encrypt encrypt = new SHA256Encrypt(EncryptKey);
+            encrypt.GetEncrypt();
         }
         public string RandomString(int size, bool lowerCase)
         {
