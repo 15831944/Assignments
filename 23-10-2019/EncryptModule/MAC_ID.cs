@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace License_Module
+namespace EncryptModule
 {
     public class MAC_ID : Component
     {

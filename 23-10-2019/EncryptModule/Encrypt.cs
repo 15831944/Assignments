@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using License_Module;
-namespace Encrypt
+﻿using System.Collections.Generic;
+
+namespace EncryptModule
 {
     public abstract class Encrypt
     {
@@ -31,7 +26,7 @@ namespace Encrypt
             string MacAddress = device.GetMACID();
             //ArrayList temp = device.GetHDSerial();
             string HDSerial = device.GetHDSerial();
-            
+
             FileIO file = new FileIO();
             file.Write("Key: " + EncryptKey);
         }

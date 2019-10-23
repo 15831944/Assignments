@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Encrypt;
+using EncryptModule;
 
-namespace CheckLicense
+namespace CheckLicenseModule
 {
     public abstract class LicenseFacade
     {
@@ -27,7 +27,7 @@ namespace CheckLicense
 
     public class MitaniLicense : LicenseFacade
     {
-        public MitaniLicense(Dictionary<string, string> info) : base (info)
+        public MitaniLicense(Dictionary<string, string> info) : base(info)
         {
             MitaniEncrypt encrypt = new MitaniEncrypt();
             userInfo = encrypt.GetLicense();
@@ -39,7 +39,6 @@ namespace CheckLicense
                 }
             }
         }
-        
-    }
 
+    }
 }

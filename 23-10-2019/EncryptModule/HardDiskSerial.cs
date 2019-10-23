@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Management;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace License_Module
+namespace EncryptModule
 {
     public class HardDiskSerial : Component
     {

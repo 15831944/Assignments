@@ -24,37 +24,70 @@ namespace License_Task
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Dictionary<string, string> UserInfo = new Dictionary<string, string>();
+        MitaniLicense mitaniLicense = new MitaniLicense(UserInfo);
+        MitaniGenerator mitaniGenerator = new MitaniGenerator(UserInfo);
         public MainWindow()
         {
             InitializeComponent();
-            Test test = new Test();
+            CheckLicense();
         }
-    }
 
-    public class Test
-    {
-        public Test()
+        public void CheckLicense()
         {
-            MitaniLicense mitaniLicense = new MitaniLicense();
+            UserInfo = mitaniLicense.userInfo;
             if (!mitaniLicense.IsLicensed())
             {
                 MessageBox.Show("Please buy a key to active this program or you can register a trial");
             }
-            //MitaniGenerator mitaniGenerator = new MitaniGenerator();
-            //MacAddress = mAC_ID.GetMacAddress();
-            //HDList = HD_Serial.hardDriveDetails;
+            else
+            {
+                btn_Purchase.IsEnabled = false;
+
+            }
+            foreach (var item in UserInfo)
+            {
+                if (item.Key == "MAC_ID")
+                {
+                    tb_MAC.Text = item.Value;
+                }
+                if (item.Key == "HD_SERIAL")
+                {
+                    tb_HDS.Text = item.Value;
+                }
+                if (item.Key == "KEY")
+                {
+                    tb_KEY.Text = item.Value;
+                }
+            }
         }
 
-        public void Print()
+        public void GenerateLicense()
         {
-            //MessageBox.Show("Your MAC Address: " + MacAddress);
-
-            //foreach(License_Module.HardDrive item in HD_Serial.hardDriveDetails)
-            //{
-            //    MessageBox.Show("HD Serial: " + item.SerialNo);
-            //}
+            UserInfo = mitaniGenerator.GenerateInfo;
+            MessageBox.Show("Thanks for your purchasing!");
+            btn_Purchase.IsEnabled = false;
+            foreach (var item in UserInfo)
+            {
+                if (item.Key == "MAC_ID")
+                {
+                    tb_MAC.Text = item.Value;
+                }
+                if (item.Key == "HD_SERIAL")
+                {
+                    tb_HDS.Text = item.Value;
+                }
+                if (item.Key == "KEY")
+                {
+                    tb_KEY.Text = item.Value;
+                }
+            }
         }
 
+        private void Btn_Purchase_Click(object sender, RoutedEventArgs e)
+        {
+            GenerateLicense();
+        }
     }
 
 }

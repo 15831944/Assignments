@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="172,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="172,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="172,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="MAC Address" HorizontalAlignment="Left" Margin="69,91,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Harddisk Serial" HorizontalAlignment="Left" Margin="69,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Key" HorizontalAlignment="Left" Margin="69,177,0,0" VerticalAlignment="Top"/>
-
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="299" Margin="46,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="696"/>
+        <TextBox x:Name="tb_MAC" HorizontalAlignment="Left" Height="23" Margin="376,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="tb_HDS" HorizontalAlignment="Left" Height="23" Margin="376,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="tb_KEY" HorizontalAlignment="Left" Height="23" Margin="376,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <Label x:Name="label" Content="MAC Address" HorizontalAlignment="Left" Margin="210,140,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="132"/>
+        <Label x:Name="label_Copy" Content="Harddisk Serial" HorizontalAlignment="Left" Margin="210,183,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="147"/>
+        <Label x:Name="label_Copy1" Content="Key" HorizontalAlignment="Left" Margin="210,226,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Width="46"/>
+        <Button x:Name="btn_Purchase" Content="Purchase" HorizontalAlignment="Left" Margin="339,286,0,0" VerticalAlignment="Top" Width="112" Height="32" Click="Btn_Purchase_Click"/>
     </Grid>
 </Window>

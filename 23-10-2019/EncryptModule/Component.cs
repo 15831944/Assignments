@@ -1,16 +1,21 @@
-﻿using System.Collections;
-using Encrypt;
-namespace License_Module
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EncryptModule
 {
     public class Component
     {
         public static string MAC_Address { get; set; }
         public static ArrayList HardDriveList;
         public static string HDSerial { get; set; }
-        
+
         public Component()
         {
-            
+
         }
 
         public static void GetComponent()
