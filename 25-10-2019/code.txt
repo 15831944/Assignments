@@ -1,0 +1,50 @@
+,
+                    new RadRibbonGroup()
+                    {
+                        Header = "Utility", Items =
+                        {
+                            new StackPanel()
+                            {
+                                Orientation = Orientation.Vertical, Children =
+                                {
+                                    new StackPanel()
+                                    {
+                                        Children =
+                                        {
+                                            new RadRibbonButton()
+                                            {
+                                                CollapseToSmall = CollapseThreshold.WhenGroupIsMedium,
+                                                SmallImage = IconToImageSource(Properties.Resources.PV_Detail_Ring),
+                                                Size = Telerik.Windows.Controls.RibbonView.ButtonSize.Large
+                                            },
+                                            new RadRibbonButton()
+                                            {
+                                                CollapseToSmall = CollapseThreshold.WhenGroupIsMedium,
+                                                SmallImage = IconToImageSource(Properties.Resources.PV_Detail_Ring),
+                                                Size = Telerik.Windows.Controls.RibbonView.ButtonSize.Large
+                                            },
+                                            new RadRibbonButton()
+                                            {
+                                                CollapseToSmall = CollapseThreshold.WhenGroupIsMedium,
+                                                SmallImage = IconToImageSource(Properties.Resources.PV_Detail_Ring),
+                                                Size = Telerik.Windows.Controls.RibbonView.ButtonSize.Large
+                                            },
+                                            new RadRibbonButton()
+                                            {
+                                                CollapseToSmall = CollapseThreshold.WhenGroupIsMedium,
+                                                SmallImage = IconToImageSource(Properties.Resources.PV_Detail_Ring),
+                                                Size = Telerik.Windows.Controls.RibbonView.ButtonSize.Large
+                                            },
+                                            new RadRibbonButton()
+                                            {
+                                                CollapseToSmall = CollapseThreshold.WhenGroupIsMedium,
+                                                SmallImage = IconToImageSource(Properties.Resources.PV_Detail_Ring),
+                                                Size = Telerik.Windows.Controls.RibbonView.ButtonSize.Large
+                                            },
+                                        }
+                                        ,Orientation = Orientation.Horizontal
+                                    }
+                                }
+                            }
+                        }
+                    }
