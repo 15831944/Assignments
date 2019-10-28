@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="TelerikRadRibbon.View.RadRibbonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TelerikRadRibbon.View"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="Button Temaplate">
+                <telerik:RadButton Content="{Binding Text}" VerticalAlignment="Center" />
+            </DataTemplate>
+
+            <HierarchicalDataTemplate x:Key="GroupHeaderTemplate" ItemsSource="{Binding Buttons}" ItemTemplate="{StaticResource Button Temaplate}">
+                <TextBlock Text="{Binding Text}" />
+            </HierarchicalDataTemplate>
+
+            <HierarchicalDataTemplate x:Key="TabTemplate" ItemsSource="{Binding Groups}" ItemTemplate="{StaticResource GroupHeaderTemplate}">
+                <TextBlock Text="{Binding Text}" />
+            </HierarchicalDataTemplate>
+        </Grid.Resources>
+
+        <Grid.DataContext>
+            <local:RadRibbonView />
+        </Grid.DataContext>
+
+        <telerik:RadRibbonView ApplicationName="NVVM Examples" Title="RibbonView" ItemsSource="{Binding Tabs}" ItemTemplate="{StaticResource TabTemplate}" />
+    </Grid>
+</UserControl>

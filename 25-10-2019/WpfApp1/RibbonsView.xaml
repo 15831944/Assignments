@@ -1,0 +1,9 @@
+﻿<telerik:RadWindow
+    x:Class="WpfApp1.RibbonsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    Header="Demo"
+    Activated="RadWindow_Activated"
+    xmlns:local="clr-namespace:WpfApp1">
+</telerik:RadWindow> 

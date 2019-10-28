@@ -1,0 +1,4 @@
+HD Serial: WD-WCC6Y2ADHV1Z
+MAC Address: 40B076D9ADB5
+Expire Date: 24/10/2020
+Key: 9c067272dfc77cefdab6fd96edf6dbda3d8d68fa3db9354efe779db97d9a4d38

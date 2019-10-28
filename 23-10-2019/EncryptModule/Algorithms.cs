@@ -10,25 +10,10 @@ namespace EncryptModule
     {
         public string EncryptKey { get; set; }
 
-        public Algorithms()
+        public Algorithms(string CombineInfo)
         {
-            EncryptKey = RandomString(11, false);
-            SHA256Encrypt encrypt = new SHA256Encrypt(EncryptKey);
-            encrypt.GetEncrypt();
-        }
-        public string RandomString(int size, bool lowerCase)
-        {
-            StringBuilder builder = new StringBuilder();
-            Random random = new Random();
-            char ch;
-            for (int i = 0; i < size; i++)
-            {
-                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
-                builder.Append(ch);
-            }
-            if (lowerCase)
-                return builder.ToString().ToLower();
-            return builder.ToString();
+            SHA256Encrypt encrypt = new SHA256Encrypt(CombineInfo);
+            EncryptKey = encrypt.Key;
         }
     }
 }

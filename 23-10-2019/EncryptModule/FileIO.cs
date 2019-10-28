@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +11,8 @@ namespace EncryptModule
 {
     public class FileIO
     {
-        public static string path = @AppDomain.CurrentDomain.BaseDirectory + "MyTest.txt";
+        public static string path = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\LicenseKey.txt";
+        //public static string path = @AppDomain.CurrentDomain.BaseDirectory + "MyTest.txt";
         public void Write(string StringToWrite)
         {
             if (!File.Exists(path))
@@ -18,6 +21,8 @@ namespace EncryptModule
                 {
                     sw.WriteLine(StringToWrite);
                 }
+                FileIOPermission f = new FileIOPermission(FileIOPermissionAccess.AllAccess, path);
+                f.Demand();
                 File.SetAttributes(path, FileAttributes.Hidden);
             }
             else
@@ -48,8 +53,7 @@ namespace EncryptModule
                 File.SetAttributes(path, FileAttributes.Hidden);
             }
         }
-
-        public void Read(ref Dictionary<string, string> UserInfo)
+        public void Read(ref string keyval, ref bool expire)
         {
             if (File.Exists(path))
             {
@@ -58,37 +62,30 @@ namespace EncryptModule
                     string s = "";
                     while ((s = sr.ReadLine()) != null)
                     {
-                        if (s.Contains("Mac Address:"))
-                        {
-                            if (s.Length > 13)
-                            {
-                                UserInfo.Add("MAC_ID", s.Substring(13));
-                            }
-                            else
-                            {
-                                UserInfo.Add("MAC_ID", "");
-                            }
-                        }
-                        if (s.Contains("HD Serial:"))
-                        {
-                            if (s.Length > 11)
-                            {
-                                UserInfo.Add("HD_SERIAL", s.Substring(11));
-                            }
-                            else
-                            {
-                                UserInfo.Add("HD_SERIAL", "");
-                            }
-                        }
                         if (s.Contains("Key:"))
                         {
                             if (s.Length > 4)
                             {
-                                UserInfo.Add("KEY", s.Substring(4));
+                                keyval = s.Substring(4);
                             }
                             else
                             {
-                                UserInfo.Add("KEY", "");
+                                keyval = "";
+                            }
+                        }
+                        if (s.Contains("Expire Date:"))
+                        {
+                            if (s.Length > 12)
+                            {
+                                
+                                if (DateTime.Parse(s.Substring(12)) > DateTime.Parse(DateTime.Now.ToShortDateString()))
+                                {
+                                    expire = false;
+                                }
+                                else
+                                {
+                                    expire = true;
+                                }
                             }
                         }
                     }
@@ -96,18 +93,12 @@ namespace EncryptModule
             }
             else
             {
-                Device device = new Device();
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine("Mac Address: " + device.GetMACID());
-                    sw.WriteLine("HD Serial: " + device.GetHDSerial());
-                    sw.WriteLine("Key: ");
-                }
-                File.SetAttributes(path, FileAttributes.Hidden);
-                UserInfo.Add("MAC_ID", device.GetMACID());
-                UserInfo.Add("HD_SERIAL", device.GetHDSerial());
-                UserInfo.Add("KEY", "");
+                keyval = "";
             }
+        }
+        public string GetPath()
+        {
+            return path;
         }
     }
 }

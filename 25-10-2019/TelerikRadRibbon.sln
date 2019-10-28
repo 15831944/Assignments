@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikRadRibbon", "TelerikRadRibbon\TelerikRadRibbon.csproj", "{99D787BB-12B2-48A1-A34A-2A053CE73E90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D787BB-12B2-48A1-A34A-2A053CE73E90}.Debug|x86.ActiveCfg = Debug|x86
+		{99D787BB-12B2-48A1-A34A-2A053CE73E90}.Debug|x86.Build.0 = Debug|x86
+		{99D787BB-12B2-48A1-A34A-2A053CE73E90}.Release|x86.ActiveCfg = Release|x86
+		{99D787BB-12B2-48A1-A34A-2A053CE73E90}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A3953EF-9A95-411A-9F9C-25BED201D90C}
+	EndGlobalSection
+EndGlobal

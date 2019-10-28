@@ -1,44 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EncryptModule;
+﻿using EncryptModule;
 
 namespace CheckLicenseModule
 {
     public abstract class LicenseFacade
     {
-        public Dictionary<string, string> userInfo = new Dictionary<string, string>();
-        public string Key { get; set; }
-        public LicenseFacade(Dictionary<string, string> info)
+        public string TextKey { get; set; }
+        public string OriginKey { get; set; }
+        public string Path { get; set; }
+        public bool Expire { get; set; }
+        public LicenseFacade()
         {
-            userInfo = info;
+
         }
         public bool IsLicensed()
         {
-            if (Key != "")
+            if (TextKey.Equals(OriginKey) && !Expire)
             {
                 return true;
             }
             return false;
         }
     }
-
     public class MitaniLicense : LicenseFacade
     {
-        public MitaniLicense(Dictionary<string, string> info) : base(info)
+        public MitaniLicense()
         {
             MitaniEncrypt encrypt = new MitaniEncrypt();
-            userInfo = encrypt.GetLicense();
-            foreach (var s in userInfo)
-            {
-                if (s.Key == "KEY")
-                {
-                    Key = s.Value;
-                }
-            }
+            TextKey = encrypt.GetLicense().Trim(); // Get Key from Text file
+            Expire = encrypt.Expire; // expire
+            encrypt.GenerateKey();
+            OriginKey = encrypt.EncryptKey;
+            //Path = encrypt.current_path; 
         }
-
     }
 }
