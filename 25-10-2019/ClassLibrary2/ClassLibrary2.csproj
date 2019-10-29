@@ -87,6 +87,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="CustomUI.xaml.cs">
+      <DependentUpon>CustomUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\RibbonTab_CS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -634,6 +637,12 @@
   <ItemGroup>
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CustomUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
