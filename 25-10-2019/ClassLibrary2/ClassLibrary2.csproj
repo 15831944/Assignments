@@ -32,18 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BrxMgd, Version=19.2.0.13299, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="BrxMgd">
       <HintPath>C:\Program Files\Bricsys\BricsCAD V19 en_US\BrxMgd.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="Interop.BricscadApp">
-      <HintPath>..\..\18-10-2019\RemoveToolbarsAndRibbons\obj\Debug\Interop.BricscadApp.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Interop.BricscadDb">
-      <HintPath>..\..\18-10-2019\RemoveToolbarsAndRibbons\obj\Debug\Interop.BricscadDb.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -57,13 +48,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TD_Mgd, Version=19.5.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="TD_Mgd">
       <HintPath>C:\Program Files\Bricsys\BricsCAD V19 en_US\TD_Mgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="TD_MgdBrep, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="TD_MgdBrep">
       <HintPath>C:\Program Files\Bricsys\BricsCAD V19 en_US\TD_MgdBrep.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -95,6 +84,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="BricscadApp">
+      <Guid>{C4A7E981-5623-484B-A11E-20987543185B}</Guid>
+      <VersionMajor>19</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="BricscadDb">
+      <Guid>{E5F83403-221E-4D53-93CC-EBFF68F268D5}</Guid>
+      <VersionMajor>19</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="stdole">
       <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>2</VersionMajor>

@@ -26,6 +26,7 @@ namespace ClassLibrary2
             radWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             StyleManager.ApplicationTheme = new VisualStudio2019Theme();
             radWindow.Content = InitRibbonView();
+            //this.DataContext = radWindow;
             //radWindow.Show();
         }
         public RadRibbonView InitRibbonView()
@@ -315,15 +316,6 @@ namespace ClassLibrary2
             ribbonView.Items.Add(new RadRibbonTab() { Header = "ESL" });
             ribbonView.Items.Add(new RadRibbonTab() { Header = "Help" });
             return ribbonView;
-        }
-
-        public static void RemoveRibbons()
-        {
-            RibbonControl ribbonControl = ComponentManager.Ribbon;
-            foreach (var item in ribbonControl.Tabs)
-            {
-                ribbonControl.Tabs.Remove(item);
-            }
         }
 
         private ImageSource IconToImageSource(System.Drawing.Icon icon)
