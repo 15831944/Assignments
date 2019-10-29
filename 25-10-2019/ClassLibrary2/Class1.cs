@@ -21,12 +21,13 @@ namespace ClassLibrary2
         public RadWindow radWindow = new RadWindow();
         public Class1()
         {
-            radWindow.Height = 500;
-            radWindow.Width = 600;
-            radWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            StyleManager.ApplicationTheme = new VisualStudio2019Theme();
-            radWindow.Content = InitRibbonView();
+            //radWindow.Height = 500;
+            //radWindow.Width = 600;
+            //radWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //StyleManager.ApplicationTheme = new MaterialTheme();
+            //radWindow.Content = InitRibbonView();
             //radWindow.Show();
+            this.DataContext = InitRibbonView();
         }
         public RadRibbonView InitRibbonView()
         {
