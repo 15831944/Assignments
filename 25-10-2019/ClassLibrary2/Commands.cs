@@ -45,29 +45,57 @@ namespace ClassLibrary2
                 Visible = true,
                 Dock = DockSides.None
             };
-            System.Drawing.Point StartPos = new System.Drawing.Point(100, 100);
+            System.Drawing.Point StartPos = new System.Drawing.Point(0, 100);
             paletteSet.SetLocation(StartPos);
-            paletteSet.SetSize(new System.Drawing.Size(900, 500));
+            paletteSet.SetSize(new System.Drawing.Size((int)SystemParameters.PrimaryScreenWidth - 100, 500));
             paletteSet.TitleBarLocation = PaletteSetTitleBarLocation.Left;
 
-            //RadRibbonView radRibbonView = new RadRibbonView();
+            
             // RibbonTab - RadTab
             // RibbonPanel - RadGroup
             // RibbonItems - RadItems
             //class1.DataContext = radRibbonView;
 
-            Class1 class1 = new Class1();
-            paletteSet.AddVisual("Ribbon", class1.InitRibbonView());
-            PaletteSet test = new PaletteSet("Test Palette");
+            
+            RadRibbonView radRibbonView = new Class1().InitRibbonView();
+            
+            for (int i = 0; i < radRibbonView.Items.Count; i++)
+            {
+                Console.Write(radRibbonView.Items[i].ToString() + " ");
+            }
+            RibbonButton ribbonButton = new RibbonButton() { Text = "Test" };
+
+            RibbonItem ribbonItem = (RibbonItem)ribbonButton;
+            TBItem tBItem = new TBItem();
+            tBItem.radButton
+            RibbonObservableCollection<RibbonPanel> ribbonPns = new RibbonObservableCollection<RibbonPanel>();
+            ribbonPns.Add(new RibbonPanel() { IsEnabled = true, Source = { Title = "RibbonPanel1", Id = "RibbonPanel1", Name = "RibbonPanel1", Items = { ribbonButton } } });
+
+            RibbonPanelSource ribbonPanelSource = new RibbonPanelSource() { Id = "PanelSource1", Name = "PanelSource1", Title = "PanelSource1" };
+            RibbonPanelSourceCollection ribbonPanelSources = new RibbonPanelSourceCollection() { ribbonPanelSource };
+            RibbonPanel ribbonPanel = new RibbonPanel() { IsEnabled = true, Source = { } };
+            RibbonPanelCollection ribbonPanels = new RibbonPanelCollection();
+            RibbonTab ribbonTab = new RibbonTab() { Id = "", IsEnabled = true, Name = "Tab1", Title = "Tab1" };
+            
+            //paletteSet.AddVisual("Ribbon", class1);
+            //RibbonControl ribbonControl = ComponentManager.Ribbon;
+
+
+
+            //ribbonControl.Tabs.Add(new RibbonTab() { Id = })
+            //editor().WriteMessage(ribbonControl.Tabs.Count.ToString());
+
+            //PaletteSet test = new PaletteSet("Test Palette");
+
             //RibbonControl ribbonControl = ComponentManager.Ribbon;
             //RadRibbonView radRibbonView = class1.InitRibbonView();
             //RibbonTabCollection ribbonTabs = new RibbonTabCollection();
             //ribbonTabs.Add(new RibbonTab() { Id = "CustomRibbonTab", IsEnabled = true, Name = "CustomRibbonTab", Title = "My Custom Ribbon Tab", Panels = {  } });
-            
+
             //RibbonTab ribbonTab = new RibbonTab() { Id = "RibbonTab1", IsEnabled = true, Name = "RibbonTab1", Title = "Ribbon Tab 1", Panels = { } };
-            
+
             ////RibbonTab ribbonTab = new RibbonTab();
-            
+
             //RibbonPanel ribbonPanel = new RibbonPanel() { IsEnabled = true, Source = radRibbonView };
             //RibbonItemCollection RibbonItems = new RibbonItemCollection();
             //RibbonItems.Add(new RibbonItem() { Id = "RibbonItem1", IsEnabled = true, IsVisible = true, Text = "RibbonItem1", ToolTip = "Ribbon Item 1"});
@@ -99,7 +127,7 @@ namespace ClassLibrary2
             //                new StackPanel() { Orientation = Orientation.Vertical, Children = { stackPanel3, stackPanel4 } }
             //            }
             //        } } };
-            
+
         }
 
         public void Terminate()

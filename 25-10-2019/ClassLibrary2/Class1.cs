@@ -27,7 +27,8 @@ namespace ClassLibrary2
             //StyleManager.ApplicationTheme = new MaterialTheme();
             //radWindow.Content = InitRibbonView();
             //radWindow.Show();
-            this.DataContext = InitRibbonView();
+            //this.DataContext = InitRibbonView();
+            this.Content = InitRibbonView();
         }
         public RadRibbonView InitRibbonView()
         {

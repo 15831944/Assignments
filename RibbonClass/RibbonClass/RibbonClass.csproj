@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8DC141C-8A6A-4457-B51D-D07103A34B2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RibbonClass</RootNamespace>
+    <AssemblyName>RibbonClass</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BrxMgd">
+      <HintPath>C:\Program Files\Bricsys\BricsCAD V19 en_US\BrxMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TD_Mgd">
+      <HintPath>C:\Program Files\Bricsys\BricsCAD V19 en_US\TD_Mgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2019.3.917.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2019\Binaries\WPF45\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2019.3.917.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2019\Binaries\WPF45\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2019.3.917.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2019\Binaries\WPF45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2019.3.917.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2019\Binaries\WPF45\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2019.3.917.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WPF R3 2019\Binaries\WPF45\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Temp.cs" />
+    <Compile Include="ViewModel\RibbonItem_ViewModel.cs" />
+    <Compile Include="ViewModel\RibbonPanelSource_ViewModel.cs" />
+    <Compile Include="ViewModel\RibbonPanel_ViewModel.cs" />
+    <Compile Include="ViewModel\RibbonTab_ViewModel.cs" />
+    <Compile Include="Model\RibbonItem_Model.cs" />
+    <Compile Include="Model\RibbonPanelSource_Model.cs" />
+    <Compile Include="Model\RibbonPanel_Model.cs" />
+    <Compile Include="Model\RibbonTab_Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Ribbon_ViewModel.cs" />
+    <Compile Include="Views\Ribbon_View.xaml.cs">
+      <DependentUpon>Ribbon_View.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="BricscadApp">
+      <Guid>{C4A7E981-5623-484B-A11E-20987543185B}</Guid>
+      <VersionMajor>19</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="BricscadDb">
+      <Guid>{E5F83403-221E-4D53-93CC-EBFF68F268D5}</Guid>
+      <VersionMajor>19</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\c2resources.dll.manifest" />
+    <None Include="res\Vista.cjstyles" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data_RibbonTab.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data_UI.xml" />
+    <Content Include="res\00_01-Piping Input.ico" />
+    <Content Include="res\00_02-Buried Pipe Modeler.ico" />
+    <Content Include="res\00_03-Structural Steel Modeler.ico" />
+    <Content Include="res\00_04-Material Property Editor.ico" />
+    <Content Include="res\00_05-ESL.ico" />
+    <Content Include="res\01-2d plot.ico" />
+    <Content Include="res\01-display piping code.ico" />
+    <Content Include="res\01-show flange.ico" />
+    <Content Include="res\01_01-Four View.ico" />
+    <Content Include="res\01_02-Show Expansion Joint.ico" />
+    <Content Include="res\01_03-Show Restraints.ico" />
+    <Content Include="res\01_04-Show Anchors.ico" />
+    <Content Include="res\01_05-Show Hangers.ico" />
+    <Content Include="res\01_06-Show Nozzles.ico" />
+    <Content Include="res\01_07-Show Displacements.ico" />
+    <Content Include="res\01_08-Show Forces.ico" />
+    <Content Include="res\01_09-Show Materials.ico" />
+    <Content Include="res\01_10-Show Bends.ico" />
+    <Content Include="res\01_11-Show Tees.ico" />
+    <Content Include="res\01_12-Show Insulation Thickness.ico" />
+    <Content Include="res\01_13-Show Axis Triad.ico" />
+    <Content Include="res\01_14-Node Numbers.ico" />
+    <Content Include="res\01_15-Pipe Diameter.ico" />
+    <Content Include="res\01_16-Wall Thickness.ico" />
+    <Content Include="res\01_17-Lengths.ico" />
+    <Content Include="res\01_18-Range.ico" />
+    <Content Include="res\01_19-Temperatures.ico" />
+    <Content Include="res\01_20-Pressures.ico" />
+    <Content Include="res\01_21-Find.ico" />
+    <Content Include="res\01_22-Uniform Loads.ico" />
+    <Content Include="res\01_23-Wind Wave.ico" />
+    <Content Include="res\01_24-Plot Options.ico" />
+    <Content Include="res\01_25-Perspective Mode.ico" />
+    <Content Include="res\01_26-Orthographic Mode.ico" />
+    <Content Include="res\02-06-clear screen.ico" />
+    <Content Include="res\02-07-create new material.ico" />
+    <Content Include="res\02-08-delete material.ico" />
+    <Content Include="res\02-09-save material.ico" />
+    <Content Include="res\02-10-print material.ico" />
+    <Content Include="res\02-seismic wizard.ico" />
+    <Content Include="res\02_01-file new.ico" />
+    <Content Include="res\02_01-FileNew.ico" />
+    <Content Include="res\02_02-File Open.ico" />
+    <Content Include="res\02_03-File Save.ico" />
+    <Content Include="res\02_04-cut.ico" />
+    <Content Include="res\02_05-copy.ico" />
+    <Content Include="res\02_06-paste.ico" />
+    <Content Include="res\02_07-print.ico" />
+    <Content Include="res\02_08-config setup.ico" />
+    <Content Include="res\02_09-error checker.ico" />
+    <Content Include="res\02_10-batch run.ico" />
+    <Content Include="res\02_11-static load case editor.ico" />
+    <Content Include="res\02_12-static output.ico" />
+    <Content Include="res\02_13-dynamic load case editor.ico" />
+    <Content Include="res\02_14-zoom extents.ico" />
+    <Content Include="res\02_15-zoom window.ico" />
+    <Content Include="res\02_16-zoom selection.ico" />
+    <Content Include="res\02_17-orbit.ico" />
+    <Content Include="res\02_18-pan.ico" />
+    <Content Include="res\02_19-zoom mouse.ico" />
+    <Content Include="res\02_20-walk through.ico" />
+    <Content Include="res\02_21-select by clicking.ico" />
+    <Content Include="res\02_22-select by rubberband.ico" />
+    <Content Include="res\02_23-rendered mode.ico" />
+    <Content Include="res\02_24-hidden line wireframe.ico" />
+    <Content Include="res\02_25-all line wireframe.ico" />
+    <Content Include="res\02_26-hidden line silhouette.ico" />
+    <Content Include="res\02_27-translucent.ico" />
+    <Content Include="res\02_28-centerline.ico" />
+    <Content Include="res\02_29-front view.ico" />
+    <Content Include="res\02_30-back view.ico" />
+    <Content Include="res\02_31-top view.ico" />
+    <Content Include="res\02_32-bottom view.ico" />
+    <Content Include="res\02_33-left view.ico" />
+    <Content Include="res\02_34-right view.ico" />
+    <Content Include="res\03-02-error check.ico" />
+    <Content Include="res\03-03-begin analysis.ico" />
+    <Content Include="res\03-04-add load case.ico" />
+    <Content Include="res\03-05-delete load case.ico" />
+    <Content Include="res\03-06-enter spectrum data.ico" />
+    <Content Include="res\03-07-generate spectrum data.ico" />
+    <Content Include="res\03-08-relief load synthesizer.ico" />
+    <Content Include="res\03-plumbers helper.ico" />
+    <Content Include="res\03_01-temperature00.ico" />
+    <Content Include="res\03_01-temperature01.ico" />
+    <Content Include="res\03_02-temperature02.ico" />
+    <Content Include="res\03_03-temperature03.ico" />
+    <Content Include="res\03_04-temperature04.ico" />
+    <Content Include="res\03_05-temperature05.ico" />
+    <Content Include="res\03_06-temperature06.ico" />
+    <Content Include="res\03_07-temperature07.ico" />
+    <Content Include="res\03_08-temperature08.ico" />
+    <Content Include="res\03_09-temperature09.ico" />
+    <Content Include="res\03_10-pressure00.ico" />
+    <Content Include="res\03_10-pressure01.ico" />
+    <Content Include="res\03_11-pressure02.ico" />
+    <Content Include="res\03_12-pressure03.ico" />
+    <Content Include="res\03_13-pressure04.ico" />
+    <Content Include="res\03_14-pressure05.ico" />
+    <Content Include="res\03_15-pressure06.ico" />
+    <Content Include="res\03_16-pressure07.ico" />
+    <Content Include="res\03_17-pressure08.ico" />
+    <Content Include="res\03_18-pressure09.ico" />
+    <Content Include="res\03_19-pressureh.ico" />
+    <Content Include="res\03_20-iso sw.ico" />
+    <Content Include="res\03_21-iso se.ico" />
+    <Content Include="res\03_22-iso ne.ico" />
+    <Content Include="res\03_23-iso nw.ico" />
+    <Content Include="res\04-01-animate using centerline.ico" />
+    <Content Include="res\04-02-animate using drawing.ico" />
+    <Content Include="res\04-05-speed up.ico" />
+    <Content Include="res\04-06-slow down.ico" />
+    <Content Include="res\04-07-stop.ico" />
+    <Content Include="res\04-08-event viewer.ico" />
+    <Content Include="res\04-09-goto beginning.ico" />
+    <Content Include="res\04-10-previous frame.ico" />
+    <Content Include="res\04-12-next frame.ico" />
+    <Content Include="res\04-13-goto end.ico" />
+    <Content Include="res\04-14-save animation.ico" />
+    <Content Include="res\04-draw box.ico" />
+    <Content Include="res\04_01-Lists.ico" />
+    <Content Include="res\04_02-Annotate Randomly.ico" />
+    <Content Include="res\04_03-Annotate in a Square.ico" />
+    <Content Include="res\04_04-Annotate in a Circle.ico" />
+    <Content Include="res\04_05-Annotate with Text.ico" />
+    <Content Include="res\04_06-Attached Annotations.ico" />
+    <Content Include="res\04_07-Save Restore View 1.ico" />
+    <Content Include="res\04_08-Save Restore View 2.ico" />
+    <Content Include="res\04_09-Show Node Number Box.ico" />
+    <Content Include="res\04_10-Show Deltas Box.ico" />
+    <Content Include="res\04_11-Show Pipesize Properties.ico" />
+    <Content Include="res\04_12-Show Temps and Pressure.ico" />
+    <Content Include="res\04_13-Show Materials Box.ico" />
+    <Content Include="res\04_14-Show Elastic Properties.ico" />
+    <Content Include="res\04_15-Show Material Density.ico" />
+    <Content Include="res\04_16-Show Aux Data.ico" />
+    <Content Include="res\05-01-flange.ico" />
+    <Content Include="res\05-01-import-export.ico" />
+    <Content Include="res\05-01-import.ico" />
+    <Content Include="res\05-02-export.ico" />
+    <Content Include="res\05-email support.ico" />
+    <Content Include="res\05_01-Archive.ico" />
+    <Content Include="res\05_02-Insert.ico" />
+    <Content Include="res\05_03-Delete.ico" />
+    <Content Include="res\05_04-Break.ico" />
+    <Content Include="res\05_05-Global Coordinates.ico" />
+    <Content Include="res\05_06-Close Loop.ico" />
+    <Content Include="res\05_07-Node Increment.ico" />
+    <Content Include="res\05_08-Distance.ico" />
+    <Content Include="res\05_09-Valve Flange Database.ico" />
+    <Content Include="res\05_10-Expansion Joint Modeler.ico" />
+    <Content Include="res\05_11-Title.ico" />
+    <Content Include="res\05_12-Hanger.ico" />
+    <Content Include="res\05_13-SIF Scratchpad.ico" />
+    <Content Include="res\05_14-Bend SIF Scratchpad.ico" />
+    <Content Include="res\05_15-Special Execution Parameters.ico" />
+    <Content Include="res\05_16-Include Piping Files.ico" />
+    <Content Include="res\05_17-Include Structural Files.ico" />
+    <Content Include="res\05_18-Undo.ico" />
+    <Content Include="res\05_19-Redo.ico" />
+    <Content Include="res\06-00-turntable orbit.ico" />
+    <Content Include="res\06_01-Skip to Beginning.ico" />
+    <Content Include="res\06_02-Skip to previous.ico" />
+    <Content Include="res\06_03-Skip to next.ico" />
+    <Content Include="res\06_04-Skip to End.ico" />
+    <Content Include="res\06_05-Continue.ico" />
+    <Content Include="res\06_06-Duplicate.ico" />
+    <Content Include="res\06_07-Plot Reset.ico" />
+    <Content Include="res\07_01-Bend.ico" />
+    <Content Include="res\07_02-Rigid.ico" />
+    <Content Include="res\07_03-Expansion Joints.ico" />
+    <Content Include="res\07_04-Reducer.ico" />
+    <Content Include="res\07_05-SIFs.ico" />
+    <Content Include="res\07_06-Anchor.ico" />
+    <Content Include="res\07_07-Hanger.ico" />
+    <Content Include="res\07_08-Nozzle.ico" />
+    <Content Include="res\07_09-Displacements.ico" />
+    <Content Include="res\07_10-Forces Moments.ico" />
+    <Content Include="res\07_11-Wind Wave.ico" />
+    <Content Include="res\07_12-Uniform Load.ico" />
+    <Content Include="res\07_13-Allowable Stress.ico" />
+    <Content Include="res\07_14-Node Name.ico" />
+    <Content Include="res\07_15-Offsets.ico" />
+    <Content Include="res\07_16-Rotate.ico" />
+    <Content Include="res\07_17-Duplicate.ico" />
+    <Content Include="res\07_18-Erase.ico" />
+    <Content Include="res\07_19-Renumber.ico" />
+    <Content Include="res\07_20-Cutting Plane X.ico" />
+    <Content Include="res\07_21-Cutting Plane Y.ico" />
+    <Content Include="res\07_22-Cutting Plane Z.ico" />
+    <Content Include="res\09-3d section tool.ico" />
+    <Content Include="res\3D.ico" />
+    <Content Include="res\3dorbit.ico" />
+    <Content Include="res\3dOribt.ico" />
+    <Content Include="res\3dpan.ico" />
+    <Content Include="res\3dpdf.ico" />
+    <Content Include="res\3dzoom.ico" />
+    <Content Include="res\3d_help.ico" />
+    <Content Include="res\about_help.ico" />
+    <Content Include="res\Add.ico" />
+    <Content Include="res\Admin_control_center.ico" />
+    <Content Include="res\Alias.ico" />
+    <Content Include="res\AliasBlack.ico" />
+    <Content Include="res\AliasTrans.ico" />
+    <Content Include="res\AliasWhite.ico" />
+    <Content Include="res\Allowable.ico" />
+    <Content Include="res\Analyse_file.ico" />
+    <Content Include="res\Append.ico" />
+    <Content Include="res\AppendixYFlanges.ico" />
+    <Content Include="res\ArrowDown.ico" />
+    <Content Include="res\ArrowUp.ico" />
+    <Content Include="res\ASME Tubesheets.ico" />
+    <Content Include="res\Back.ico" />
+    <Content Include="res\Baserings.ico" />
+    <Content Include="res\Bend.ico" />
+    <Content Include="res\Box.ico" />
+    <Content Include="res\C2Logo.ico" />
+    <Content Include="res\C2Resources.rc2" />
+    <Content Include="res\CADWorxIcon.ico" />
+    <Content Include="res\Calc.ico" />
+    <Content Include="res\Cancel.ico" />
+    <Content Include="res\Cascade.ico" />
+    <Content Include="res\Centerline.ico" />
+    <Content Include="res\Check.ico" />
+    <Content Include="res\Check_4_updates.ico" />
+    <Content Include="res\Check_hasp.ico" />
+    <Content Include="res\Circle.ico" />
+    <Content Include="res\CodeCalc.ico" />
+    <Content Include="res\Conical-Sections.ico" />
+    <Content Include="res\Copy.ico" />
+    <Content Include="res\Corrosion.ico" />
+    <Content Include="res\crc_check.ico" />
+    <Content Include="res\Cut.ico" />
+    <Content Include="res\Detail.bmp" />
+    <Content Include="res\Dll_version.ico" />
+    <Content Include="res\Download.png" />
+    <Content Include="res\drawing_options.ico" />
+    <Content Include="res\DXF_review.ico" />
+    <Content Include="res\Edit.ico" />
+    <Content Include="res\EditDelta.ico" />
+    <Content Include="res\Element.bmp" />
+    <Content Include="res\Email_PVE_support.ico" />
+    <Content Include="res\Error_review.ico" />
+    <Content Include="res\esl_phone.ico" />
+    <Content Include="res\Exit.ico" />
+    <Content Include="res\FileBackUpFolder.ico" />
+    <Content Include="res\FileLock.ico" />
+    <Content Include="res\FileUnlock.ico" />
+    <Content Include="res\File_Extraction_Utility.ico" />
+    <Content Include="res\Flanges.ico" />
+    <Content Include="res\Flat_shaded.ico" />
+    <Content Include="res\FloatingHead.ico" />
+    <Content Include="res\Fluid density.ico" />
+    <Content Include="res\forward.ico" />
+    <Content Include="res\france_flag.ico" />
+    <Content Include="res\Freehand.ico" />
+    <Content Include="res\Generate_access_codes.ico" />
+    <Content Include="res\germany_flag.ico" />
+    <Content Include="res\Half-Pipe.ico" />
+    <Content Include="res\Hasp_device_driver.ico" />
+    <Content Include="res\HEIStandard.ico" />
+    <Content Include="res\Help.ico" />
+    <Content Include="res\help_documentation.ico" />
+    <Content Include="res\help_finder.ico" />
+    <Content Include="res\help_language.ico" />
+    <Content Include="res\Help_ribbon.ico" />
+    <Content Include="res\HiddenLine.ico" />
+    <Content Include="res\Horizontal-Vessels.ico" />
+    <Content Include="res\Horizontal_tile.ico" />
+    <Content Include="res\I-configure.ico" />
+    <Content Include="res\icon6.ico" />
+    <Content Include="res\ImportExport.ico" />
+    <Content Include="res\Info.ico" />
+    <Content Include="res\input.bmp" />
+    <Content Include="res\Input.ico" />
+    <Content Include="res\Insulation density.ico" />
+    <Content Include="res\Internet_grey_update.ico" />
+    <Content Include="res\italy_flag.ico" />
+    <Content Include="res\KauxBend.ico" />
+    <Content Include="res\KAuxReducer.ico" />
+    <Content Include="res\LargeOpenings.ico" />
+    <Content Include="res\Legs_Lugs2.ico" />
+    <Content Include="res\Legs_Lugs3.ico" />
+    <Content Include="res\Logo_Gray_RGB.png" />
+    <Content Include="res\Main01-03-loadcasenames.ico" />
+    <Content Include="res\Main01-04-loadnodenames.ico" />
+    <Content Include="res\Main01-05-reporttitles.ico" />
+    <Content Include="res\Main01-07-gotoanimation.ico" />
+    <Content Include="res\Main01-08-staticplot.ico" />
+    <Content Include="res\Main01-10-outputtoscreen.ico" />
+    <Content Include="res\Main01-11-outputtoword.ico" />
+    <Content Include="res\Main02-01-newreport.ico" />
+    <Content Include="res\Main02-02-editreport.ico" />
+    <Content Include="res\Main02-03-deletereport.ico" />
+    <Content Include="res\Main02-04-resettodefaults.ico" />
+    <Content Include="res\MatEdit2.ico" />
+    <Content Include="res\material.ico" />
+    <Content Include="res\MatlDatabase.ico" />
+    <Content Include="res\merge.ico" />
+    <Content Include="res\NavBack.ico" />
+    <Content Include="res\NavFront.ico" />
+    <Content Include="res\NavNext.ico" />
+    <Content Include="res\NavPrev.ico" />
+    <Content Include="res\New.ico" />
+    <Content Include="res\NodeName.ico" />
+    <Content Include="res\NoHiddenLine.ico" />
+    <Content Include="res\Nozzle.ico" />
+    <Content Include="res\Nozzles.ico" />
+    <Content Include="res\Online_registeration.ico" />
+    <Content Include="res\OnScreenResult.ico" />
+    <Content Include="res\Open.ico" />
+    <Content Include="res\Output.ico" />
+    <Content Include="res\Output\ASMEForm_ouput.ico" />
+    <Content Include="res\Output\Delete_ouput.ico" />
+    <Content Include="res\Output\Drag_and_drop.bmp" />
+    <Content Include="res\Output\Exit_output.ico" />
+    <Content Include="res\Output\Next_output.ico" />
+    <Content Include="res\Output\Path_output.ico" />
+    <Content Include="res\Output\Previous_output.ico" />
+    <Content Include="res\Output\Recent_output.ico" />
+    <Content Include="res\Output\Select_output.ico" />
+    <Content Include="res\Output\Text_File_big_output.ico" />
+    <Content Include="res\Output\Wordicon_output.ico" />
+    <Content Include="res\PageSetup.ico" />
+    <Content Include="res\password.ico" />
+    <Content Include="res\Paste.ico" />
+    <Content Include="res\PDFOutput.ico" />
+    <Content Include="res\Phong.ico" />
+    <Content Include="res\Ph_01.ico" />
+    <Content Include="res\Ph_02.ico" />
+    <Content Include="res\Ph_03.ico" />
+    <Content Include="res\Ph_04.ico" />
+    <Content Include="res\Ph_05.ico" />
+    <Content Include="res\Ph_06.ico" />
+    <Content Include="res\Ph_07.ico" />
+    <Content Include="res\Ph_08.ico" />
+    <Content Include="res\Ph_09.ico" />
+    <Content Include="res\Pipe density.ico" />
+    <Content Include="res\PipesPads.ico" />
+    <Content Include="res\Play.ico" />
+    <Content Include="res\Plot01-01-showdeflectedshape.ico" />
+    <Content Include="res\Plot01-02-growdeflectedshape.ico" />
+    <Content Include="res\Plot02-01-maxdx.ico" />
+    <Content Include="res\Plot02-02-maxdy.ico" />
+    <Content Include="res\Plot02-03-maxdz.ico" />
+    <Content Include="res\Plot03-01-directionalrestraints.ico" />
+    <Content Include="res\Plot03-02-maxfx.ico" />
+    <Content Include="res\Plot03-03-maxfy.ico" />
+    <Content Include="res\Plot03-04-maxfz.ico" />
+    <Content Include="res\Plot03-05-maxmx.ico" />
+    <Content Include="res\Plot03-06-maxmy.ico" />
+    <Content Include="res\Plot03-07-maxmz.ico" />
+    <Content Include="res\Plot04-01-overstress.ico" />
+    <Content Include="res\Plot04-02-maxstress.ico" />
+    <Content Include="res\Plot04-03-stressbyvalue.ico" />
+    <Content Include="res\Plot04-04-stressbypercent.ico" />
+    <Content Include="res\Plot04-05-sif.ico" />
+    <Content Include="res\Plot05-01-grid.ico" />
+    <Content Include="res\Plot05-02-gridzoom.ico" />
+    <Content Include="res\portugal_flag.ico" />
+    <Content Include="res\Preview.ico" />
+    <Content Include="res\primaryarrow1.PNG" />
+    <Content Include="res\Print.ico" />
+    <Content Include="res\Print_setup.ico" />
+    <Content Include="res\prog_scanner.ico" />
+    <Content Include="res\Project_data.ico" />
+    <Content Include="res\PVEResources.rc2" />
+    <Content Include="res\PVE_Detail_Weight.ico" />
+    <Content Include="res\PV_Aux_Access.ico" />
+    <Content Include="res\PV_Aux_Calc.ico" />
+    <Content Include="res\PV_Aux_Datum.ico" />
+    <Content Include="res\PV_Aux_Dxf.ico" />
+    <Content Include="res\PV_Aux_F3D.ico" />
+    <Content Include="res\PV_Aux_List.ico" />
+    <Content Include="res\PV_Aux_MakeUnit.ico" />
+    <Content Include="res\PV_Aux_Pipe.ico" />
+    <Content Include="res\PV_Aux_Properties.ico" />
+    <Content Include="res\PV_Aux_RigGraph.ico" />
+    <Content Include="res\PV_Aux_Setup.ico" />
+    <Content Include="res\PV_Aux_Sphere.ico" />
+    <Content Include="res\PV_Detail_API-579.ico" />
+    <Content Include="res\PV_Detail_App9_Jacket.ico" />
+    <Content Include="res\PV_Detail_Clip.ico" />
+    <Content Include="res\PV_Detail_Force.ico" />
+    <Content Include="res\PV_Detail_HPJ.ico" />
+    <Content Include="res\PV_Detail_Insulation.ico" />
+    <Content Include="res\PV_Detail_Leg.ico" />
+    <Content Include="res\PV_Detail_Lift_Lug.ico" />
+    <Content Include="res\PV_Detail_Lining.ico" />
+    <Content Include="res\PV_Detail_Liquid.ico" />
+    <Content Include="res\PV_Detail_Lug.ico" />
+    <Content Include="res\PV_Detail_Nozzle.ico" />
+    <Content Include="res\PV_Detail_Packing.ico" />
+    <Content Include="res\PV_Detail_Platform.ico" />
+    <Content Include="res\PV_Detail_Ring.ico" />
+    <Content Include="res\PV_Detail_Saddle.ico" />
+    <Content Include="res\PV_Detail_Trays.ico" />
+    <Content Include="res\PV_Detail_TS.ico" />
+    <Content Include="res\PV_Element_Cone.ico" />
+    <Content Include="res\PV_Element_Cylinder.ico" />
+    <Content Include="res\PV_Element_Ellipse.ico" />
+    <Content Include="res\PV_Element_Flange.ico" />
+    <Content Include="res\PV_Element_Skirt.ico" />
+    <Content Include="res\PV_Element_Sphere.ico" />
+    <Content Include="res\PV_Element_Torisphere.ico" />
+    <Content Include="res\PV_Element_WeldFlat.ico" />
+    <Content Include="res\PV_Flip.ico" />
+    <Content Include="res\PV_Hoops_Plot_Refresh.ico" />
+    <Content Include="res\PV_Utility_Flip.ico" />
+    <Content Include="res\PV_Utility_Ligament.ico" />
+    <Content Include="res\PV_Utility_Mat.ico" />
+    <Content Include="res\PV_Utility_Set_Rings.ico" />
+    <Content Include="res\PV_Utility_Share.ico" />
+    <Content Include="res\PV_Utility_Skip.ico" />
+    <Content Include="res\PV_Utility_Update.ico" />
+    <Content Include="res\PV_Utility_Zoom.ico" />
+    <Content Include="res\PV_Utilty_Insert.ico" />
+    <Content Include="res\Quick_start_guide.ico" />
+    <Content Include="res\Reauthorisation_code.ico" />
+    <Content Include="res\Recent.ico" />
+    <Content Include="res\Recent_big.ico" />
+    <Content Include="res\Rectangular-Vessels.ico" />
+    <Content Include="res\Redo.ico" />
+    <Content Include="res\reducer.ico" />
+    <Content Include="res\ResetAll.ico" />
+    <Content Include="res\reset_pane_layout.ico" />
+    <Content Include="res\Review_access_database.ico" />
+    <Content Include="res\Rewind.ico" />
+    <Content Include="res\Rho.ico" />
+    <Content Include="res\Save.ico" />
+    <Content Include="res\Save_analysis_text.ico" />
+    <Content Include="res\Save_as.ico" />
+    <Content Include="res\SecondaryArrow.PNG" />
+    <Content Include="res\Sectx.ico" />
+    <Content Include="res\Secty.ico" />
+    <Content Include="res\Sectz.ico" />
+    <Content Include="res\Select.ico" />
+    <Content Include="res\Selpic.ico" />
+    <Content Include="res\Selwin.ico" />
+    <Content Include="res\Share_desktop.ico" />
+    <Content Include="res\ShellsHeads.ico" />
+    <Content Include="res\Show_esl_data.ico" />
+    <Content Include="res\SIFs.ico" />
+    <Content Include="res\single_run.ico" />
+    <Content Include="res\spain_flag.ico" />
+    <Content Include="res\split_window.ico" />
+    <Content Include="res\Stop.ico" />
+    <Content Include="res\Summary.ico" />
+    <Content Include="res\system_folder.ico" />
+    <Content Include="res\TagEmpty.ico" />
+    <Content Include="res\TagLoadCase.ico" />
+    <Content Include="res\TagPencil.ico" />
+    <Content Include="res\Text.ico" />
+    <Content Include="res\Thermo.ico" />
+    <Content Include="res\ThickJoints.ico" />
+    <Content Include="res\ThinJoints.ico" />
+    <Content Include="res\tip_of_the_day.ico" />
+    <Content Include="res\Title_page.ico" />
+    <Content Include="res\Tubesheets.ico" />
+    <Content Include="res\TwoLine.ico" />
+    <Content Include="res\U1-form.ico" />
+    <Content Include="res\Undo.ico" />
+    <Content Include="res\UniformLoad.ico" />
+    <Content Include="res\united_states_flag.ico" />
+    <Content Include="res\Units.ico" />
+    <Content Include="res\unit_conversion.ico" />
+    <Content Include="res\Vertical_tile.ico" />
+    <Content Include="res\ViewBack.ico" />
+    <Content Include="res\ViewBottom.ico" />
+    <Content Include="res\ViewFront.ico" />
+    <Content Include="res\ViewLeft.ico" />
+    <Content Include="res\ViewNEIso.ico" />
+    <Content Include="res\ViewNWIso.ico" />
+    <Content Include="res\ViewRight.ico" />
+    <Content Include="res\ViewSEIso.ico" />
+    <Content Include="res\ViewSWIso.ico" />
+    <Content Include="res\ViewTop.ico" />
+    <Content Include="res\Visibility.ico" />
+    <Content Include="res\VUEExport.ico" />
+    <Content Include="res\Walk.ico" />
+    <Content Include="res\what_is_new.ico" />
+    <Content Include="res\WindWave.ico" />
+    <Content Include="res\WordReport.ico" />
+    <Content Include="res\WRC.ico" />
+    <Content Include="res\WRC297.ico" />
+    <Content Include="res\Zooext.ico" />
+    <Content Include="res\Zoosel.ico" />
+    <Content Include="res\Zoowin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Ribbon_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
