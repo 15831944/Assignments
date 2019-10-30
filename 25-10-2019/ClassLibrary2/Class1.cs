@@ -13,26 +13,129 @@ using System.Windows.Interop;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml;
 
 namespace ClassLibrary2
 {
-    public class Class1 : RadWindow
+    public class Class1
     {
         public RadWindow radWindow = new RadWindow();
+        public RadRibbonView radRibbonView = new RadRibbonView();
+        XmlNodeList XmlNodeList;
         public Class1()
         {
-            //radWindow.Height = 500;
-            //radWindow.Width = 600;
-            //radWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //StyleManager.ApplicationTheme = new MaterialTheme();
+            radWindow.Height = 500;
+            radWindow.Width = 600;
+            radWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            StyleManager.ApplicationTheme = new MaterialTheme();
             //radWindow.Content = InitRibbonView();
+            //radWindow.ResizeMode = ResizeMode.NoResize;
             //radWindow.Show();
             //this.DataContext = InitRibbonView();
-            this.Content = InitRibbonView();
+
         }
-        public RadRibbonView InitRibbonView()
+
+        public void InitRbControl()
+        {
+            RibbonControl rbnCtrl = ComponentManager.Ribbon;
+            // Init Panel Source
+            RibbonPanelSource srcPanel = new RibbonPanelSource();
+            srcPanel.Title = "Panel hosting WPF Controls";
+            srcPanel.Id = "PanelWithWPF";
+
+            RibbonPanel panel = new RibbonPanel();
+            panel.Source = srcPanel;
+
+            RibbonTab tab = new RibbonTab();
+            tab.Title = "Custom Tab Telerik";
+            tab.Id = "CustomTab";
+            tab.Panels.Add(panel);
+            rbnCtrl.Tabs.Add(tab);
+
+            System.Windows.Controls.StackPanel wrapPanel = new System.Windows.Controls.StackPanel();
+
+            string XMLName = "//Data_UI.xml";
+            string CurrentDirectory = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(CurrentDirectory + XMLName);
+            XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/RadRibbonView/RadRibbonTab");
+            ReadXml(XmlNodeList);
+        }
+
+        public void ReadXml(XmlNodeList nodeList)
+        {
+            foreach (XmlNode node in nodeList)
+            {
+                
+                Parse(node, radRibbonView);
+            }
+
+            //wrapPanel.Children.Add(class1.InitRibbonView((int)SystemParameters.PrimaryScreenWidth, 360));
+            //wrapPanel.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+
+            //panel.SetWPFControl(wrapPanel, "test");
+        }
+
+        public void Parse(XmlNode Node, RadRibbonView radRibbonView)
+        {
+            string name = "";
+            string title = "";
+            string isEnabled = "";
+            string id = "";
+            bool IsEnabled = false;
+            switch (Node.Name)
+            {
+                case "RadRibbonTab":
+                    name = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    title = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Header").Value : "";
+                    id = (Node.Attributes.GetNamedItem("Name") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    isEnabled = (Node.Attributes.GetNamedItem("IsEnabled") != null) ? Node.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                    IsEnabled = (isEnabled == "true") ? true : false;
+                    RadRibbonTab radRibbonTab = new RadRibbonTab() { Name = name, Header = title, IsEnabled = IsEnabled };
+                    break;
+                case "RadRibbonGroup":
+                    name = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    title = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Header").Value : "";
+                    id = (Node.Attributes.GetNamedItem("Name") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    isEnabled = (Node.Attributes.GetNamedItem("IsEnabled") != null) ? Node.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                    IsEnabled = (isEnabled == "true") ? true : false;
+                    RadRibbonGroup radRibbonGroup = new RadRibbonGroup() { Name = name, Header = title, IsEnabled = IsEnabled };
+                    break;
+                case "RadCollapsiblePanel":
+                    name = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    title = (Node.Attributes.GetNamedItem("Header") != null) ? Node.Attributes.GetNamedItem("Header").Value : "";
+                    id = (Node.Attributes.GetNamedItem("Name") != null) ? Node.Attributes.GetNamedItem("Name").Value : "";
+                    isEnabled = (Node.Attributes.GetNamedItem("IsEnabled") != null) ? Node.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                    IsEnabled = (isEnabled == "true") ? true : false;
+                    RadCollapsiblePanel radCollapsiblePanel = new RadCollapsiblePanel() { Name = name, IsEnabled = IsEnabled, Children = { } };
+                    break;
+                default:
+                    id = Node.Attributes.GetNamedItem("Name").Value;
+                    String tooltip = Node.Attributes.GetNamedItem("ToolTipContent").Value;
+                    String text = Node.Attributes.GetNamedItem("Text").Value;
+                    String imagePath = "";
+                    String externalImage = "true";
+                    String isVisible = Node.Attributes.GetNamedItem("IsVisible").Value;
+                    String isInitialized = Node.Attributes.GetNamedItem("IsInitialized").Value;
+                    String image = Node.Attributes.GetNamedItem("Image").Value;
+                    String largeImage = Node.Attributes.GetNamedItem("LargeImage").Value;
+                    //String width = node.SelectSingleNode("Width").InnerText;
+                    //String height = node.SelectSingleNode("Height").InnerText;
+                    isEnabled = Node.Attributes.GetNamedItem("IsEnabled").Value;
+                    String itemType = Node.NodeType.ToString();
+                    //String size = node.SelectSingleNode("Size").InnerText;
+                    //String isAutoSize = node.SelectSingleNode("IsAutoSize").InnerText;
+                    break;
+            }
+        }
+
+        public RadRibbonView InitRibbonView(int width, int height)
         {
             RadRibbonView ribbonView = new RadRibbonView();
+            ribbonView.IsMinimizable = false;
+            ribbonView.Title = "Demo";
+            
             StackPanel stackPanel = new StackPanel();
             StackPanel stackPanel2 = new StackPanel();
             StackPanel stackPanel3 = new StackPanel();

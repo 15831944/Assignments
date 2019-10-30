@@ -17,6 +17,6 @@ namespace ClassLibrary2
     public class TBItem : RibbonItem
     {
         public static RadButton radButton = new RadButton() { Content = "Test" };
-        public RibbonButton ribbonButton = (RibbonButton)radButton;
+        //public RibbonButton ribbonButton = (RibbonButton)radButton;
     }
 }

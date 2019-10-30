@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RadRibbonView>
+<RadRibbonView Name="radRibbonView" Title="My Title" ApplicationButtonContent="File" ApplicationName="My Application">
   <RadRibbonTab Header="Home" Name="HomeRadRibbonTab" IsEnabled="true">
-    <Items Header="Home" Name="HomeRadRibbonTab" IsEnabled="true">
       <RadRibbonGroup Header="File" Name="HomeRadRibbonGroup" IsEnabled="true">
-        <Items Header="File" Name="HomeRadRibbonGroup" IsEnabled="true">
           <RadRibbonSplitButton Text="New" VerticalAlignment ="VerticalAlignment.Top" Image="._02_01_FileNew.ico"  SmallImage="._02_01_FileNew.ico" LargeImage="" Name="NewButton" ToolTipContent="New" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonSplitButton>
           <RadRibbonButton SplitText="true" Text ="Open..." Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large" Image="._02_02_File_Open.ico" SmallImage="._02_02_File_Open.ico" LargeImage="" Name="OpenButton"  ToolTipContent="Open" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonButton>
           <RadRibbonSplitButton Text="Save" VerticalAlignment ="VerticalAlignment.Top" Image="._02_03_File_Save.ico" SmallImage="._02_03_File_Save.ico" LargeImage="" Name="SaveButton" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Medium"  ToolTipContent="Save" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonSplitButton>
-        </Items>
       </RadRibbonGroup>
-        
-    </Items>
   </RadRibbonTab>
   <RadRibbonTab Header="Tools" Name="" IsEnabled="true"></RadRibbonTab>
   <RadRibbonTab Header="View" Name="" IsEnabled="true"></RadRibbonTab>

@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BrxMgd, Version=19.2.0.13299, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -133,6 +136,7 @@
     <None Include="Resources\Input.ico" />
     <None Include="Resources\CodeCalc.ico" />
     <None Include="Resources\Review_access_database.ico" />
+    <Content Include="Data_UI.xml" />
     <Content Include="res\00_01-Piping Input.ico" />
     <Content Include="res\00_02-Buried Pipe Modeler.ico" />
     <Content Include="res\00_03-Structural Steel Modeler.ico" />
