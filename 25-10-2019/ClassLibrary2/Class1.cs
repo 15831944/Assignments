@@ -68,6 +68,18 @@ namespace ClassLibrary2
 
         public void ReadXml(XmlNodeList nodeList)
         {
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            string temp = path + "\\res\\02_01-FileNew.ico";
+            try
+            {
+                //ImageSource img = IconToImageSource(Properties.Resources._02_01_FileNew);
+                ImageSource image = (ImageSource)new ImageSourceConverter().ConvertFromString(temp);
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             string name = "";
             string title = "";
             string isEnabled = "";
@@ -113,8 +125,8 @@ namespace ClassLibrary2
                                         id = (childchildchildNode.Attributes.GetNamedItem("Name") != null) ? childchildchildNode.Attributes.GetNamedItem("Name").Value : "";
                                         String tooltip = (childchildchildNode.Attributes.GetNamedItem("ToolTipContent") != null) ? childchildchildNode.Attributes.GetNamedItem("ToolTipContent").Value : "";
                                         String text = (childchildchildNode.Attributes.GetNamedItem("Text") != null) ? childchildchildNode.Attributes.GetNamedItem("Text").Value : "";
-                                        String imagePath = "";
-                                        String externalImage = "true";
+                                        String imagePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\res\\";
+                                        //String externalImage = "true";
                                         String isVisible = (childchildchildNode.Attributes.GetNamedItem("IsVisible") != null) ? childchildchildNode.Attributes.GetNamedItem("IsVisible").Value : "";
                                         String isInitialized = childchildchildNode.Attributes.GetNamedItem("IsInitialized").Value;
                                         String image = (childchildchildNode.Attributes.GetNamedItem("Image") != null) ? childchildchildNode.Attributes.GetNamedItem("Image").Value : "";
@@ -125,8 +137,7 @@ namespace ClassLibrary2
                                         String itemType = childchildchildNode.Name.ToString();
                                         //String size = childchildchildNode.SelectSingleNode("Size").InnerText;
                                         //String isAutoSize = childchildchildNode.SelectSingleNode("IsAutoSize").InnerText;
-                                        ImageSource itemImg = new BitmapImage(new Uri("../../res/" + image));
-                                        ImageSource ime = IconToImageSource(Properties.Resources. + image);
+                                        ImageSource itemImg = (ImageSource)new ImageSourceConverter().ConvertFromString(imagePath + image);
                                         //string typeNode = childchildchildNode.NodeType.ToString();
                                         switch (itemType)
                                         {

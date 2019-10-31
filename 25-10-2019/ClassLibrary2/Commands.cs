@@ -13,13 +13,14 @@ using System.Windows;
 using System.Windows.Media;
 using System.Reflection;
 using System.Linq;
+using ClassLibrary2.View;
 
-// this attribute marks this class, as a class that contains commands or lisp callable functions 
-[assembly: CommandClass(typeof(ClassLibrary2.Commands))]
+//// this attribute marks this class, as a class that contains commands or lisp callable functions 
+//[assembly: CommandClass(typeof(ClassLibrary2.Commands))]
 
 
-// this attribute marks this class, as a class having ExtensionApplication methods
-// Initialize and Terminate that are called on loading and unloading of this assembly 
+//// this attribute marks this class, as a class having ExtensionApplication methods
+//// Initialize and Terminate that are called on loading and unloading of this assembly 
 [assembly: ExtensionApplication(typeof(ClassLibrary2.Commands))]
 
 namespace ClassLibrary2
@@ -34,11 +35,12 @@ namespace ClassLibrary2
         public void Initialize()
         {
             StyleManager.ApplicationTheme = new MaterialTheme();
+            Ribbon_View ribbon_View = new Ribbon_View();
             //Application.ShowAlertDialog("The commands class is Initialized");
             //if (RibbonServices.RibbonPaletteSet == null)
             //    RibbonServices.CreateRibbonPaletteSet();
 
-            Class1 class1 = new Class1();
+            //Class1 class1 = new Class1();
             //PaletteSet paletteSet = new PaletteSet("Ribbon Custom")
             //{
             //    Style = PaletteSetStyles.NameEditable |
@@ -57,7 +59,7 @@ namespace ClassLibrary2
 
 
             //addWPFControls();
-            class1.InitRbControl();
+            //class1.InitRbControl();
             //class1.radRibbonView
         }
 
@@ -100,17 +102,6 @@ namespace ClassLibrary2
             rps.Title = "Test One";
             RibbonPanel rp = new RibbonPanel();
             rp.Source = rps;
-
-            //Create a Command Item that the Dialog Launcher can use,
-            // for this test it is just a place holder.
-            //RibbonButton rci = new RibbonButton();
-            //rci.Id = "TestCommand";
-
-            //assign the Command Item to the DialgLauncher which auto-enables
-            // the little button at the lower right of a Panel
-            //rps.DialogLauncher = rci;
-
-            //rb = new RadRibbonSplitButton() { Text = "New", VerticalAlignment = VerticalAlignment.Top };
 
             rb = new RibbonButton();
             rb.Id = "Test Button";

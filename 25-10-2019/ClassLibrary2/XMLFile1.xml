@@ -100,3 +100,29 @@
     </StackPanel>
   </StackPanel>
 </RadRibbonGroup>
+
+
+
+
+<RadRibbonGroup Header="Elements" Name="ElementsRadRibbonGroup" IsEnabled="true">
+  <RadCollapsiblePanel Name="ElementsRadCollapsiblePanel" IsEnabled="true">
+    <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" Image="PV_Element_Cylinder" SmallImage="PV_Element_Cylinder" LargeImage="PV_Element_Cylinder" Size="Large"></RadRibbonButton>
+  </RadCollapsiblePanel>
+  <RadCollapsiblePanel Name="ElementsRadCollapsiblePanel" IsEnabled="true">
+    <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" Image="PV_Element_Ellipse" SmallImage="PV_Element_Ellipse" LargeImage="PV_Element_Ellipse" Size="Large"></RadRibbonButton>
+  </RadCollapsiblePanel>
+</RadRibbonGroup>
+
+<RadRibbonGroup Header="Elements" Name="" IsEnabled="true">
+
+</RadRibbonGroup>
+
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Cylinder" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Torisphere" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Cone" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Flange" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Ellipse" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Sphere" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_WeldFlat" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+<RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Skirt" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>

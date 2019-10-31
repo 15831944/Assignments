@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <RadRibbonView Name="radRibbonView" Title="My Title" ApplicationButtonContent="File" ApplicationName="My Application">
   <RadRibbonTab Header="Home" Name="HomeRadRibbonTab" IsEnabled="true">
-      <RadRibbonGroup Header="File" Name="HomeRadRibbonGroup" IsEnabled="true">
-        <RadCollapsiblePanel Name="HomeRadCollapsiblePanel" IsEnabled="true">
-          <RadRibbonSplitButton Text="New" VerticalAlignment ="VerticalAlignment.Top" Image="._02_01_FileNew.ico"  SmallImage="._02_01_FileNew.ico" LargeImage="" Name="NewButton" ToolTipContent="New" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonSplitButton>
-          <RadRibbonButton SplitText="true" Text ="Open..." Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large" Image="._02_02_File_Open.ico" SmallImage="._02_02_File_Open.ico" LargeImage="" Name="OpenButton"  ToolTipContent="Open" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonButton>
-          <RadRibbonSplitButton Text="Save" VerticalAlignment ="VerticalAlignment.Top" Image="._02_03_File_Save.ico" SmallImage="._02_03_File_Save.ico" LargeImage="" Name="SaveButton" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Medium"  ToolTipContent="Save" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonSplitButton>
-        </RadCollapsiblePanel>
-      </RadRibbonGroup>
+    <RadRibbonGroup Header="File" Name="HomeRadRibbonGroup" IsEnabled="true">
+      <RadCollapsiblePanel Name="HomeRadCollapsiblePanel" IsEnabled="true">
+        <RadRibbonSplitButton Text="New" VerticalAlignment="Top" Image="_02_01_FileNew"  SmallImage="_02_01_FileNew" LargeImage="_02_01_FileNew" Name="NewButton" ToolTipContent="New" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonSplitButton>
+      </RadCollapsiblePanel>
+      <RadCollapsiblePanel Name="HomeRadCollapsiblePanel2" IsEnabled="true">
+        <RadRibbonButton SplitText="true" Text ="Open..." Size="Medium" Image="_02_02_File_Open"  SmallImage="_02_02_File_Open" LargeImage="_02_02_File_Open" Name="OpenButton"  ToolTipContent="Open" IsEnabled="true" IsVisible="true" IsInitialized="true"></RadRibbonButton>
+      </RadCollapsiblePanel>
+      <RadCollapsiblePanel Name="HomeRadCollapsiblePanel3" IsEnabled="true">
+        <RadRibbonSplitButton Text="Save" VerticalAlignment="Top" Image="_02_03_File_Save"  SmallImage="_02_03_File_Save" LargeImage="_02_03_File_Save" Name="SaveButton" ToolTipContent="Save" IsEnabled="true" IsVisible="true" IsInitialized="true" Size="Medium"></RadRibbonSplitButton>
+      </RadCollapsiblePanel>
+    </RadRibbonGroup>
+    <RadRibbonGroup Header="Elements" Name="ElementsRadRibbonGroup" IsEnabled="true">
+      <RadCollapsiblePanel Name="ElementsRadCollapsiblePanel" IsEnabled="true">
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" Image="PV_Element_Cylinder" SmallImage="PV_Element_Cylinder" LargeImage="PV_Element_Cylinder" Size="Large"></RadRibbonButton>
+      </RadCollapsiblePanel>
+      <RadCollapsiblePanel Name="ElementsRadCollapsiblePanel" IsEnabled="true">
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" Image="PV_Element_Ellipse" SmallImage="PV_Element_Ellipse" LargeImage="PV_Element_Ellipse" Size="Large"></RadRibbonButton>
+      </RadCollapsiblePanel>
+    </RadRibbonGroup>
   </RadRibbonTab>
   <RadRibbonTab Header="Tools" Name="" IsEnabled="true"></RadRibbonTab>
   <RadRibbonTab Header="View" Name="" IsEnabled="true"></RadRibbonTab>
