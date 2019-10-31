@@ -56,7 +56,9 @@ namespace ClassLibrary2
             //paletteSet.AddVisual("Ribbon", class1.InitRibbonView());
 
 
-            addWPFControls();
+            //addWPFControls();
+            class1.InitRbControl();
+            //class1.radRibbonView
         }
 
         public static void addWPFControls()

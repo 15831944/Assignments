@@ -41,8 +41,8 @@ namespace ClassLibrary2
             RibbonControl rbnCtrl = ComponentManager.Ribbon;
             // Init Panel Source
             RibbonPanelSource srcPanel = new RibbonPanelSource();
-            srcPanel.Title = "Panel hosting WPF Controls";
-            srcPanel.Id = "PanelWithWPF";
+            srcPanel.Title = "";
+            srcPanel.Id = "CustomPanel";
 
             RibbonPanel panel = new RibbonPanel();
             panel.Source = srcPanel;
@@ -61,19 +61,128 @@ namespace ClassLibrary2
             xmlDoc.Load(CurrentDirectory + XMLName);
             XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/RadRibbonView/RadRibbonTab");
             ReadXml(XmlNodeList);
+            wrapPanel.Children.Add(radRibbonView);
+            wrapPanel.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+            panel.SetWPFControl(wrapPanel, "test");
         }
 
         public void ReadXml(XmlNodeList nodeList)
         {
+            string name = "";
+            string title = "";
+            string isEnabled = "";
+            string id = "";
+            bool IsEnabled = false;
             foreach (XmlNode node in nodeList)
             {
+                name = (node.Attributes.GetNamedItem("Header") != null) ? node.Attributes.GetNamedItem("Name").Value : "";
+                title = (node.Attributes.GetNamedItem("Header") != null) ? node.Attributes.GetNamedItem("Header").Value : "";
+                id = (node.Attributes.GetNamedItem("Name") != null) ? node.Attributes.GetNamedItem("Name").Value : "";
+                isEnabled = (node.Attributes.GetNamedItem("IsEnabled") != null) ? node.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                IsEnabled = (isEnabled == "true") ? true : false;
+
+                RadRibbonTab radRibbonTab = new RadRibbonTab() { Name = name, Header = title, IsEnabled = IsEnabled };
                 
-                Parse(node, radRibbonView);
+                if (node.ChildNodes.Count > 0)
+                {
+                    XmlNodeList ChildNode = node.ChildNodes;
+                    foreach(XmlNode childNode in ChildNode)
+                    {
+                        name = (childNode.Attributes.GetNamedItem("Header") != null) ? childNode.Attributes.GetNamedItem("Name").Value : "";
+                        title = (childNode.Attributes.GetNamedItem("Header") != null) ? childNode.Attributes.GetNamedItem("Header").Value : "";
+                        id = (childNode.Attributes.GetNamedItem("Name") != null) ? childNode.Attributes.GetNamedItem("Name").Value : "";
+                        isEnabled = (childNode.Attributes.GetNamedItem("IsEnabled") != null) ? childNode.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                        IsEnabled = (isEnabled == "true") ? true : false;
+                        RadRibbonGroup radRibbonGroup = new RadRibbonGroup() { Name = name, Header = title, IsEnabled = IsEnabled };
+                        if (childNode.ChildNodes.Count > 0)
+                        {
+                            XmlNodeList ChildChildNode = childNode.ChildNodes;
+                            foreach(XmlNode childchildNode in ChildChildNode)
+                            {
+                                name = (childchildNode.Attributes.GetNamedItem("Name") != null) ? childchildNode.Attributes.GetNamedItem("Name").Value : "";
+                                title = (childchildNode.Attributes.GetNamedItem("Header") != null) ? childchildNode.Attributes.GetNamedItem("Header").Value : "";
+                                id = (childchildNode.Attributes.GetNamedItem("Name") != null) ? childchildNode.Attributes.GetNamedItem("Name").Value : "";
+                                isEnabled = (childchildNode.Attributes.GetNamedItem("IsEnabled") != null) ? childchildNode.Attributes.GetNamedItem("IsEnabled").Value : "true";
+                                IsEnabled = (isEnabled == "true") ? true : false;
+                                RadCollapsiblePanel radCollapsiblePanel = new RadCollapsiblePanel() { Name = name, IsEnabled = IsEnabled };
+                                if (childchildNode.ChildNodes.Count > 0)
+                                {
+                                    XmlNodeList ChildChildChildNode = childchildNode.ChildNodes;
+                                    foreach (XmlNode childchildchildNode in ChildChildChildNode)
+                                    {
+                                        id = (childchildchildNode.Attributes.GetNamedItem("Name") != null) ? childchildchildNode.Attributes.GetNamedItem("Name").Value : "";
+                                        String tooltip = (childchildchildNode.Attributes.GetNamedItem("ToolTipContent") != null) ? childchildchildNode.Attributes.GetNamedItem("ToolTipContent").Value : "";
+                                        String text = (childchildchildNode.Attributes.GetNamedItem("Text") != null) ? childchildchildNode.Attributes.GetNamedItem("Text").Value : "";
+                                        String imagePath = "";
+                                        String externalImage = "true";
+                                        String isVisible = (childchildchildNode.Attributes.GetNamedItem("IsVisible") != null) ? childchildchildNode.Attributes.GetNamedItem("IsVisible").Value : "";
+                                        String isInitialized = childchildchildNode.Attributes.GetNamedItem("IsInitialized").Value;
+                                        String image = (childchildchildNode.Attributes.GetNamedItem("Image") != null) ? childchildchildNode.Attributes.GetNamedItem("Image").Value : "";
+                                        String largeImage = (childchildchildNode.Attributes.GetNamedItem("LargeImage") != null) ? childchildchildNode.Attributes.GetNamedItem("LargeImage").Value : "";
+                                        //String width = childchildchildNode.SelectSingleNode("Width").InnerText;
+                                        //String height = node.SelectSingleNode("Height").InnerText;
+                                        isEnabled = (childchildchildNode.Attributes.GetNamedItem("IsEnabled") != null) ? childchildchildNode.Attributes.GetNamedItem("IsEnabled").Value : "";
+                                        String itemType = childchildchildNode.Name.ToString();
+                                        //String size = childchildchildNode.SelectSingleNode("Size").InnerText;
+                                        //String isAutoSize = childchildchildNode.SelectSingleNode("IsAutoSize").InnerText;
+                                        ImageSource itemImg = new BitmapImage(new Uri("../../res/" + image));
+                                        ImageSource ime = IconToImageSource(Properties.Resources. + image);
+                                        //string typeNode = childchildchildNode.NodeType.ToString();
+                                        switch (itemType)
+                                        {
+                                            case "RadRibbonButton":
+                                                radCollapsiblePanel.Children.Add(new RadRibbonButton() { SmallImage = itemImg, LargeImage = itemImg, Text = text, ToolTip = tooltip });
+                                                break;
+                                            case "RadRibbonToggleButton":
+                                                radCollapsiblePanel.Children.Add(new RadRibbonToggleButton() { SmallImage = itemImg, LargeImage = itemImg, Text = text, ToolTip = tooltip });
+                                                break;
+                                            case "RadRibbonRadioButton":
+                                                radCollapsiblePanel.Children.Add(new RadRibbonRadioButton() { SmallImage = itemImg, LargeImage = itemImg, Text = text, ToolTip = tooltip });
+                                                break;
+                                            case "RadRibbonDropDownButton":
+                                                radCollapsiblePanel.Children.Add(new RadRibbonDropDownButton() { SmallImage = itemImg, LargeImage = itemImg, Text = text, ToolTip = tooltip });
+                                                break;
+                                            case "RadRibbonSplitButton":
+                                                radCollapsiblePanel.Children.Add(new RadRibbonSplitButton() { SmallImage = itemImg, LargeImage = itemImg, Text = text, ToolTip = tooltip });
+                                                // ERROR
+                                                break;
+                                            case "RadButton":
+                                                radCollapsiblePanel.Children.Add(new RadButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadPathButton":
+                                                radCollapsiblePanel.Children.Add(new RadPathButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadDropDownButton":
+                                                radCollapsiblePanel.Children.Add(new RadDropDownButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadRadioButton":
+                                                radCollapsiblePanel.Children.Add(new RadRadioButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadSplitButton":
+                                                radCollapsiblePanel.Children.Add(new RadSplitButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadToggleButton":
+                                                radCollapsiblePanel.Children.Add(new RadToggleButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadToggleSwitchButton":
+                                                radCollapsiblePanel.Children.Add(new RadToggleSwitchButton() { Content = text, Name = name, ToolTip = tooltip });
+                                                break;
+                                            case "RadComboBox":
+                                                radCollapsiblePanel.Children.Add(new RadComboBox() { Text = text,  });
+                                                break;
+                                        }
+                                    }
+                                }
+                                radRibbonGroup.Items.Add(radCollapsiblePanel);
+                            }
+                        }
+                        radRibbonTab.Items.Add(radRibbonGroup);
+                    }
+                    
+                }
+                radRibbonView.Items.Add(radRibbonTab);
+                //Parse(node, radRibbonView);
             }
-
-            //wrapPanel.Children.Add(class1.InitRibbonView((int)SystemParameters.PrimaryScreenWidth, 360));
-            //wrapPanel.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-
             //panel.SetWPFControl(wrapPanel, "test");
         }
 

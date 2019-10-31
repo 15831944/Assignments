@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RadRibbonGroup Header="Elements" Name="" IsEnabled="true">
+  <Items Header="Elements" Name="" IsEnabled="true">
+    <StackPanel Orientation="Orientation.Vertical" Name="">
+      <StackPanel Orientation="Orientation.Horizontal" Name="">
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Cylinder" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Torisphere" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Cone" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Flange" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      </StackPanel>
+      <StackPanel Orientation="Orientation.Horizontal" Name="">
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Ellipse" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Sphere" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_WeldFlat" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+        <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Element_Skirt" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      </StackPanel>
+    </StackPanel>
+  </Items>
+</RadRibbonGroup>
+<RadRibbonGroup Header="Details" Name="">
+  <StackPanel Orientation="Orientation.Vertical" Name="">
+    <StackPanel Orientation="Orientation.Horizontal" Name="">
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Ring" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Ring" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Platform" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PVE_Detail_Weight" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Lug" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Liquid" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Insulation" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_TS" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Lift_Lug" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_API_579" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+    </StackPanel>
+    <StackPanel Orientation="Orientation.Horizontal" Name="">
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Nozzle" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Force" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Packing" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Trays" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Lug" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Lining" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_HPJ" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_Clip" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+      <RadRibbonButton CollapseToSmall="CollapseThreshold.WhenGroupIsMedium" SmallImage ="PV_Detail_App9_Jacket" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Large"></RadRibbonButton>
+    </StackPanel>
+  </StackPanel>
+</RadRibbonGroup>
+<RadRibbonGroup Header="Input / Output" Name="">
+  <StackPanel Orientation="Orientation.Horizontal" Name="">
+    <StackPanel Orientation="Orientation.Vertical" Name="">
+      <RadRibbonButton Text="Input" SmallImage ="Input" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Medium"></RadRibbonButton>
+      <RadRibbonButton SmallImage ="CodeCalc" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Medium"></RadRibbonButton>
+    </StackPanel>
+    <RadRibbonButton SmallImage ="Review_access_database" Size="Telerik.Windows.Controls.RibbonView.ButtonSize.Medium"></RadRibbonButton>
+  </StackPanel>
+</RadRibbonGroup>
+<RadRibbonGroup Header="" Name="">
+  <RadDropDownButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Auxiliary">
+    <RadDropDownButton.DropDownContent>
+      <RadContextMenu>
+        <RadMenuItem Header="Add" />
+        <RadMenuItem Header="Edit" />
+        <RadMenuItem Header="Delete" />
+      </RadContextMenu>
+    </RadDropDownButton.DropDownContent>
+  </RadDropDownButton>
+</RadRibbonGroup>
+<RadRibbonGroup Header="" Name="">
+  <RadDropDownButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Analyze">
+    <RadDropDownButton.DropDownContent>
+      <RadContextMenu>
+        <RadMenuItem Header="Add" />
+        <RadMenuItem Header="Edit" />
+        <RadMenuItem Header="Delete" />
+      </RadContextMenu>
+    </RadDropDownButton.DropDownContent>
+  </RadDropDownButton>
+</RadRibbonGroup>
+<RadRibbonGroup Header="Units/Code" Name="">
+  <StackPanel Header="" Name="" Orientation="Orientation.Vertical">
+    <StackPanel Header="" Orientation="Orientation.Horizontal" Name="">
+      <TextBlock Text="Units:" Background="" TextAlignment="Center"/>
+      <RadComboBox Width="100">
+        <RadComboBoxItem Content="ENGLISH" />
+        <RadComboBoxItem Content="FRENCH" />
+      </RadComboBox>
+    </StackPanel>
+    <StackPanel Header="" Orientation="Orientation.Horizontal" Name="">
+      <TextBlock Text="Design Code:" Background="" TextAlignment="Center"/>
+      <RadComboBox Width="100">
+        <RadComboBoxItem Content="Division 1" />
+        <RadComboBoxItem Content="Division 2" />
+      </RadComboBox>
+    </StackPanel>
+    <StackPanel Header="" Orientation="Orientation.Horizontal" Name="">
+      <TextBlock Text="Div.2 Class:" Background="" TextAlignment="Center"/>
+      <RadComboBox Width="100">
+        <RadComboBoxItem Content="Class 1" />
+        <RadComboBoxItem Content="Class 2" />
+      </RadComboBox>
+    </StackPanel>
+  </StackPanel>
+</RadRibbonGroup>
