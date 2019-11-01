@@ -20,12 +20,9 @@ namespace MVVMSampleApp3
     /// </summary>
     public partial class StudentView : UserControl
     {
-        public List<Student> Students { get; set; }
         public StudentView()
         {
             InitializeComponent();
-            //Students = 
-            this.DataContext = this;
         }
     }
 }

@@ -4,42 +4,12 @@ using System.ComponentModel;
 
 namespace MVVMSampleApp3
 {
-    public class Student
+    public class Student 
     {
         public string age;
         public string name;
 
-        public string Age
-        {
-            get
-            {
-                return age;
-            }
-            set
-            {
-                if (age != value)
-                {
-                    age = value;
-                    //RaisePropertyChanged("Age");
-                }
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (name != value)
-                {
-                    name = value;
-                    //RaisePropertyChanged("Name");
-                }
-            }
-        }
+        
     }
     public class MyViewModel : INotifyPropertyChanged
     {
@@ -115,7 +85,5 @@ namespace MVVMSampleApp3
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
-
-        
     }
 }
