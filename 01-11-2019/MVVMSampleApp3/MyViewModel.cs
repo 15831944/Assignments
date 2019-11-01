@@ -8,39 +8,10 @@ namespace MVVMSampleApp3
     {
         public string age;
         public string name;
-
         
     }
     public class MyViewModel : INotifyPropertyChanged
     {
-        public List<Student> students = new List<Student>();
-        public List<Student> Students
-        {
-            get
-            {
-                return students;
-            }
-            set
-            {
-                if (students != value)
-                {
-                    
-                }
-            }
-        }
-        public void LoadStudents()
-        {
-            List<Student> students = new List<Student>();
-
-            students.Add(new Student() { age = "24", name = "Mark" });
-            students.Add(new Student() { age = "35", name = "Steve" });
-            students.Add(new Student() { age = "16", name = "Michael" });
-            students.Add(new Student() { age = "70", name = "Bill" });
-            students.Add(new Student() { age = "48", name = "Kelvin" });
-
-            this.students = students;
-        }
-
         public string age;
         public string name;
 
@@ -54,6 +25,7 @@ namespace MVVMSampleApp3
             {
                 if (age != value)
                 {
+                    //updateStudent(name, value, "Age");
                     age = value;
                     RaisePropertyChanged("Age");
                 }
@@ -70,11 +42,34 @@ namespace MVVMSampleApp3
             {
                 if (name != value)
                 {
+                    //updateStudent(name, value, "Name");
                     name = value;
                     RaisePropertyChanged("Name");
                 }
             }
         }
+        public List<Student> students = new List<Student>();
+        public List<Student> Students
+        {
+            get
+            {
+                return students;
+            }
+        }
+        public void LoadStudents()
+        {
+            List<Student> students_ = new List<Student>();
+
+            students_.Add(new Student() { age = "24", name = "Mark" });
+            students_.Add(new Student() { age = "35", name = "Steve" });
+            students_.Add(new Student() { age = "16", name = "Michael" });
+            students_.Add(new Student() { age = "70", name = "Bill" });
+            students_.Add(new Student() { age = "48", name = "Kelvin" });
+
+            this.students = students_;
+        }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -83,6 +78,29 @@ namespace MVVMSampleApp3
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
+        private void updateStudent(string val, string newval, string props)
+        {
+            for(int i = 0; i < students.Count; i++)
+            {
+                if (props == "Name")
+                {
+                    if (students[i].name == val)
+                    {
+                        students[i].name = newval;
+                        break;
+                    }
+                }
+                if (props == "Age")
+                {
+                    if (students[i].age == val)
+                    {
+                        students[i].age = newval;
+                        break;
+                    }
+                }
             }
         }
     }
