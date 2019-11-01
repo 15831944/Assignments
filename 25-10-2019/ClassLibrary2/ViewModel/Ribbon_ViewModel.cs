@@ -20,12 +20,14 @@ namespace ClassLibrary2.ViewModel
     public class Ribbon_ViewModel
     {
         public RadWindow radWindow = new RadWindow();
-        public RadRibbonView radRibbonView = new RadRibbonView();
+        public RadRibbonView radRibbonView { get; set; }
         
         public RadRibbonTab radRibbonTab = new RadRibbonTab();
         public List<RadRibbonGroup> radRibbonTabs = new List<RadRibbonGroup>();
         String imagePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\res\\"; // Resource Folder
-        XmlNodeList XmlNodeList;
+
+        public XmlNodeList XmlNodeList;
+
         public Ribbon_ViewModel()
         {
             InitRbControl();

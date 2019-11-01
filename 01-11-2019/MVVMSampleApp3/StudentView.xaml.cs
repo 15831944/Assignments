@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace MVVMSampleApp3
+{
+    /// <summary>
+    /// Interaction logic for StudentView.xaml
+    /// </summary>
+    public partial class StudentView : UserControl
+    {
+        public List<Student> Students { get; set; }
+        public StudentView()
+        {
+            InitializeComponent();
+            //Students = 
+            this.DataContext = this;
+        }
+    }
+}

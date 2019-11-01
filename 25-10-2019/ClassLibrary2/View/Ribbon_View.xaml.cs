@@ -37,7 +37,6 @@ namespace ClassLibrary2.View
             StyleManager.ApplicationTheme = new MaterialTheme();
             this.DataContext = new Ribbon_ViewModel();
             InitializeComponent();
-            
         }
 
     }
