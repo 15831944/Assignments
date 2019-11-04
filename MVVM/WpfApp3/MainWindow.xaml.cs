@@ -13,23 +13,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMSampleApp3
+namespace WpfApp3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BookViewModel vm;
         public MainWindow()
         {
             InitializeComponent();
+            BookProvider bookProvider = new BookProvider();
+            List<BookViewModel> books = bookProvider.GetBooks();
+            for (int i = 0; i < books.Count; i++)
+            {
+                vm = new BookViewModel(books[i]);
+            }
+            
+            this.DataContext = vm;
         }
 
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
+            vm.MakeChange();
         }
     }
 }

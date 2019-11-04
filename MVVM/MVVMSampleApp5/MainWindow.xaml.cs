@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMSampleApp3
+namespace MVVMSampleApp5
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,11 +25,13 @@ namespace MVVMSampleApp3
             InitializeComponent();
         }
 
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
+        private void DisplayUI(CustomerViewModel o)
         {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
+            lblName.Content = o.TxtCustomerName;
+            lblAmount.Content = o.TxtAmount;
+            BrushConverter brushconv = new BrushConverter();
+            lblBuyingHabits.Background = brushconv.ConvertFromString(o.LblAmountColor) as SolidColorBrush;
+            chkMarried.IsChecked = o.IsMarried;
         }
     }
 }

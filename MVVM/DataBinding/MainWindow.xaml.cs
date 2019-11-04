@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVMSampleApp3
+namespace DataBinding
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,13 +23,6 @@ namespace MVVMSampleApp3
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
         }
     }
 }

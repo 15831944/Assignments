@@ -24,12 +24,5 @@ namespace MVVMSampleApp3
         {
             InitializeComponent();
         }
-
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
-        }
     }
 }

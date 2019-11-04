@@ -16,20 +16,14 @@ using System.Windows.Shapes;
 namespace MVVMSampleApp3
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StudentView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentView : UserControl
     {
-        public MainWindow()
+        public StudentView()
         {
             InitializeComponent();
-        }
-
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
+            this.DataContext = new MyViewModel();
         }
     }
 }

@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
+using WpfApp1.ViewModels;
 
-namespace MVVMSampleApp3
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,13 +25,6 @@ namespace MVVMSampleApp3
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            MyViewModel myViewModel = new MyViewModel();
-            myViewModel.LoadStudents();
-            StudentViewControl.DataContext = myViewModel;
         }
     }
 }
