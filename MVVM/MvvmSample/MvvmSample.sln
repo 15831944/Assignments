@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{6622F052-4BC5-4AD5-955D-8C1407E89773}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{451BB3E1-9316-4812-BCF1-C8B9B707CAA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".shared", ".shared", "{F70223E5-7A40-4A18-ABD9-E3A532D1EE0F}"
+	ProjectSection(SolutionItems) = preProject
+		.shared\SharedAssemblyInfo.cs = .shared\SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Desktop", "Ui\Ui.Desktop\Ui.Desktop.csproj", "{68AAF9CE-85F9-47C3-A28E-C1079712A071}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68AAF9CE-85F9-47C3-A28E-C1079712A071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68AAF9CE-85F9-47C3-A28E-C1079712A071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68AAF9CE-85F9-47C3-A28E-C1079712A071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68AAF9CE-85F9-47C3-A28E-C1079712A071}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68AAF9CE-85F9-47C3-A28E-C1079712A071} = {6622F052-4BC5-4AD5-955D-8C1407E89773}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {622969F5-5425-4D6F-93CD-0110CA6E9DB9}
+	EndGlobalSection
+EndGlobal
