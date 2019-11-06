@@ -14,9 +14,9 @@ using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : INotifyPropertyChanged, IDataErrorInfo
     {
-        private string name = "test";
+        private string name;
         public string Name
         {
             get
@@ -29,23 +29,6 @@ namespace WpfApp1.ViewModels
                 {
                     name = value;
                     NotifyPropertyChange("Name");
-                }
-            }
-        }
-
-        private string type;
-        public string Type
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                if (type != value)
-                {
-                    type = value;
-                    NotifyPropertyChange("Type");
                 }
             }
         }
@@ -74,6 +57,31 @@ namespace WpfApp1.ViewModels
                     mButtonCommand = new RelayCommand(Action => ExitFunc(), predicate => CanTest());
                 }
                 return mButtonCommand;
+            }
+        }
+
+        public string Error
+        {
+            get
+            {
+                return "....";
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string result = null;
+                if (columnName == "Name")
+                {
+                    Regex regex = new Regex("[^a-zA-Z]+");
+                    if (regex.IsMatch(this.name))
+                    {
+                        result = "Error";
+                    }
+                }
+                return result;
             }
         }
 
@@ -113,5 +121,7 @@ namespace WpfApp1.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
+
+        /* TODO : UPDATE DATA IN LIST ON VIEWMODEL , PUSH IT TO MODEL */
     }
 }

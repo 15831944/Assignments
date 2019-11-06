@@ -1,11 +1,8 @@
 ﻿
 using Microsoft.TeamFoundation.MVVM;
-using System;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 
 namespace WpfApp1.ViewModels
@@ -23,35 +20,15 @@ namespace WpfApp1.ViewModels
             {
                 if (name != value)
                 {
-
-                    //Regex regex = new Regex("[^0-9]+");
-                    //if (regex.IsMatch(value))
-                    //{
-                    //    if (value.Length > name.Length)
-                    //    {
-                    //        name = value.Substring(0, name.Length);
-                    //        value = name;
-                    //    }
-                    //    MessageBox.Show("Giá trị vừa nhập không hợp lệ!");
-                    //}
+                    Regex regex = new Regex("[^0-9]+");
+                    if (regex.IsMatch(value))
+                    {
+                        MessageBox.Show("Giá trị vừa nhập không hợp lệ!");
+                        return;
+                    }
                     name = value;
                 }
-            }
-        }
 
-        private string type;
-        public string Type
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                if (type != value)
-                {
-                    type = value;
-                }
             }
         }
 
@@ -92,6 +69,7 @@ namespace WpfApp1.ViewModels
         {
 
             textbox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            MessageBox.Show("Enter ");
         }
 
         public bool CanTest()

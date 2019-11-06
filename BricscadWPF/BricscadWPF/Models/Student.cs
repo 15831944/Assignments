@@ -15,9 +15,12 @@ namespace WpfApp1.Models
         {
             students = new ObservableCollection<Student>()
             {
-                new Student() { Name = "9104402", Type = "int" },
-                new Student() { Name = "robert", Type = "string" },
-                new Student() { Name = "2.5", Type = "float" }
+                new Student() { Name = "9104402" },
+                new Student() { Name = "8066499" },
+                new Student() { Name = "5965308" },
+                new Student() { Name = "9646411" },
+                new Student() { Name = "222380" },
+                new Student() { Name = "2986276" }
             };
         }
     }
@@ -36,22 +39,6 @@ namespace WpfApp1.Models
                 if (name != value)
                 {
                     name = value;
-                }
-            }
-        }
-
-        private string type;
-        public string Type
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                if (type != value)
-                {
-                    type = value;
                 }
             }
         }
