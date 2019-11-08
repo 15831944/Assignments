@@ -4,18 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RibbonBricscad"
-             mc:Ignorable="d" 
-             d:DesignHeight="26" d:DesignWidth="577">
-    <Grid Margin="0,0,0,0">
+             mc:Ignorable="d" Loaded="UserControl_Loaded" SizeChanged="UserControl_SizeChanged">
+    <Grid Margin="0,0,0,20" Name="parent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="108*" />
             <ColumnDefinition Width="469*"/>
         </Grid.ColumnDefinitions>
-        <StatusBar HorizontalAlignment="Left" Height="26" Margin="0,0,0,0" VerticalAlignment="Top" Width="577" Background="#038e96" Grid.ColumnSpan="2">
-            <DockPanel Width="577">
-                <!--<GroupBox x:Name="groupBox" Header="GroupBox" BorderBrush="Transparent" BorderThickness="0" Width="69">
-                </GroupBox>-->
-                <Label Name="HelpText" Foreground="White" FontSize="9" Height="23" HorizontalAlignment="Left">Press F1 for Help</Label>
+        <StatusBar Margin="0,0,0,0" VerticalAlignment="Top" Background="#038e96" Grid.ColumnSpan="2" Name="StatusBar" Height="Auto" >
+            <!-- HorizontalAlignment="Stretch"-->
+            <DockPanel Name="DockPanel">
+                <!--<Label Name="HelpText" Foreground="White" FontSize="9" Height="23" HorizontalAlignment="Left">Press F1 for Help</Label>
                 <WrapPanel HorizontalAlignment="Right" Width="Auto">
                     <Label Name="HelpText2" Foreground="White" FontSize="9" Height="23">New Model</Label>
                     <Label Name="HelpText3" Foreground="White" FontSize="9" Height="23">...</Label>
@@ -27,9 +25,7 @@
                     <Label Name="HelpText9" Foreground="White" FontSize="9" Height="23">...</Label>
                     <Label Foreground="White" FontSize="9" Height="23">License Days Left:</Label>
                     <Label Name="HelpText10" Foreground="White" FontSize="9" Height="23">237</Label>
-                </WrapPanel>
-
-                <!--<GroupBox x:Name="groupBox2" Header="GroupBox" BorderBrush="Transparent" BorderThickness="0" Width="369"></GroupBox>-->
+                </WrapPanel>-->
             </DockPanel>
 
         </StatusBar>

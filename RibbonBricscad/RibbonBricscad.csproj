@@ -62,6 +62,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BricscadCustom.cs" />
+    <Compile Include="CustomUI.cs" />
+    <Compile Include="InputUI.cs" />
+    <Compile Include="TBButton.cs" />
     <Compile Include="UserControl2.xaml.cs">
       <DependentUpon>UserControl2.xaml</DependentUpon>
     </Compile>

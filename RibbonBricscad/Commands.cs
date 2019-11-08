@@ -23,6 +23,7 @@ namespace RibbonBricscad
     {
         public void Initialize()
         {
+
         }
 
         public void Terminate()
@@ -42,7 +43,30 @@ namespace RibbonBricscad
         public static void AddBottomToolbar()
         {
             UserControl2 uc = new UserControl2();
-            uc.InitUI();
+            PaletteSet ps = new PaletteSet("Bottom Toolbar")
+            {
+                Style = PaletteSetStyles.NameEditable |
+               PaletteSetStyles.ShowPropertiesMenu |
+               PaletteSetStyles.ShowAutoHideButton |
+               PaletteSetStyles.ShowCloseButton |
+               PaletteSetStyles.Snappable,
+                Visible = true,
+                Dock = DockSides.Bottom,
+                KeepFocus = true,
+                MinimumSize = new System.Drawing.Size((int)uc.width, (int)uc.height),
+                Size = new System.Drawing.Size((int)uc.width, (int)uc.height)
+            };
+            //System.Drawing.Point startPos = new System.Drawing.Point(50, 50);
+            //ps.SetLocation(startPos);
+            ps.TitleBarLocation = PaletteSetTitleBarLocation.Left;
+            ps.AddVisual("Ribbon", uc);
+        }
+
+        [CommandMethod("Test")]
+        public static void Test()
+        {
+            CustomUI customUI = new CustomUI();
+            customUI.Init();
         }
     }
 }

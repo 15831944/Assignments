@@ -23,7 +23,7 @@ namespace ClassLibrary2.ViewModel
         public RadRibbonView radRibbonView { get; set; }
         
         public RadRibbonTab radRibbonTab = new RadRibbonTab();
-        public List<RadRibbonGroup> radRibbonTabs = new List<RadRibbonGroup>();
+        public List<RadRibbonTab> radRibbonTabs = new List<RadRibbonTab>();
         String imagePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\res\\"; // Resource Folder
 
         public XmlNodeList XmlNodeList;
@@ -100,10 +100,10 @@ namespace ClassLibrary2.ViewModel
                             }
                         }
                         radRibbonTab.Items.Add(radRibbonGroup);
-                        radRibbonTabs.Add(radRibbonGroup);
+                        //radRibbonTabs.Add(radRibbonGroup);
                     }
                 }
-                //radRibbonTabs.Add(radRibbonTab);
+                radRibbonTabs.Add(radRibbonTab);
                 //radRibbonView.Items.Add(radRibbonTab);
                 //Parse(node, radRibbonView);
             }
