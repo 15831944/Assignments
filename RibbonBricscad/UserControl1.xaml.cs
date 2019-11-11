@@ -42,9 +42,9 @@ namespace RibbonBricscad
         {
             InitializeComponent();
             ButtonList = new List<TBButton>();
-            ButtonList.Add(new TBButton("Front View", "Command", "Front View", GetImage("02_29-front view.ico"), GetImage("02_29-front view.ico")));
-            ButtonList.Add(new TBButton("Back View", "Command", "Back View", GetImage("02_30-back view.ico"), GetImage("02_30-back view.ico")));
-            ButtonList.Add(new TBButton("Top View", "Command", "Top View", GetImage("02_31-top view.ico"), GetImage("02_31-top view.ico")));
+            ButtonList.Add(new TBButton("Front View", "^c^c_-layer;m;InteriorWalls;;Mline", "Front View", GetImage("02_29-front view.ico"), GetImage("02_29-front view.ico")));
+            ButtonList.Add(new TBButton("Back View", "_nearest", "Back View", GetImage("02_30-back view.ico"), GetImage("02_30-back view.ico")));
+            ButtonList.Add(new TBButton("Top View", "adasdssa", "Top View", GetImage("02_31-top view.ico"), GetImage("02_31-top view.ico")));
             ButtonList.Add(new TBButton("Bottom View", "Command", "Bottom View", GetImage("02_32-bottom view.ico"), GetImage("02_32-bottom view.ico")));
         }
         public void InitUI()
@@ -52,22 +52,18 @@ namespace RibbonBricscad
             var menuGroups = app.MenuGroups;
             var menuGroup = menuGroups.Load(loadCUIpath);
             var toolbars = menuGroup.Toolbars;
-            //var toolbar = toolbars.Add("Right Toolbar");
             AcadToolbar toolbar = toolbars.Add("Custom Toolbar");
-            
 
             int i = 0;
             foreach (var items in ButtonList)
             {
-                AcadToolbar tb = toolbars.Add("Right Toolbar " + i);
-                tb.AddToolbarButton(i, items.Name, items.HelpString, items.Macro);   
+                toolbar.AddToolbarButton(i, items.Name, items.HelpString, items.Macro);   
                 //items.Name = items.Name;
                 //items.HelpString = items.HelpString;
                 //item.Macro = items.Macro;
                 //item.SetBitmaps(GetImage(items.SmallIconName), GetImage(items.LargeIconName));
                 //toolbar.AddToolbarButton(i, item.Name, item.HelpString, item.Macro).SetBitmaps(GetImage(item.SmallIconName),GetImage(item.LargeIconName));
                 i++;
-                toolbar.AddToolbarButton(0, ButtonList[0].Name, ButtonList[0].HelpString, ButtonList[0].Macro, tb);
             }
             
             toolbar.Dock(AcToolbarDockStatus.acToolbarDockRight);

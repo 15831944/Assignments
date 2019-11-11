@@ -66,7 +66,7 @@ namespace RibbonBricscad
 
         public void InitUI()
         {
-            PaletteSet ps = new PaletteSet("Bottom Toolbar")
+            PaletteSet ps = new PaletteSet("Bottom Toolbar", new Guid("87374E16-C0DB-4F3F-9271-7A71ED921566"))
             {
                 Style = PaletteSetStyles.NameEditable |
                 PaletteSetStyles.ShowPropertiesMenu |
@@ -83,6 +83,9 @@ namespace RibbonBricscad
             //ps.SetLocation(startPos);
             ps.TitleBarLocation = PaletteSetTitleBarLocation.Left;
             ps.AddVisual("Ribbon", this);
+            var PSSize = new System.Drawing.Size(1000, 26);
+            ps.Size = new System.Drawing.Size(PSSize.Width, PSSize.Height);
+            ps.Size = PSSize;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CustSection xml:lang="en-US">
+
+  <Header>
+    <WorkspaceRoot>
+      <Workspace DefaultWorkspace="true" MenuBar="off" PanelButtonSize="small" ScrollBars="ignore" ToolButtonSize="small">
+        <Name>Drafting</Name>
+        <WSPopRoot/>
+        <WSToolbarRoot>
+          <WSToolbar Display="1" MenuGroup="CUSTOMCUI" ToolbarOrient="right" dockcolumn="0" dockrow="0" pUID="tbCustomToolbar"/>
+        </WSToolbarRoot>
+        <WSESWRoot>
+          <WSESW ClassName="3DCONSTRAINTSBAR" Display="no" Height="372" Orientation="floating" Width="300" xval="5" yval="5">
+            <Name>Mechanical Browser</Name>
+          </WSESW>
+          <WSESW ClassName="ATTACHMENTS" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="13">
+            <Name>Attachments</Name>
+          </WSESW>
+          <WSESW ClassName="BIMCOMPOSITIONS" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="2">
+            <Name>BIM Compositions</Name>
+          </WSESW>
+          <WSESW ClassName="BIMPROFILES" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="1">
+            <Name>BIM Profiles</Name>
+          </WSESW>
+          <WSESW ClassName="BIMPROJECTBROWSER" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="0">
+            <Name>BIM Project Browser</Name>
+          </WSESW>
+          <WSESW ClassName="BIMTIPS" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="12">
+            <Name>Tips</Name>
+          </WSESW>
+          <WSESW ClassName="COMMANDLINE" Display="yes" Orientation="bottom" dockheight="100" dockwidth="1891" dockxval="0" dockyval="0">
+            <Name>Commandline</Name>
+          </WSESW>
+          <WSESW ClassName="COMPONENTS" Display="no" Height="600" Orientation="floating" Width="300" xval="5" yval="11">
+            <Name>Components</Name>
+          </WSESW>
+          <WSESW ClassName="CONTENTBROWSER" Display="no" Height="372" Orientation="floating" StackZOrder="1" Width="300" xval="5" yval="10">
+            <Name>Content Browser</Name>
+          </WSESW>
+          <WSESW ClassName="LAYERS" Display="no" Height="372" Orientation="floating" StackZOrder="2" Width="300" xval="5" yval="9">
+            <Name>Layers</Name>
+          </WSESW>
+          <WSESW ClassName="MATERIALSBROWSER" Display="no" Height="372" Orientation="floating" StackZOrder="3" Width="300" xval="5" yval="8">
+            <Name>Render Materials</Name>
+          </WSESW>
+          <WSESW ClassName="PARAMETERSPANEL" Display="no" Height="372" Orientation="floating" Width="300" xval="5" yval="4">
+            <Name>Parameters</Name>
+          </WSESW>
+          <WSESW ClassName="PROPERTIES" Display="no" Height="847" Orientation="floating" Width="300" xval="8" yval="1">
+            <Name>Properties</Name>
+          </WSESW>
+          <WSESW ClassName="REPORTPANEL" Display="no" Height="372" Orientation="floating" Width="300" xval="5" yval="6">
+            <Name>Report</Name>
+          </WSESW>
+          <WSESW ClassName="RIBBON" Display="yes" Orientation="top" dockheight="120" dockwidth="1920" dockxval="0" dockyval="7">
+            <Name>Ribbon</Name>
+          </WSESW>
+          <WSESW ClassName="SHEETSETS" Display="no" Height="372" Orientation="floating" StackZOrder="4" Width="300" xval="5" yval="7">
+            <Name>Sheet Sets</Name>
+          </WSESW>
+          <WSESW ClassName="STRUCTURE" Display="no" Height="372" Orientation="floating" Width="300" xval="5" yval="3">
+            <Name>Structure</Name>
+          </WSESW>
+          <WSESW ClassName="TOOLPALETTES" Display="no" Height="500" Orientation="floating" StackZOrder="1" Width="300" xval="8" yval="0">
+            <Name>Tool Palettes</Name>
+          </WSESW>
+        </WSESWRoot>
+        <WSRibbonRoot/>
+        <WSQuadRoot/>
+      </Workspace>
+      <WorkspaceConfigRoot>
+        <WorkspaceConfig Display="true">
+          <Name>Drafting</Name>
+        </WorkspaceConfig>
+      </WorkspaceConfigRoot>
+    </WorkspaceRoot>
+  </Header>
+
+  <MenuGroup Name="CUSTOMCUI">
+    <MacroGroup Name="CustomToolbox">
+      <MenuMacro UID="FrontViewMacro">
+        <Macro>
+          <Name>FrontView</Name>
+          <Command>FrontView</Command>
+          <HelpString>Front View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\FrontView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="BackViewMacro">
+        <Macro>
+          <Name>BackView</Name>
+          <Command>BackView</Command>
+          <HelpString>Back View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\BackView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="TopViewMacro">
+        <Macro>
+          <Name>TopView</Name>
+          <Command>TopView</Command>
+          <HelpString>Top View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\TopView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="BottomViewMacro">
+        <Macro>
+          <Name>BottomView</Name>
+          <Command>BottomView</Command>
+          <HelpString>Bottom View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\BottomView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="LeftViewMacro">
+        <Macro>
+          <Name>LeftView</Name>
+          <Command>LeftView</Command>
+          <HelpString>Left View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\LeftView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="RightViewMacro">
+        <Macro>
+          <Name>RightView</Name>
+          <Command>RightView</Command>
+          <HelpString>Right View</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\RightView.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="IsoSwMacro">
+        <Macro>
+          <Name>IsoSw</Name>
+          <Command>IsoSw</Command>
+          <HelpString>Iso Sw</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\IsoSW.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="IsoSeMacro">
+        <Macro>
+          <Name>IsoSe</Name>
+          <Command>IsoSe</Command>
+          <HelpString>Iso Se</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\IsoSe.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="IsoNeMacro">
+        <Macro>
+          <Name>IsoNe</Name>
+          <Command>IsoNe</Command>
+          <HelpString>Iso Ne</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\IsoNe.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="IsoNwMacro">
+        <Macro>
+          <Name>IsoNw</Name>
+          <Command>IsoNw</Command>
+          <HelpString>Iso Nw</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\IsoNw.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ZoomDiMacro">
+        <Macro>
+          <Name>ZoomDi</Name>
+          <Command>ZoomDi</Command>
+          <HelpString>Zoom Di</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\ZoomDi.bmp"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ZoomDeMacro">
+        <Macro>
+          <Name>ZoomDe</Name>
+          <Command>ZoomDe</Command>
+          <HelpString>Zoom De</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\ZoomDe.bmp"/>
+        </Macro>
+      </MenuMacro>
+    </MacroGroup>
+    <MenuRoot>
+      <PopMenuRoot/>
+      <RibbonRoot>
+        <RibbonTabSourceCollection/>
+        <RibbonPanelSourceCollection/>
+      </RibbonRoot>
+      <MouseButtonRoot/>
+      <DoubleClickRoot/>
+      <DigitizerButtonRoot/>
+      <TabletMenuRoot/>
+      <QuadRoot>
+        <QuadTabs/>
+      </QuadRoot>
+      <PropertiesRoot/>
+      <ToolbarRoot>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="tbCustomToolbar" rows="1">
+          <Alias>TB_CustomToolbar</Alias>
+          <Name>CustomToolbar</Name>
+          <ToolbarButton>
+            <Name>FrontView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="FrontViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="true"/>
+          <ToolbarButton>
+            <Name>BackView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="BackViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>TopView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="TopViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>BottomView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="BottomViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="true"/>
+          <ToolbarButton>
+            <Name>LeftView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="LeftViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>RightView</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="RightViewMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>IsoSw</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="IsoSwMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>IsoSe</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="IsoSeMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>IsoNe</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="IsoNeMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>IsoNw</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="IsoNwMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>ZoomDi</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ZoomDiMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>ZoomDe</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ZoomDeMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+        </Toolbar>
+      </ToolbarRoot>
+    </MenuRoot>
+  </MenuGroup>
+
+
+
+</CustSection>

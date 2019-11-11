@@ -63,11 +63,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BricscadCustom.cs" />
+    <Compile Include="CustomRibbonToggleButton.cs" />
     <Compile Include="CustomUI.cs" />
     <Compile Include="InputUI.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TBButton.cs" />
     <Compile Include="UserControl2.xaml.cs">
       <DependentUpon>UserControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControl1.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,15 +91,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,16 +106,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="CustomUI.cui" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="res\c2resources.dll.manifest" />
-    <None Include="res\Vista.cjstyles" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="BricscadApp">
@@ -139,483 +144,1438 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\00_01-Piping Input.ico" />
-    <Resource Include="res\00_02-Buried Pipe Modeler.ico" />
-    <Resource Include="res\00_03-Structural Steel Modeler.ico" />
-    <Resource Include="res\00_04-Material Property Editor.ico" />
-    <Resource Include="res\00_05-ESL.ico" />
-    <Resource Include="res\01-2d plot.ico" />
-    <Resource Include="res\01-display piping code.ico" />
-    <Resource Include="res\01-show flange.ico" />
-    <Resource Include="res\01_01-Four View.ico" />
-    <Resource Include="res\01_02-Show Expansion Joint.ico" />
-    <Resource Include="res\01_03-Show Restraints.ico" />
-    <Resource Include="res\01_04-Show Anchors.ico" />
-    <Resource Include="res\01_05-Show Hangers.ico" />
-    <Resource Include="res\01_06-Show Nozzles.ico" />
-    <Resource Include="res\01_07-Show Displacements.ico" />
-    <Resource Include="res\01_08-Show Forces.ico" />
-    <Resource Include="res\01_09-Show Materials.ico" />
-    <Resource Include="res\01_10-Show Bends.ico" />
-    <Resource Include="res\01_11-Show Tees.ico" />
-    <Resource Include="res\01_12-Show Insulation Thickness.ico" />
-    <Resource Include="res\01_13-Show Axis Triad.ico" />
-    <Resource Include="res\01_14-Node Numbers.ico" />
-    <Resource Include="res\01_15-Pipe Diameter.ico" />
-    <Resource Include="res\01_16-Wall Thickness.ico" />
-    <Resource Include="res\01_17-Lengths.ico" />
-    <Resource Include="res\01_18-Range.ico" />
-    <Resource Include="res\01_19-Temperatures.ico" />
-    <Resource Include="res\01_20-Pressures.ico" />
-    <Resource Include="res\01_21-Find.ico" />
-    <Resource Include="res\01_22-Uniform Loads.ico" />
-    <Resource Include="res\01_23-Wind Wave.ico" />
-    <Resource Include="res\01_24-Plot Options.ico" />
-    <Resource Include="res\01_25-Perspective Mode.ico" />
-    <Resource Include="res\01_26-Orthographic Mode.ico" />
-    <Resource Include="res\02-06-clear screen.ico" />
-    <Resource Include="res\02-07-create new material.ico" />
-    <Resource Include="res\02-08-delete material.ico" />
-    <Resource Include="res\02-09-save material.ico" />
-    <Resource Include="res\02-10-print material.ico" />
-    <Resource Include="res\02-seismic wizard.ico" />
-    <Resource Include="res\02_01-file new.ico" />
-    <Resource Include="res\02_01-FileNew.ico" />
-    <Resource Include="res\02_02-File Open.ico" />
-    <Resource Include="res\02_03-File Save.ico" />
-    <Resource Include="res\02_04-cut.ico" />
-    <Resource Include="res\02_05-copy.ico" />
-    <Resource Include="res\02_06-paste.ico" />
-    <Resource Include="res\02_07-print.ico" />
-    <Resource Include="res\02_08-config setup.ico" />
-    <Resource Include="res\02_09-error checker.ico" />
-    <Resource Include="res\02_10-batch run.ico" />
-    <Resource Include="res\02_11-static load case editor.ico" />
-    <Resource Include="res\02_12-static output.ico" />
-    <Resource Include="res\02_13-dynamic load case editor.ico" />
-    <Resource Include="res\02_14-zoom extents.ico" />
-    <Resource Include="res\02_15-zoom window.ico" />
-    <Resource Include="res\02_16-zoom selection.ico" />
-    <Resource Include="res\02_17-orbit.ico" />
-    <Resource Include="res\02_18-pan.ico" />
-    <Resource Include="res\02_19-zoom mouse.ico" />
-    <Resource Include="res\02_20-walk through.ico" />
-    <Resource Include="res\02_21-select by clicking.ico" />
-    <Resource Include="res\02_22-select by rubberband.ico" />
-    <Resource Include="res\02_23-rendered mode.ico" />
-    <Resource Include="res\02_24-hidden line wireframe.ico" />
-    <Resource Include="res\02_25-all line wireframe.ico" />
-    <Resource Include="res\02_26-hidden line silhouette.ico" />
-    <Resource Include="res\02_27-translucent.ico" />
-    <Resource Include="res\02_28-centerline.ico" />
-    <Resource Include="res\02_29-front view.ico" />
-    <Resource Include="res\02_30-back view.ico" />
-    <Resource Include="res\02_31-top view.ico" />
-    <Resource Include="res\02_32-bottom view.ico" />
-    <Resource Include="res\02_33-left view.ico" />
-    <Resource Include="res\02_34-right view.ico" />
-    <Resource Include="res\03-02-error check.ico" />
-    <Resource Include="res\03-03-begin analysis.ico" />
-    <Resource Include="res\03-04-add load case.ico" />
-    <Resource Include="res\03-05-delete load case.ico" />
-    <Resource Include="res\03-06-enter spectrum data.ico" />
-    <Resource Include="res\03-07-generate spectrum data.ico" />
-    <Resource Include="res\03-08-relief load synthesizer.ico" />
-    <Resource Include="res\03-plumbers helper.ico" />
-    <Resource Include="res\03_01-temperature00.ico" />
-    <Resource Include="res\03_01-temperature01.ico" />
-    <Resource Include="res\03_02-temperature02.ico" />
-    <Resource Include="res\03_03-temperature03.ico" />
-    <Resource Include="res\03_04-temperature04.ico" />
-    <Resource Include="res\03_05-temperature05.ico" />
-    <Resource Include="res\03_06-temperature06.ico" />
-    <Resource Include="res\03_07-temperature07.ico" />
-    <Resource Include="res\03_08-temperature08.ico" />
-    <Resource Include="res\03_09-temperature09.ico" />
-    <Resource Include="res\03_10-pressure00.ico" />
-    <Resource Include="res\03_10-pressure01.ico" />
-    <Resource Include="res\03_11-pressure02.ico" />
-    <Resource Include="res\03_12-pressure03.ico" />
-    <Resource Include="res\03_13-pressure04.ico" />
-    <Resource Include="res\03_14-pressure05.ico" />
-    <Resource Include="res\03_15-pressure06.ico" />
-    <Resource Include="res\03_16-pressure07.ico" />
-    <Resource Include="res\03_17-pressure08.ico" />
-    <Resource Include="res\03_18-pressure09.ico" />
-    <Resource Include="res\03_19-pressureh.ico" />
-    <Resource Include="res\03_20-iso sw.ico" />
-    <Resource Include="res\03_21-iso se.ico" />
-    <Resource Include="res\03_22-iso ne.ico" />
-    <Resource Include="res\03_23-iso nw.ico" />
-    <Resource Include="res\04-01-animate using centerline.ico" />
-    <Resource Include="res\04-02-animate using drawing.ico" />
-    <Resource Include="res\04-05-speed up.ico" />
-    <Resource Include="res\04-06-slow down.ico" />
-    <Resource Include="res\04-07-stop.ico" />
-    <Resource Include="res\04-08-event viewer.ico" />
-    <Resource Include="res\04-09-goto beginning.ico" />
-    <Resource Include="res\04-10-previous frame.ico" />
-    <Resource Include="res\04-12-next frame.ico" />
-    <Resource Include="res\04-13-goto end.ico" />
-    <Resource Include="res\04-14-save animation.ico" />
-    <Resource Include="res\04-draw box.ico" />
-    <Resource Include="res\04_01-Lists.ico" />
-    <Resource Include="res\04_02-Annotate Randomly.ico" />
-    <Resource Include="res\04_03-Annotate in a Square.ico" />
-    <Resource Include="res\04_04-Annotate in a Circle.ico" />
-    <Resource Include="res\04_05-Annotate with Text.ico" />
-    <Resource Include="res\04_06-Attached Annotations.ico" />
-    <Resource Include="res\04_07-Save Restore View 1.ico" />
-    <Resource Include="res\04_08-Save Restore View 2.ico" />
-    <Resource Include="res\04_09-Show Node Number Box.ico" />
-    <Resource Include="res\04_10-Show Deltas Box.ico" />
-    <Resource Include="res\04_11-Show Pipesize Properties.ico" />
-    <Resource Include="res\04_12-Show Temps and Pressure.ico" />
-    <Resource Include="res\04_13-Show Materials Box.ico" />
-    <Resource Include="res\04_14-Show Elastic Properties.ico" />
-    <Resource Include="res\04_15-Show Material Density.ico" />
-    <Resource Include="res\04_16-Show Aux Data.ico" />
-    <Resource Include="res\05-01-flange.ico" />
-    <Resource Include="res\05-01-import-export.ico" />
-    <Resource Include="res\05-01-import.ico" />
-    <Resource Include="res\05-02-export.ico" />
-    <Resource Include="res\05-email support.ico" />
-    <Resource Include="res\05_01-Archive.ico" />
-    <Resource Include="res\05_02-Insert.ico" />
-    <Resource Include="res\05_03-Delete.ico" />
-    <Resource Include="res\05_04-Break.ico" />
-    <Resource Include="res\05_05-Global Coordinates.ico" />
-    <Resource Include="res\05_06-Close Loop.ico" />
-    <Resource Include="res\05_07-Node Increment.ico" />
-    <Resource Include="res\05_08-Distance.ico" />
-    <Resource Include="res\05_09-Valve Flange Database.ico" />
-    <Resource Include="res\05_10-Expansion Joint Modeler.ico" />
-    <Resource Include="res\05_11-Title.ico" />
-    <Resource Include="res\05_12-Hanger.ico" />
-    <Resource Include="res\05_13-SIF Scratchpad.ico" />
-    <Resource Include="res\05_14-Bend SIF Scratchpad.ico" />
-    <Resource Include="res\05_15-Special Execution Parameters.ico" />
-    <Resource Include="res\05_16-Include Piping Files.ico" />
-    <Resource Include="res\05_17-Include Structural Files.ico" />
-    <Resource Include="res\05_18-Undo.ico" />
-    <Resource Include="res\05_19-Redo.ico" />
-    <Resource Include="res\06-00-turntable orbit.ico" />
-    <Resource Include="res\06_01-Skip to Beginning.ico" />
-    <Resource Include="res\06_02-Skip to previous.ico" />
-    <Resource Include="res\06_03-Skip to next.ico" />
-    <Resource Include="res\06_04-Skip to End.ico" />
-    <Resource Include="res\06_05-Continue.ico" />
-    <Resource Include="res\06_06-Duplicate.ico" />
-    <Resource Include="res\06_07-Plot Reset.ico" />
-    <Resource Include="res\07_01-Bend.ico" />
-    <Resource Include="res\07_02-Rigid.ico" />
-    <Resource Include="res\07_03-Expansion Joints.ico" />
-    <Resource Include="res\07_04-Reducer.ico" />
-    <Resource Include="res\07_05-SIFs.ico" />
-    <Resource Include="res\07_06-Anchor.ico" />
-    <Resource Include="res\07_07-Hanger.ico" />
-    <Resource Include="res\07_08-Nozzle.ico" />
-    <Resource Include="res\07_09-Displacements.ico" />
-    <Resource Include="res\07_10-Forces Moments.ico" />
-    <Resource Include="res\07_11-Wind Wave.ico" />
-    <Resource Include="res\07_12-Uniform Load.ico" />
-    <Resource Include="res\07_13-Allowable Stress.ico" />
-    <Resource Include="res\07_14-Node Name.ico" />
-    <Resource Include="res\07_15-Offsets.ico" />
-    <Resource Include="res\07_16-Rotate.ico" />
-    <Resource Include="res\07_17-Duplicate.ico" />
-    <Resource Include="res\07_18-Erase.ico" />
-    <Resource Include="res\07_19-Renumber.ico" />
-    <Resource Include="res\07_20-Cutting Plane X.ico" />
-    <Resource Include="res\07_21-Cutting Plane Y.ico" />
-    <Resource Include="res\07_22-Cutting Plane Z.ico" />
-    <Resource Include="res\09-3d section tool.ico" />
-    <Resource Include="res\3D.ico" />
-    <Resource Include="res\3dorbit.ico" />
-    <Resource Include="res\3dOribt.ico" />
-    <Resource Include="res\3dpan.ico" />
-    <Resource Include="res\3dpdf.ico" />
-    <Resource Include="res\3dzoom.ico" />
-    <Resource Include="res\3d_help.ico" />
-    <Resource Include="res\about_help.ico" />
-    <Resource Include="res\Add.ico" />
-    <Resource Include="res\Admin_control_center.ico" />
-    <Resource Include="res\Alias.ico" />
-    <Resource Include="res\AliasBlack.ico" />
-    <Resource Include="res\AliasTrans.ico" />
-    <Resource Include="res\AliasWhite.ico" />
-    <Resource Include="res\Allowable.ico" />
-    <Resource Include="res\Analyse_file.ico" />
-    <Resource Include="res\Append.ico" />
-    <Resource Include="res\AppendixYFlanges.ico" />
-    <Resource Include="res\ArrowDown.ico" />
-    <Resource Include="res\ArrowUp.ico" />
-    <Resource Include="res\ASME Tubesheets.ico" />
-    <Resource Include="res\Back.ico" />
-    <Resource Include="res\Baserings.ico" />
-    <Resource Include="res\Bend.ico" />
-    <Resource Include="res\Box.ico" />
-    <Resource Include="res\C2Logo.ico" />
-    <Content Include="res\C2Resources.rc2" />
-    <Resource Include="res\CADWorxIcon.ico" />
-    <Resource Include="res\Calc.ico" />
-    <Resource Include="res\Cancel.ico" />
-    <Resource Include="res\Cascade.ico" />
-    <Resource Include="res\Centerline.ico" />
-    <Resource Include="res\Check.ico" />
-    <Resource Include="res\Check_4_updates.ico" />
-    <Resource Include="res\Check_hasp.ico" />
-    <Resource Include="res\Circle.ico" />
-    <Resource Include="res\CodeCalc.ico" />
-    <Resource Include="res\Conical-Sections.ico" />
-    <Resource Include="res\Copy.ico" />
-    <Resource Include="res\Corrosion.ico" />
-    <Resource Include="res\crc_check.ico" />
-    <Resource Include="res\Cut.ico" />
-    <Resource Include="res\Detail.bmp" />
-    <Resource Include="res\Dll_version.ico" />
-    <Resource Include="res\Download.png" />
-    <Resource Include="res\drawing_options.ico" />
-    <Resource Include="res\DXF_review.ico" />
-    <Resource Include="res\Edit.ico" />
-    <Resource Include="res\EditDelta.ico" />
-    <Resource Include="res\Element.bmp" />
-    <Resource Include="res\Email_PVE_support.ico" />
-    <Resource Include="res\Error_review.ico" />
-    <Resource Include="res\esl_phone.ico" />
-    <Resource Include="res\Exit.ico" />
-    <Resource Include="res\FileBackUpFolder.ico" />
-    <Resource Include="res\FileLock.ico" />
-    <Resource Include="res\FileUnlock.ico" />
-    <Resource Include="res\File_Extraction_Utility.ico" />
-    <Resource Include="res\Flanges.ico" />
-    <Resource Include="res\Flat_shaded.ico" />
-    <Resource Include="res\FloatingHead.ico" />
-    <Resource Include="res\Fluid density.ico" />
-    <Resource Include="res\forward.ico" />
-    <Resource Include="res\france_flag.ico" />
-    <Resource Include="res\Freehand.ico" />
-    <Resource Include="res\Generate_access_codes.ico" />
-    <Resource Include="res\germany_flag.ico" />
-    <Resource Include="res\Half-Pipe.ico" />
-    <Resource Include="res\Hasp_device_driver.ico" />
-    <Resource Include="res\HEIStandard.ico" />
-    <Resource Include="res\Help.ico" />
-    <Resource Include="res\help_documentation.ico" />
-    <Resource Include="res\help_finder.ico" />
-    <Resource Include="res\help_language.ico" />
-    <Resource Include="res\Help_ribbon.ico" />
-    <Resource Include="res\HiddenLine.ico" />
-    <Resource Include="res\Horizontal-Vessels.ico" />
-    <Resource Include="res\Horizontal_tile.ico" />
-    <Resource Include="res\I-configure.ico" />
-    <Resource Include="res\icon6.ico" />
-    <Resource Include="res\ImportExport.ico" />
-    <Resource Include="res\Info.ico" />
-    <Resource Include="res\input.bmp" />
-    <Resource Include="res\Input.ico" />
-    <Resource Include="res\Insulation density.ico" />
-    <Resource Include="res\Internet_grey_update.ico" />
-    <Resource Include="res\italy_flag.ico" />
-    <Resource Include="res\KauxBend.ico" />
-    <Resource Include="res\KAuxReducer.ico" />
-    <Resource Include="res\LargeOpenings.ico" />
-    <Resource Include="res\Legs_Lugs2.ico" />
-    <Resource Include="res\Legs_Lugs3.ico" />
-    <Resource Include="res\Logo_Gray_RGB.png" />
-    <Resource Include="res\Main01-03-loadcasenames.ico" />
-    <Resource Include="res\Main01-04-loadnodenames.ico" />
-    <Resource Include="res\Main01-05-reporttitles.ico" />
-    <Resource Include="res\Main01-07-gotoanimation.ico" />
-    <Resource Include="res\Main01-08-staticplot.ico" />
-    <Resource Include="res\Main01-10-outputtoscreen.ico" />
-    <Resource Include="res\Main01-11-outputtoword.ico" />
-    <Resource Include="res\Main02-01-newreport.ico" />
-    <Resource Include="res\Main02-02-editreport.ico" />
-    <Resource Include="res\Main02-03-deletereport.ico" />
-    <Resource Include="res\Main02-04-resettodefaults.ico" />
-    <Resource Include="res\MatEdit2.ico" />
-    <Resource Include="res\material.ico" />
-    <Resource Include="res\MatlDatabase.ico" />
-    <Resource Include="res\merge.ico" />
-    <Resource Include="res\NavBack.ico" />
-    <Resource Include="res\NavFront.ico" />
-    <Resource Include="res\NavNext.ico" />
-    <Resource Include="res\NavPrev.ico" />
-    <Resource Include="res\New.ico" />
-    <Resource Include="res\NodeName.ico" />
-    <Resource Include="res\NoHiddenLine.ico" />
-    <Resource Include="res\Nozzle.ico" />
-    <Resource Include="res\Nozzles.ico" />
-    <Resource Include="res\Online_registeration.ico" />
-    <Resource Include="res\OnScreenResult.ico" />
-    <Resource Include="res\Open.ico" />
-    <Resource Include="res\Output.ico" />
-    <Resource Include="res\PageSetup.ico" />
-    <Resource Include="res\password.ico" />
-    <Resource Include="res\Paste.ico" />
-    <Resource Include="res\PDFOutput.ico" />
-    <Resource Include="res\Phong.ico" />
-    <Resource Include="res\Ph_01.ico" />
-    <Resource Include="res\Ph_02.ico" />
-    <Resource Include="res\Ph_03.ico" />
-    <Resource Include="res\Ph_04.ico" />
-    <Resource Include="res\Ph_05.ico" />
-    <Resource Include="res\Ph_06.ico" />
-    <Resource Include="res\Ph_07.ico" />
-    <Resource Include="res\Ph_08.ico" />
-    <Resource Include="res\Ph_09.ico" />
-    <Resource Include="res\Pipe density.ico" />
-    <Resource Include="res\PipesPads.ico" />
-    <Resource Include="res\Play.ico" />
-    <Resource Include="res\Plot01-01-showdeflectedshape.ico" />
-    <Resource Include="res\Plot01-02-growdeflectedshape.ico" />
-    <Resource Include="res\Plot02-01-maxdx.ico" />
-    <Resource Include="res\Plot02-02-maxdy.ico" />
-    <Resource Include="res\Plot02-03-maxdz.ico" />
-    <Resource Include="res\Plot03-01-directionalrestraints.ico" />
-    <Resource Include="res\Plot03-02-maxfx.ico" />
-    <Resource Include="res\Plot03-03-maxfy.ico" />
-    <Resource Include="res\Plot03-04-maxfz.ico" />
-    <Resource Include="res\Plot03-05-maxmx.ico" />
-    <Resource Include="res\Plot03-06-maxmy.ico" />
-    <Resource Include="res\Plot03-07-maxmz.ico" />
-    <Resource Include="res\Plot04-01-overstress.ico" />
-    <Resource Include="res\Plot04-02-maxstress.ico" />
-    <Resource Include="res\Plot04-03-stressbyvalue.ico" />
-    <Resource Include="res\Plot04-04-stressbypercent.ico" />
-    <Resource Include="res\Plot04-05-sif.ico" />
-    <Resource Include="res\Plot05-01-grid.ico" />
-    <Resource Include="res\Plot05-02-gridzoom.ico" />
-    <Resource Include="res\portugal_flag.ico" />
-    <Resource Include="res\Preview.ico" />
-    <Resource Include="res\primaryarrow1.PNG" />
-    <Resource Include="res\Print.ico" />
-    <Resource Include="res\Print_setup.ico" />
-    <Resource Include="res\prog_scanner.ico" />
-    <Resource Include="res\Project_data.ico" />
-    <Content Include="res\PVEResources.rc2" />
-    <Resource Include="res\PVE_Detail_Weight.ico" />
-    <Resource Include="res\PV_Aux_Access.ico" />
-    <Resource Include="res\PV_Aux_Calc.ico" />
-    <Resource Include="res\PV_Aux_Datum.ico" />
-    <Resource Include="res\PV_Aux_Dxf.ico" />
-    <Resource Include="res\PV_Aux_F3D.ico" />
-    <Resource Include="res\PV_Aux_List.ico" />
-    <Resource Include="res\PV_Aux_MakeUnit.ico" />
-    <Resource Include="res\PV_Aux_Pipe.ico" />
-    <Resource Include="res\PV_Aux_Properties.ico" />
-    <Resource Include="res\PV_Aux_RigGraph.ico" />
-    <Resource Include="res\PV_Aux_Setup.ico" />
-    <Resource Include="res\PV_Aux_Sphere.ico" />
-    <Resource Include="res\PV_Detail_API-579.ico" />
-    <Resource Include="res\PV_Detail_App9_Jacket.ico" />
-    <Resource Include="res\PV_Detail_Clip.ico" />
-    <Resource Include="res\PV_Detail_Force.ico" />
-    <Resource Include="res\PV_Detail_HPJ.ico" />
-    <Resource Include="res\PV_Detail_Insulation.ico" />
-    <Resource Include="res\PV_Detail_Leg.ico" />
-    <Resource Include="res\PV_Detail_Lift_Lug.ico" />
-    <Resource Include="res\PV_Detail_Lining.ico" />
-    <Resource Include="res\PV_Detail_Liquid.ico" />
-    <Resource Include="res\PV_Detail_Lug.ico" />
-    <Resource Include="res\PV_Detail_Nozzle.ico" />
-    <Resource Include="res\PV_Detail_Packing.ico" />
-    <Resource Include="res\PV_Detail_Platform.ico" />
-    <Resource Include="res\PV_Detail_Ring.ico" />
-    <Resource Include="res\PV_Detail_Saddle.ico" />
-    <Resource Include="res\PV_Detail_Trays.ico" />
-    <Resource Include="res\PV_Detail_TS.ico" />
-    <Resource Include="res\PV_Element_Cone.ico" />
-    <Resource Include="res\PV_Element_Cylinder.ico" />
-    <Resource Include="res\PV_Element_Ellipse.ico" />
-    <Resource Include="res\PV_Element_Flange.ico" />
-    <Resource Include="res\PV_Element_Skirt.ico" />
-    <Resource Include="res\PV_Element_Sphere.ico" />
-    <Resource Include="res\PV_Element_Torisphere.ico" />
-    <Resource Include="res\PV_Element_WeldFlat.ico" />
-    <Resource Include="res\PV_Flip.ico" />
-    <Resource Include="res\PV_Hoops_Plot_Refresh.ico" />
-    <Resource Include="res\PV_Utility_Flip.ico" />
-    <Resource Include="res\PV_Utility_Ligament.ico" />
-    <Resource Include="res\PV_Utility_Mat.ico" />
-    <Resource Include="res\PV_Utility_Set_Rings.ico" />
-    <Resource Include="res\PV_Utility_Share.ico" />
-    <Resource Include="res\PV_Utility_Skip.ico" />
-    <Resource Include="res\PV_Utility_Update.ico" />
-    <Resource Include="res\PV_Utility_Zoom.ico" />
-    <Resource Include="res\PV_Utilty_Insert.ico" />
-    <Resource Include="res\Quick_start_guide.ico" />
-    <Resource Include="res\Reauthorisation_code.ico" />
-    <Resource Include="res\Recent.ico" />
-    <Resource Include="res\Recent_big.ico" />
-    <Resource Include="res\Rectangular-Vessels.ico" />
-    <Resource Include="res\Redo.ico" />
-    <Resource Include="res\reducer.ico" />
-    <Resource Include="res\ResetAll.ico" />
-    <Resource Include="res\reset_pane_layout.ico" />
-    <Resource Include="res\Review_access_database.ico" />
-    <Resource Include="res\Rewind.ico" />
-    <Resource Include="res\Rho.ico" />
-    <Resource Include="res\Save.ico" />
-    <Resource Include="res\Save_analysis_text.ico" />
-    <Resource Include="res\Save_as.ico" />
-    <Resource Include="res\SecondaryArrow.PNG" />
-    <Resource Include="res\Sectx.ico" />
-    <Resource Include="res\Secty.ico" />
-    <Resource Include="res\Sectz.ico" />
-    <Resource Include="res\Select.ico" />
-    <Resource Include="res\Selpic.ico" />
-    <Resource Include="res\Selwin.ico" />
-    <Resource Include="res\Share_desktop.ico" />
-    <Resource Include="res\ShellsHeads.ico" />
-    <Resource Include="res\Show_esl_data.ico" />
-    <Resource Include="res\SIFs.ico" />
-    <Resource Include="res\single_run.ico" />
-    <Resource Include="res\spain_flag.ico" />
-    <Resource Include="res\split_window.ico" />
-    <Resource Include="res\Stop.ico" />
-    <Resource Include="res\Summary.ico" />
-    <Resource Include="res\system_folder.ico" />
-    <Resource Include="res\TagEmpty.ico" />
-    <Resource Include="res\TagLoadCase.ico" />
-    <Resource Include="res\TagPencil.ico" />
-    <Resource Include="res\Text.ico" />
-    <Resource Include="res\Thermo.ico" />
-    <Resource Include="res\ThickJoints.ico" />
-    <Resource Include="res\ThinJoints.ico" />
-    <Resource Include="res\tip_of_the_day.ico" />
-    <Resource Include="res\Title_page.ico" />
-    <Resource Include="res\Tubesheets.ico" />
-    <Resource Include="res\TwoLine.ico" />
-    <Resource Include="res\U1-form.ico" />
-    <Resource Include="res\Undo.ico" />
-    <Resource Include="res\UniformLoad.ico" />
-    <Resource Include="res\united_states_flag.ico" />
-    <Resource Include="res\Units.ico" />
-    <Resource Include="res\unit_conversion.ico" />
-    <Resource Include="res\Vertical_tile.ico" />
-    <Resource Include="res\ViewBack.ico" />
-    <Resource Include="res\ViewBottom.ico" />
-    <Resource Include="res\ViewFront.ico" />
-    <Resource Include="res\ViewLeft.ico" />
-    <Resource Include="res\ViewNEIso.ico" />
-    <Resource Include="res\ViewNWIso.ico" />
-    <Resource Include="res\ViewRight.ico" />
-    <Resource Include="res\ViewSEIso.ico" />
-    <Resource Include="res\ViewSWIso.ico" />
-    <Resource Include="res\ViewTop.ico" />
-    <Resource Include="res\Visibility.ico" />
-    <Resource Include="res\VUEExport.ico" />
-    <Resource Include="res\Walk.ico" />
-    <Resource Include="res\what_is_new.ico" />
-    <Resource Include="res\WindWave.ico" />
-    <Resource Include="res\WordReport.ico" />
-    <Resource Include="res\WRC.ico" />
-    <Resource Include="res\WRC297.ico" />
-    <Resource Include="res\Zooext.ico" />
-    <Resource Include="res\Zoosel.ico" />
-    <Resource Include="res\Zoowin.ico" />
+    <None Include="res\RightView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\LeftView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BackView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BottomView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TopView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FrontView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\2dPlot.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3D.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3DHelp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dorbit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dOribt.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dpan.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dpdf.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dSectionTool.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\3dzoom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\04_07-Save Restore View 1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AboutHelp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Add.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AddLoadCase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AdminControlCenter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Alias.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AliasBlack.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AliasTrans.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AliasWhite.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AllLineWireframe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Allowable Stress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Allowable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AnalyseFile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Anchor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AnimateUsingCenterline.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AnimateUsingDrawing.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Annotate in a Circle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Annotate in a Square.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Annotate Randomly.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Annotate with Text.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Append.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\AppendixYFlanges.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Archive.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ArrowDown.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ArrowUp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ASME Tubesheets.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Attached Annotations.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Back.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BackView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Baserings.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BatchRun.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BeginAnalysis.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Bend.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Bend_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BendSIFScratchpad.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BottomView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Box.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Break.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\BuriedPipeModeler.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\C2Logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CADWorxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Calc.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Cancel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Cascade.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Centerline.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Centerline_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Check.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CheckForUpdates.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CheckHasp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Circle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ClearScreen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CloseLoop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CodeCalc.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ConfigSetup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ConicalSections.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Continue.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Copy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Copy_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Corrosion.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CrcCheck.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CreateNewMaterial.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Cut.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Cut_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CuttingPlaneX.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CuttingPlaneY.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\CuttingPlaneZ.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Delete.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DeleteLoadCase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DeleteMaterial.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Displacements.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DisplayPiping code.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Distance.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DllVersion.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DrawBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DrawingOptions.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Duplicate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Duplicate_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DXFReview.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\DynamicLoadCaseEditor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Edit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EditDelta.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EmailPVESupport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EmailSupport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EnterSpectrumData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Erase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ErrorCheck.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ErrorChecker.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ErrorReview.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ESL.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EslPhone.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\EventViewer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Exit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Expansion Joints.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ExpansionJointModeler.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Export.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileBackUpFolder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileExtractionUtility.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileLock.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileNew.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileNew_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileOpen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileSave.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FileUnlock.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Find.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Flange.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Flanges.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FlatShaded.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FloatingHead.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FluidDensity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ForcesMoments.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Forward.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FourView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FranceFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Freehand.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\FrontView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GenerateAccessCodes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GenerateSpectrumData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GermanyFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GlobalCoordinates.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GotoBegining.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\GotoEnd.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HalfPipe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Hanger.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Hanger_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HaspDeviceDriver.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HEIStandard.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Help.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HelpDocumentation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HelpFinder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HelpLanguage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HelpRibbon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HiddenLine.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HiddenLineSilhouette.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HiddenLineWireframe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HorizontalTile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\HorizontalVessels.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Icon6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IConfigure.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Import.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ImportExport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ImportExport_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IncludePipingFiles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IncludeStructuralFiles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Info.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Input.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Insert.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\InsulationDensity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\InternetGreyUpdate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IsoNe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IsoNw.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IsoSe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\IsoSw.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ItalyFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\KauxBend.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\KauxReducer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\LargeOpenings.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\LeftView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\LegsLugs2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\LegsLugs3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Lengths.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Lists.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\LogoGrayRGB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainDeletereport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainEditreport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainGotoanimation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainLoadcasenames.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainLoadnodenames.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainNewreport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainOutputtoscreen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainOutputtoword.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainReporttitles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainResettodefaults.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MainStaticplot.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MatEdit2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Material.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MaterialPropertyEditor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\MatlDatabase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Merge.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NavBack.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NavFront.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NavNext.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NavPrev.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\New.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NextFrame.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Node Increment.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Node Name.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Node Numbers.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NodeName.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\NoHiddenLine.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Nozzle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Nozzle_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Nozzles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Offsets.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\OnlineRegisteration.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\OnScreenResult.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Open.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Orbit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\OrthographicMode.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Output.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PageSetup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pan.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Password.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Paste.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Paste_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PDFOutput.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PerspectiveMode.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph_07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph_08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph_09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Ph06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Phong.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PipeDensity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PipeDiameter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PipesPads.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PipingInput.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Play.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotDirectionalrestraints.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotGrid.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotGridzoom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotGrowdeflectedshape.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxdx.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxdy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxdz.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxfx.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxfy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxfz.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxmx.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxmy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxmz.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotMaxstress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotOptions.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotOverstress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotReset.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotShowdeflectedshape.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotSif.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotStressbypercent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlotStressbyvalue.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PlumbersHelper.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PortugalFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure00.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressure09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressureh.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Pressures.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Preview.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PreviousFrame.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PrimaryArrow1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Print.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Print_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PrintMaterial.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PrintSetup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ProgScanner.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ProjectData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxAccess.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxCalc.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxDatum.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxDxf.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxF3D.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxList.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxMakeUnit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxPipe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxProperties.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxRigGraph.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxSetup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVAuxSphere.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetai_Packing.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailAPI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailAppJacket.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailClip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailForce.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailHPJ.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailInsulation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailLeg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailLiftLug.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailLining.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailLiquid.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailLug.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailNozzle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailPlatform.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailRing.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailSaddle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailTrays.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVDetailTS.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVEDetailWeight.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementCone.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementCylinder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementEllipse.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementFlange.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementSkirt.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementSphere.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementTorisphere.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVElementWeldFlat.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVFlip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVHoopsPlotRefresh.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityFlip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityLigament.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityMat.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilitySetRings.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityShare.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilitySkip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityUpdate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtilityZoom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\PVUtiltyInsert.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\QuickStartGuide.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Range.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Reauthorisation_code.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Recent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\RecentBig.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Rectangular-Vessels.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Redo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Redo_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Reducer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Reducer_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ReliefLoadSynthesizer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\RenderedMode.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Renumber.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ResetAll.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ResetPaneLayout.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ReviewAccessDatabase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Rewind.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Rho.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\RightView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Rigid.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Rotate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SaveAnalysisText.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SaveAnimation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SaveAs.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SaveMaterial.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SaveRestoreView2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SecondaryArrow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Sectx.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Secty.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Sectz.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SeismicWizard.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Select.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SelectByClicking.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SelectByRubberband.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Selpic.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Selwin.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShareDesktop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShellsHeads.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowAnchors.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowAxisTriad.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowAxusData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowBends.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowDeltasBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowDisplacements.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowElasticProperties.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowEslData.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowExpansionJoint.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowFlange.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowForces.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowHangers.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowInsulationThickness.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowMaterialDensity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowMaterials.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowMaterialsBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowNodeNumberBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowNozzles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowPipesizeProperties.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowRestraints.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowTees.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ShowTempsAndPressure.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SIFs.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SIFs_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SIFScratchpad.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SingleRun.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SkipToBeginning.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SkipToEnd.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SkipToNext.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SkipToPrevious.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SlowDown.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SpainFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SpecialExecutionParameters.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SpeedUp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SplitWindow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\StaticLoadCaseEditor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\StaticOutput.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Stop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Stop_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\StructuralSteelModeler.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Summary.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\SystemFolder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TagEmpty.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TagLoadCase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TagPencil.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature00.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperature09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Temperatures.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Text.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Thermo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ThickJoints.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ThinJoints.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TipOfTheDay.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Title.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TitlePage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TopView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Translucent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Tubesheets.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TurntableOrbit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\TwoLine.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\U1Form.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Undo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Undo_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\UniformLoad.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\UniformLoad_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\UniformLoads.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\UnitConversions.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\UnitedStatesFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Units.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ValveFlangeDatabase.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\VerticalTile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewBack.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewBottom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewFront.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewLeft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewNEIso.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewNWIso.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewRight.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewSEIso.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewSWIso.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ViewTop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Visibility.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\VUEExport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Walk.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WalkThrough.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WallThickness.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WhatIsNew.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WindWave.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WindWave_.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WindWave__.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WordReport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WRC.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\WRC297.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Zooext.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ZoomExtents.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ZoomMouse.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ZoomSelection.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\ZoomWindow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Zoosel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\Zoowin.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
