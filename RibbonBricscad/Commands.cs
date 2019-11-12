@@ -16,6 +16,10 @@ using BricscadDb;
 using System.Drawing;
 using RibbonBricscad.Properties;
 using System.Windows.Media.Imaging;
+using System.Windows;
+using System.Windows.Media;
+using Application = Bricscad.ApplicationServices.Application;
+using System.Windows.Forms;
 
 //// this attribute marks this class, as a class that contains commands or lisp callable functions 
 [assembly: CommandClass(typeof(RibbonBricscad.Commands))]
@@ -124,9 +128,7 @@ namespace RibbonBricscad
 
 
     //    //            foreach (var a in m.CustomAttributes)
-
     //    //            {
-
     //    //                // Check whether we have a command and/or a "palette" attb
 
 
@@ -149,173 +151,70 @@ namespace RibbonBricscad
 
     //    //            }
 
-
-
     //    //            // If we have a palette attb, then one way or another it'll be
-
     //    //            // added to the palette
-
-
-
     //    //            if (palette)
-
     //    //            {
-
     //    //                // Create our button and give it a position
-
-
-
     //    //                var b = new Button();
-
     //    //                //b.SetBounds(50, 40 * i, 100, 30);
-
-
     //    //                // If no command name was found, use the method name and call the
-
     //    //                // function directly in the session context
-
-
-
     //    //                if (String.IsNullOrEmpty(cmdName))
-
     //    //                {
     //    //                    b.Content = m.Name;
-
     //    //                    b.Click +=
-
     //    //                      (s, e) =>
-
     //    //                      {
-
     //    //                          var b2 = (Button)s;
-
     //    //                          var mi = type.GetMethod(b2.Content);
-
     //    //                          if (mi != null)
-
     //    //                          {
-
     //    //                // Use reflection to call the method with no arguments
-
-
-
     //    //                mi.Invoke(this, null);
-
     //    //                          }
-
     //    //                      };
-
     //    //                }
-
     //    //                else
-
     //    //                {
-
     //    //                    // Otherwise we use the command name as the button text and
-
     //    //                    // execute the command in the command context asynchronously
-
-
-
     //    //                    b.Content = cmdName;
-
     //    //                    b.Click +=
-
     //    //                      async (s, e) =>
-
     //    //                      {
-
     //    //                          var dm = Application.DocumentManager;
-
     //    //                          var doc2 = dm.MdiActiveDocument;
-
     //    //                          if (doc2 == null) return;
-
-
-
     //    //            // We could also use SendStringToExecute for older versions
-
-
-
     //    //            // doc2.SendStringToExecute(
-
     //    //            //   "_." + cmdName + " ", false, false, true
-
     //    //            // );
-
-
-
     //    //            var ed2 = doc2.Editor;
-
-
-
     //    //                          await dm.ExecuteInCommandContextAsync(
-
     //    //              async (obj) =>
-
     //    //                          {
-
     //    //                              await ed2.CommandAsync("_." + cmdName);
-
     //    //                          },
-
     //    //              null
-
     //    //            );
-
     //    //                      };
-
     //    //                }
-
     //    //                bs.Add(b);
-
     //    //                i++;
-
     //    //            }
-
     //    //        }
-
-
-
     //    //        // Create a user control and add all our buttons to it
-
-
-
     //    //        var uc = new WinForms.UserControl();
-
     //    //        uc.Controls.AddRange(bs.ToArray());
-
-
-
     //    //        // Create a palette set and add a palette containing our control
-
-
-
     //    //        _ps = new PaletteSet("PC", new Guid("87374E16-C0DB-4F3F-9271-7A71ED921566"));
-
     //    //        _ps.Add("CMDPAL", uc);
-
     //    //        _ps.MinimumSize = new Size(200, (i + 1) * 40);
-
     //    //        _ps.DockEnabled = (DockSides)(DockSides.Left | DockSides.Right);
-
     //    //    }
-
-
-
     //    //    _ps.Visible = true;
-
     //    //}
-
-
-
-    //    // Helper function to display a message and post a command prompt
-
-    //    // (if there's an active document available)
-
-
-
-
     //}
 
     public class Commands : IExtensionApplication
@@ -429,22 +328,77 @@ namespace RibbonBricscad
         [CommandMethod("AddBottomToolbar")]
         public static void AddBottomToolbar()
         {
-            UserControl2 uc = new UserControl2();
+            //UserControl2 uc = new UserControl2();
             PaletteSet ps = new PaletteSet("Bottom Toolbar", new Guid("87374E16-C0DB-4F3F-9271-7A71ED921566"))
             {
                 Dock = DockSides.Bottom,
                 KeepFocus = true,
-
-                Size = new System.Drawing.Size((int)uc.width, (int)uc.height),
+                //Size = new System.Drawing.Size((int)uc.width, (int)uc.height),
             };
             //System.Drawing.Point startPos = new System.Drawing.Point(50, 50);
             //ps.SetLocation(startPos);
             ps.TitleBarLocation = PaletteSetTitleBarLocation.Left;
-            ps.AddVisual("Ribbon", uc);
+            var uc2 = new System.Windows.Forms.Control();
+            uc2.Height = 26;
+            List<InputUI> UIInputList;
+            List<InputUI> inputs = new List<InputUI>();
+            inputs.Add(new InputUI() { text = "New Model" });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "License Days Left" });
+            inputs.Add(new InputUI() { text = "..." });
+            UIInputList = inputs;
+            System.Windows.Forms.StatusBar statusBar = new System.Windows.Forms.StatusBar();
+            statusBar.Margin = new System.Windows.Forms.Padding(0);
+            var converter = new System.Windows.Media.BrushConverter();
+            var brush = (System.Windows.Media.Brush)converter.ConvertFromString("#038e96");
+            //statusBar.Background = brush;
+            statusBar.Name = "StatusBar";
+
+            //Grid.ColumnSpan = "2" Height = "Auto"
+
+            //DockPanel dockPanel = new DockPanel();
+            //dockPanel.HorizontalAlignment = HorizontalAlignment.Left;
+            //dockPanel.Children.Add(new Label() { Content = UIInputList[0].text, HorizontalAlignment = HorizontalAlignment.Left, Foreground = new SolidColorBrush(Colors.White), FontSize = 9 });
+            //WrapPanel wrapPanel = new WrapPanel() { Name = "WrapPanel", HorizontalAlignment = HorizontalAlignment.Right, Height = 26 };
+            //dockPanel.Children.Add(wrapPanel);
+            //foreach (var item in UIInputList)
+            //{
+            //    wrapPanel.Children.Add(new Label() { Content = item.text, Foreground = new SolidColorBrush(Colors.White), FontSize = 9 });
+            //}
+            //statusBar.ShowPanels = true;
+            //statusBar.Panels.AddRange(dockPanel);
+            //statusBar.Panels.Add(dockPanel);
+            //statusBar.Items.Add(dockPanel);
+            //System.Windows.Forms.StatusBarPanel statusBarPanel = new System.Windows.Forms.StatusBarPanel();
+            //statusBarPanel.Text = UIInputList[0].text;
+            uc2.Controls.Add(statusBar);
+
+            StatusStrip statusStrip = new StatusStrip();
+            statusStrip.Margin = new Padding(0);
+            statusStrip.Name = "StatusStip";
+            statusStrip.SuspendLayout();
+            var toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {toolStripStatusLabel1});
+            toolStripStatusLabel1.Text = UIInputList[0].text;
+            uc2.Controls.Add(statusStrip);
+            //statusStrip.BackColor = new System.Drawing.Color();
+            //Grid grid = new Grid();
+            //grid.Name = "parent";
+            //grid.Children.Add()
+
+            
+            ps.Add("Test", uc2);
+            //ps.AddVisual("Ribbon", uc);
             //var uc2 = new WinForms
             //ps.Add("Ribbon", uc2);
-
-            var PSSize = new System.Drawing.Size(1000, 50);
+            
+            var PSSize = new System.Drawing.Size(1000, 26);
             ps.MinimumSize = PSSize;
             ps.DockEnabled = (DockSides)(DockSides.Left | DockSides.Right);
             ps.Size = new System.Drawing.Size(PSSize.Width, PSSize.Height);
