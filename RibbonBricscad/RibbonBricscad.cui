@@ -83,7 +83,7 @@
           <Name>FrontView</Name>
           <Command>FrontView</Command>
           <HelpString>Front View</HelpString>
-          <Image ID="D:\Work\Assignments\RibbonBricscad\res\FrontView.bmp"/>
+          <Image ID="./res/FrontView.bmp"/>
         </Macro>
       </MenuMacro>
       <MenuMacro UID="BackViewMacro">
@@ -174,6 +174,94 @@
           <Image ID="D:\Work\Assignments\RibbonBricscad\res\ZoomDe.bmp"/>
         </Macro>
       </MenuMacro>
+	  <MenuMacro UID="OrbitMacro">
+        <Macro>
+          <Name>Orbit</Name>
+          <Command>Orbit</Command>
+          <HelpString>Orbit</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\Orbit.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="TurnableOrbitMacro">
+        <Macro>
+          <Name>TurnableOrbit</Name>
+          <Command>TurnableOrbit</Command>
+          <HelpString>Turnable Orbit</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\TurnableOrbit.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="3dpanMacro">
+        <Macro>
+          <Name>3dpan</Name>
+          <Command>3dpan</Command>
+          <HelpString>3dpan</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\3dpan.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="ZoomMouseMacro">
+        <Macro>
+          <Name>ZoomMouse</Name>
+          <Command>ZoomMouse</Command>
+          <HelpString>Zoom Mouse</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\ZoomMouse.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="SelectByRubberbandMacro">
+        <Macro>
+          <Name>SelectByRubberband</Name>
+          <Command>SelectByRubberband</Command>
+          <HelpString>Select By Rubberband</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\SelectByRubberband.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="SelectByClickingMacro">
+        <Macro>
+          <Name>SelectByClicking</Name>
+          <Command>SelectByClicking</Command>
+          <HelpString>Select By Clicking</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\SelectByClicking.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="QqMacro">
+        <Macro>
+          <Name>Qq</Name>
+          <Command>Qq</Command>
+          <HelpString>Qq</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\Qq.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="CuttingPlaneZMacro">
+        <Macro>
+          <Name>CuttingPlaneZ</Name>
+          <Command>CuttingPlaneZ</Command>
+          <HelpString>Cutting Plane Z</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\CuttingPlaneZ.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="TranslucentMacro">
+        <Macro>
+          <Name>Translucent</Name>
+          <Command>Translucent</Command>
+          <HelpString>Translucent</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\Translucent.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="ShowNozzlesMacro">
+        <Macro>
+          <Name>ShowNozzles</Name>
+          <Command>ShowNozzles</Command>
+          <HelpString>Show Nozzles</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\ShowNozzles.bmp"/>
+        </Macro>
+      </MenuMacro>
+	  <MenuMacro UID="HoopsPlotRefreshMacro">
+        <Macro>
+          <Name>HoopsPlotRefresh</Name>
+          <Command>HoopsPlotRefresh</Command>
+          <HelpString>Hoops Plot Refresh</HelpString>
+          <Image ID="D:\Work\Assignments\RibbonBricscad\res\PV_Hoops_Plot_Refresh.bmp"/>
+        </Macro>
+      </MenuMacro>
     </MacroGroup>
     <MenuRoot>
       <PopMenuRoot/>
@@ -199,7 +287,6 @@
               <MacroRef MenuMacroID="FrontViewMacro"/>
             </MenuItem>
           </ToolbarButton>
-          <ToolbarButton IsSeparator="true"/>
           <ToolbarButton>
             <Name>BackView</Name>
             <MenuItem>
@@ -265,6 +352,75 @@
             <Name>ZoomDe</Name>
             <MenuItem>
               <MacroRef MenuMacroID="ZoomDeMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton IsSeparator="true"/>
+		  <ToolbarButton>
+            <Name>Orbit</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="OrbitMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>TurnableOrbit</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="TurnableOrbitMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>3dpan</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="3dpanMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>ZoomMouse</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ZoomMouseMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton IsSeparator="true"/>
+		  <ToolbarButton>
+            <Name>SelectByRubberband</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SelectByRubberbandMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>SelectByClicking</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SelectByClickingMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>Qq</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="QqMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton IsSeparator="true"/>
+          <ToolbarButton>
+            <Name>CuttingPlaneZ</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="CuttingPlaneZMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton>
+            <Name>Translucent</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="TranslucentMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton>
+            <Name>ShowNozzles</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ShowNozzlesMacro"/>
+            </MenuItem>
+          </ToolbarButton>
+		  <ToolbarButton>
+            <Name>HoopsPlotRefresh</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HoopsPlotRefreshMacro"/>
             </MenuItem>
           </ToolbarButton>
         </Toolbar>

@@ -37,7 +37,6 @@ namespace ClassLibrary2.ViewModel
         {
             RibbonControl rbnCtrl = ComponentManager.Ribbon;
             rbnCtrl.ClearAllTabs();
-
             // Init Panel Source
             RibbonPanelSource srcPanel = new RibbonPanelSource();
             srcPanel.Title = "";
@@ -68,7 +67,6 @@ namespace ClassLibrary2.ViewModel
 
                 panel.SetWPFControl(wrapPanel, "test");
             }
-            
         }
 
         public void ReadXml(XmlNodeList nodeList)

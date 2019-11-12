@@ -19,7 +19,7 @@ namespace RibbonBricscad.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -1603,9 +1603,9 @@ namespace RibbonBricscad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Input {
+        public static System.Drawing.Bitmap input {
             get {
-                object obj = ResourceManager.GetObject("Input", resourceCulture);
+                object obj = ResourceManager.GetObject("input", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2743,9 +2743,9 @@ namespace RibbonBricscad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap PrimaryArrow1 {
+        public static System.Drawing.Bitmap primaryarrow1 {
             get {
-                object obj = ResourceManager.GetObject("PrimaryArrow1", resourceCulture);
+                object obj = ResourceManager.GetObject("primaryarrow1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

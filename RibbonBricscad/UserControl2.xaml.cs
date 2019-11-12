@@ -27,7 +27,6 @@ namespace RibbonBricscad
         public List<InputUI> GetInputUI()
         {
             List<InputUI> inputs = new List<InputUI>();
-            inputs.Add(new InputUI() { text = "New Model" });
             inputs.Add(new InputUI() { text = "..." });
             inputs.Add(new InputUI() { text = "..." });
             inputs.Add(new InputUI() { text = "..." });
@@ -35,7 +34,8 @@ namespace RibbonBricscad
             inputs.Add(new InputUI() { text = "..." });
             inputs.Add(new InputUI() { text = "..." });
             inputs.Add(new InputUI() { text = "..." });
-            inputs.Add(new InputUI() { text = "License Days Left" });
+            inputs.Add(new InputUI() { text = "..." });
+            inputs.Add(new InputUI() { text = "License Days Left:" });
             inputs.Add(new InputUI() { text = "..." });
             UIInputList = inputs;
             return UIInputList;
@@ -45,27 +45,46 @@ namespace RibbonBricscad
         public UserControl2()
         {
             InitializeComponent();
-            LoadUI();
-            this.UpdateLayout();
+            InitUI();
         }
 
         public void LoadUI()
         {
-            parent.Height = 26;
             GetInputUI();
-            //DockPanel.VerticalAlignment = VerticalAlignment.Stretch;
-            DockPanel.HorizontalAlignment = HorizontalAlignment.Left;
-            DockPanel.Children.Add(new Label() { Content = UIInputList[0].text, HorizontalAlignment = HorizontalAlignment.Left, Foreground = new SolidColorBrush(Colors.White), FontSize = 9 });
-            WrapPanel wrapPanel = new WrapPanel() { Name = "WrapPanel", HorizontalAlignment = HorizontalAlignment.Right, Height = 26 };
-            DockPanel.Children.Add(wrapPanel);
+            
+            RowDefinition rowDef = new RowDefinition();
+            parent.RowDefinitions.Add(rowDef);
+            ColumnDefinition colDef1 = new ColumnDefinition();
+            ColumnDefinition colDef2 = new ColumnDefinition();
+            parent.ColumnDefinitions.Add(colDef1);
+            parent.ColumnDefinitions.Add(colDef2);
+            Label label = new Label() { Content = "Press F1 for Help", Foreground = new SolidColorBrush(Colors.White), FontSize = 12, Name = "HelpLb", VerticalAlignment = VerticalAlignment.Center };
+            Grid.SetRow(label, 0);
+            Grid.SetColumn(label, 0);
+            parent.Children.Add(label);
+            int i = 0;
+            StackPanel stackPanel = new StackPanel() { HorizontalAlignment = HorizontalAlignment.Right, Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Center };
+            Label lb = new Label();
             foreach (var item in UIInputList)
             {
-                wrapPanel.Children.Add(new Label() { Content = item.text, Foreground = new SolidColorBrush(Colors.White), FontSize = 9 });
+                lb = new Label()
+                {
+                    Content = item.text,
+                    Foreground = new SolidColorBrush(Colors.White),
+                    FontSize = 12,
+                    Name = "Lb" + i
+                };
+                stackPanel.Children.Add(lb);
+                i++;
             }
+            Grid.SetRow(stackPanel, 0);
+            Grid.SetColumn(stackPanel, 1);
+            parent.Children.Add(stackPanel);
         }
 
         public void InitUI()
         {
+            LoadUI();
             PaletteSet ps = new PaletteSet("Bottom Toolbar", new Guid("87374E16-C0DB-4F3F-9271-7A71ED921566"))
             {
                 Style = PaletteSetStyles.NameEditable |
@@ -83,7 +102,7 @@ namespace RibbonBricscad
             //ps.SetLocation(startPos);
             ps.TitleBarLocation = PaletteSetTitleBarLocation.Left;
             ps.AddVisual("Ribbon", this);
-            var PSSize = new System.Drawing.Size(1000, 26);
+            var PSSize = new System.Drawing.Size(1024, 40);
             ps.Size = new System.Drawing.Size(PSSize.Width, PSSize.Height);
             ps.Size = PSSize;
         }
